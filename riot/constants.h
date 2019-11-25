@@ -25,6 +25,8 @@
 //                  Constants
 //-----------------------------------------------
 // graphic images
+const char PLAYER_IMAGE[] = "player.png";
+const char ENEMY_IMAGE[] = "enemy.png";
 
 // window
 const char CLASS_NAME[] = "Riot";

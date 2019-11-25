@@ -26,12 +26,6 @@ Input::Input()
 	mouseRButton = false;               // true if right mouse button is down
 	mouseX1Button = false;              // true if X1 mouse button is down
 	mouseX2Button = false;              // true if X2 mouse button is down
-
-	for (int i = 0; i < MAX_CONTROLLERS; i++)
-	{
-		controllers[i].vibrateTimeLeft = 0;
-		controllers[i].vibrateTimeRight = 0;
-	}
 }
 
 //=============================================================================
@@ -62,11 +56,6 @@ void Input::initialize(HWND hwnd, bool capture)
 
 		if (mouseCaptured)
 			SetCapture(hwnd);           // capture mouse
-
-		// Clear controllers state
-		ZeroMemory(controllers, sizeof(ControllerState) * MAX_CONTROLLERS);
-
-		checkControllers();             // check for connected controllers
 	}
 	catch (...)
 	{
@@ -102,7 +91,7 @@ void Input::keyUp(WPARAM wParam)
 }
 
 //=============================================================================
-// Save the char just entered in textIn string
+// Save the char just entered in textIn string (Probably won't be used)
 // Pre: wParam contains the char
 //=============================================================================
 void Input::keyIn(WPARAM wParam)
@@ -226,64 +215,5 @@ void Input::mouseRawIn(LPARAM lParam)
 	{
 		mouseRawX = raw->data.mouse.lLastX;
 		mouseRawY = raw->data.mouse.lLastY;
-	}
-}
-
-//=============================================================================
-// Check for connected controllers
-//=============================================================================
-void Input::checkControllers()
-{
-	DWORD result;
-	for (DWORD i = 0; i < MAX_CONTROLLERS; i++)
-	{
-		result = XInputGetState(i, &controllers[i].state);
-		if (result == ERROR_SUCCESS)
-			controllers[i].connected = true;
-		else
-			controllers[i].connected = false;
-	}
-}
-
-//=============================================================================
-// Read state of connected controllers
-//=============================================================================
-void Input::readControllers()
-{
-	DWORD result;
-	for (DWORD i = 0; i < MAX_CONTROLLERS; i++)
-	{
-		if (controllers[i].connected)
-		{
-			result = XInputGetState(i, &controllers[i].state);
-			if (result == ERROR_DEVICE_NOT_CONNECTED)    // if controller disconnected
-				controllers[i].connected = false;
-		}
-	}
-}
-
-//=============================================================================
-// Vibrate connected controllers
-//=============================================================================
-void Input::vibrateControllers(float frameTime)
-{
-	for (int i = 0; i < MAX_CONTROLLERS; i++)
-	{
-		if (controllers[i].connected)
-		{
-			controllers[i].vibrateTimeLeft -= frameTime;
-			if (controllers[i].vibrateTimeLeft < 0)
-			{
-				controllers[i].vibrateTimeLeft = 0;
-				controllers[i].vibration.wLeftMotorSpeed = 0;
-			}
-			controllers[i].vibrateTimeRight -= frameTime;
-			if (controllers[i].vibrateTimeRight < 0)
-			{
-				controllers[i].vibrateTimeRight = 0;
-				controllers[i].vibration.wRightMotorSpeed = 0;
-			}
-			XInputSetState(i, &controllers[i].vibration);
-		}
 	}
 }

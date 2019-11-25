@@ -79,9 +79,6 @@ LRESULT Game::messageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			input->setMouseXButton(wParam);
 			input->mouseIn(lParam);             // mouse position
 			return 0;
-		case WM_DEVICECHANGE:                   // check for controller insert
-			input->checkControllers();
-			return 0;
 		}
 	}
 	return DefWindowProc(hwnd, msg, wParam, lParam);    // let Windows handle it
@@ -215,14 +212,12 @@ void Game::run(HWND hwnd)
 // The graphics device was lost.
 // Release all reserved video memory so graphics device may be reset.
 //=============================================================================
-void Game::releaseAll()
-{}
+void Game::releaseAll() {}
 
 //=============================================================================
 // Recreate all surfaces and reset all entities.
 //=============================================================================
-void Game::resetAll()
-{}
+void Game::resetAll() {}
 
 //=============================================================================
 // Delete all reserved memory
