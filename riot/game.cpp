@@ -79,9 +79,6 @@ LRESULT Game::messageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			input->setMouseXButton(wParam);
 			input->mouseIn(lParam);             // mouse position
 			return 0;
-		case WM_DEVICECHANGE:                   // check for controller insert
-			input->checkControllers();
-			return 0;
 		}
 	}
 	return DefWindowProc(hwnd, msg, wParam, lParam);    // let Windows handle it
