@@ -11,12 +11,12 @@ TextureManager::TextureManager()
 	initialized = false;            // set true when successfully initialized
 }
 
-
 // destructor
 TextureManager::~TextureManager()
 {
 	SAFE_RELEASE(texture);
 }
+
 bool TextureManager::initialize(Graphics* g, const char* f)
 {
 	try {

@@ -213,14 +213,12 @@ void Game::run(HWND hwnd)
 // The graphics device was lost.
 // Release all reserved video memory so graphics device may be reset.
 //=============================================================================
-void Game::releaseAll()
-{}
+void Game::releaseAll() {}
 
 //=============================================================================
 // Recreate all surfaces and reset all entities.
 //=============================================================================
-void Game::resetAll()
-{}
+void Game::resetAll() {}
 
 //=============================================================================
 // Delete all reserved memory
