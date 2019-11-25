@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\collision">
-      <UniqueIdentifier>{a08b9947-9a20-46b2-8e15-cd82e5dc336b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\collision">
-      <UniqueIdentifier>{e569ad0f-7de7-4bf0-ad3f-a5749865080c}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -45,11 +39,8 @@
     <ClCompile Include="entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="collisionDetectors.cpp">
-      <Filter>Source Files\collision</Filter>
-    </ClCompile>
-    <ClCompile Include="collidable.cpp">
-      <Filter>Source Files\collision</Filter>
+    <ClCompile Include="collision.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,11 +71,8 @@
     <ClInclude Include="entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="collidable.h">
-      <Filter>Header Files\collision</Filter>
-    </ClInclude>
-    <ClInclude Include="collisionDetectors.h">
-      <Filter>Header Files\collision</Filter>
+    <ClInclude Include="collision.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
