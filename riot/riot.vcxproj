@@ -149,6 +149,10 @@
     <ClInclude Include="riot.h" />
     <ClInclude Include="textureManager.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="enemy.png" />
+    <Image Include="player.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
