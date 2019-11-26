@@ -2,6 +2,7 @@
 
 #include <utility>
 #include <vector>
+#include <unordered_set>
 #include <unordered_map>
 #include <typeindex>
 
@@ -12,8 +13,10 @@ namespace ECS {
 
 class Manager {
 	private:
-		// Entity -> vector<Entity>
-		std::unordered_map<Types::TypeId, std::vector<Entity>> entities;
+		// EntityId -> Entity
+		std::unordered_map<EntityIdType, Entity> entities;
+		// EntityType -> unordered_set<EntityId>
+		std::unordered_map<Types::TypeId, std::unordered_set<EntityIdType>> entityFamilies;
 		// Component -> vector<T>
 		std::unordered_map<Types::TypeId, void*> components;
 		// EntityId -> ComponentType -> vector index
@@ -28,7 +31,7 @@ class Manager {
 
 		template<typename ComponentType> void addComponent(EntityIdType id, ComponentType component);
 
-		void removeEntity(EntityIdType id);
+		template<typename EntityType> void removeEntity(EntityIdType id);
 };
 
 }

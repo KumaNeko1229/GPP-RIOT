@@ -9,14 +9,17 @@ template<typename EntityType> EntityIdType Manager::createEntity() {
 	Entity entity = Entity(newEntityId, entityType);
 
 	// Add the entity to the entities map
-	if (this->entities.find(entityType) == this->entities.end())
+	std::pair<EntityIdType, Entity> entityRecord (newEntityId, entity);
+	this->entities.insert(entityRecord);
+
+	// Add the entity to the entityFamilies map
+	if (this->entityFamilies.find(entityType) == this->entityFamilies.end())
 	{
 		// Add an empty vector with the entityType if it does not exist
-		std::pair<Types::TypeId, std::vector<Entity>> emptyRecord (entityType, std::vector<Entity>());
-		this->entities.insert(emptyRecord);
+		std::pair<Types::TypeId, std::vector<EntityIdType>> emptyRecord (entityType, std::vector<EntityIdType>());
+		this->entityFamilies.insert(emptyRecord);
 	}
-
-	this->entities.at(entityType).push_back(entity);
+	this->entityFamilies.at(entityType).push_back(newEntityId);
 
 	return newEntityId;
 }
@@ -61,8 +64,26 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 	}
 }
 
-void Manager::removeEntity(EntityIdType id) {
+template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
+	Types::TypeId entityTypeId = Types::toTypeId(EntityType);
 
-}
+	// Remove the entity's components
+	std::unordered_map componentMap = this->entityComponents.at(id);
+	for (std::pair<Types::TypeId, int> componentPair : componentMap)
+	{
+		Types::TypeId componentType = componentPair.first;
 
+		int componentIndex = this->entityComponents.at(id).at(componentType);
+		std::vector<componentType>* componentVectorPtr = this->components.at(componentType);
+		componentVectorPtr->erase(componentIndex);
+	}
+
+	// Remove the entity from the entityComponents map
+	this->entityComponents.erase(id);
+
+	// Remove the entity from the entityFamilies map
+	this->entityFamilies.at(entityTypeId).erase(id);
+
+	// Remove the entity from the list of entities
+	this->entities.erase(entityTypeId);
 }
