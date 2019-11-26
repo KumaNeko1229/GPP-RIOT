@@ -14,7 +14,12 @@ class Riot : public Game
 {
 private:
 	// variables
-
+	TextureManager mapTexture;
+	TextureManager enemyTexture;
+	TextureManager playerTexture;
+	Image map;
+	Image enemy;
+	Image player;
 
 public:
 	// Constructor

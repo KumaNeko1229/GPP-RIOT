@@ -30,7 +30,7 @@ class Collidable {
 		bool collidesWith(Collidable collidable);
 };
 
-std::function<bool(Collidable, Collidable)> findCollisionDetector(Collidable a, Collidable b);
+std::function<bool(Collidable, Collidable)> findCollisionDetector(CollisionType a, CollisionType b);
 
 bool CircleCircleCheckCollision(Collidable a, Collidable b);
 

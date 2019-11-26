@@ -27,6 +27,7 @@
 // graphic images
 const char PLAYER_IMAGE[] = "player.png";
 const char ENEMY_IMAGE[] = "enemy.png";
+const char MAP_IMAGE[] = "map.png";
 
 // window
 const char CLASS_NAME[] = "Riot";

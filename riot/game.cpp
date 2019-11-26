@@ -200,7 +200,6 @@ void Game::run(HWND hwnd)
 		collisions();               // handle collisions
 	}
 	renderGame();                   // draw all game items
-	input->readControllers();       // read state of controllers
 
 
 	// Clear input
