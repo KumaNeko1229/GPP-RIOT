@@ -137,9 +137,11 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="image.cpp" />
     <ClCompile Include="input.cpp" />
+    <ClCompile Include="manager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="riot.cpp" />
     <ClCompile Include="textureManager.cpp" />
+    <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,9 +153,11 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="manager.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="textureManager.h" />
+    <ClInclude Include="typeUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Downloads\map.jpg" />
