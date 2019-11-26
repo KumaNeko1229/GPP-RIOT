@@ -23,7 +23,6 @@ class Manager {
 	public:
 		template<typename EntityType> EntityIdType createEntity();
 
-		template<typename EntityType> Entity getEntity(EntityIdType id);
 		template<typename ComponentType> std::vector<ComponentType> getComponents();
 		template<typename ComponentType> ComponentType getEntityComponent(EntityIdType id);
 

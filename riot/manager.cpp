@@ -21,10 +21,6 @@ template<typename EntityType> EntityIdType Manager::createEntity() {
 	return newEntityId;
 }
 
-template<typename EntityType> Entity Manager::getEntity(EntityIdType id) {
-
-}
-
 template<typename ComponentType> std::vector<ComponentType> Manager::getComponents() {
 	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
 
@@ -42,7 +38,10 @@ template<typename ComponentType> std::vector<ComponentType> Manager::getComponen
 }
 
 template<typename ComponentType> ComponentType Manager::getEntityComponent(EntityIdType id) {
-
+	Types::TypeId componentTypeId = Types::toTypeId(ComponentType);
+	int componentIndex = this->entityComponents.at(id).at(componentTypeId);
+	std::vector<ComponentType>* componentVectorPtr = this->components.at(componentTypeId);
+	return componentVectorPtr->at(componentIndex);
 }
 
 template<typename ComponentType> void Manager::addComponent(EntityIdType id, ComponentType component) {
@@ -58,7 +57,7 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 	}
 	else
 	{
-		((std::vector<ComponentType>) this->components.at(componentTypeId)).push_back(component);
+		((std::vector<ComponentType>*) this->components.at(componentTypeId))->push_back(component);
 	}
 }
 
