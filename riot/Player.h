@@ -1,7 +1,6 @@
 #pragma once
-#include "entity.h"
 
-class Player : Entity {
+class Player {
 
 	private:
 		// variables
@@ -11,12 +10,10 @@ class Player : Entity {
 	public:
 		// Constructor
 		Player();
-		Player(Image* i);
 		// Destructor
 		~Player();
 
 		void shoot();
-		void draw() { Entity::draw(); }
 		bool checkWeaponCollision();
 		int getHealth() { return this->health; }
 		float getVelocity() { return this->velocity; }
