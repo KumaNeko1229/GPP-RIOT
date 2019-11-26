@@ -24,6 +24,21 @@ template<typename EntityType> Entity Manager::getEntity(EntityIdType id) {
 
 }
 
+template<typename ComponentType> std::vector<ComponentType> Manager::getComponents() {
+	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
+
+	if (this->components.find(componentTypeId) == this->components.end()) {
+		// Add an empty vector with the entityType if it does not exist
+		std::vector<ComponentType> componentVector;
+		std::pair<Types::TypeId, std::vector<ComponentType>> emptyRecord
+			(componentTypeId, &componentVector);
+		this->components.insert(emptyRecord);
+	}
+
+	std::vector<ComponentType> componentVector = this->components.at(componentTypeId);
+	return componentVector;
+}
+
 template<typename ComponentType> ComponentType Manager::getEntityComponent(EntityIdType id) {
 
 }
