@@ -199,7 +199,6 @@ void Game::run(HWND hwnd)
 		update();                   // update all game items
 		ai();                       // artificial intelligence
 		collisions();               // handle collisions
-		input->vibrateControllers(frameTime); // handle controller vibration
 	}
 	renderGame();                   // draw all game items
 	input->readControllers();       // read state of controllers

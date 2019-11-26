@@ -131,6 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="collision.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="image.cpp" />
@@ -140,7 +142,9 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="collision.h" />
     <ClInclude Include="constants.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="graphics.h" />
@@ -148,6 +152,10 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="textureManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="enemy.png" />
+    <Image Include="player.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
