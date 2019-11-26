@@ -28,7 +28,7 @@ template<typename ComponentType> std::vector<ComponentType> Manager::getComponen
 	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
 
 	if (this->components.find(componentTypeId) == this->components.end()) {
-		// Add an empty vector with the entityType if it does not exist
+		// Add an empty vector with the componentType if it does not exist
 		std::vector<ComponentType> componentVector;
 		std::pair<Types::TypeId, std::vector<ComponentType>> emptyRecord
 			(componentTypeId, &componentVector);
@@ -44,7 +44,17 @@ template<typename ComponentType> ComponentType Manager::getEntityComponent(Entit
 }
 
 template<typename ComponentType> void Manager::addComponent(EntityIdType id, ComponentType component) {
+	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
 
+	if (this->components.find(componentTypeId) == this->components.end()) {
+		// Add an empty vector with the componentType if it does not exist
+		std::vector<ComponentType> componentVector { component };
+		std::pair<Types::TypeId, std::vector<ComponentType>> emptyRecord
+			(componentTypeId, &componentVector);
+		this->components.insert(emptyRecord);
+	} else {
+		((std::vector<ComponentType>) this->components.at(componentTypeId)).push_back(component);
+	}
 }
 
 void Manager::removeEntity(EntityIdType id) {

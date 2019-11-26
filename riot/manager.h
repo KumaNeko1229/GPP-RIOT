@@ -12,9 +12,12 @@ namespace ECS {
 
 class Manager {
 	private:
+		// Entity -> vector<Entity>
 		std::unordered_map<Types::TypeId, std::vector<Entity>> entities;
-		// Types::TypeId -> vector<T>
+		// Component -> vector<T>
 		std::unordered_map<Types::TypeId, void*> components;
+		// EntityId -> ComponentType -> vector index
+		std::unordered_map<EntityIdType, std::unordered_map<Types::TypeId, int>> entityComponents;
 		EntityIdType lastCreatedEntityId = NULL;
 
 	public:
