@@ -19,7 +19,11 @@
 // Safely call onResetDevice
 #define SAFE_ON_RESET_DEVICE(ptr)   { if(ptr) { ptr->onResetDevice(); } }
 #define TRANSCOLOR  SETCOLOR_ARGB(0,255,0,255)  // transparent color (magenta)
-
+// mapped as VKs and not Char to prevent confusion later on
+#define VK_W 0x57
+#define VK_A 0x41
+#define VK_S 0x53
+#define VK_D 0x44
 
 //-----------------------------------------------
 //                  Constants
@@ -48,9 +52,9 @@ const float MAX_FRAME_TIME = 1.0f / MIN_FRAME_RATE; // maximum time used in calc
 const UCHAR ESC_KEY = VK_ESCAPE;   // escape key
 const UCHAR ALT_KEY = VK_MENU;     // Alt key
 const UCHAR ENTER_KEY = VK_RETURN;   // Enter key
-const UCHAR LEFT_KEY = VK_LEFT;
-const UCHAR RIGHT_KEY = VK_RIGHT;
-const UCHAR UP_KEY = VK_UP;
-const UCHAR DOWN_KEY = VK_DOWN;
+const UCHAR LEFT_KEY = VK_A;
+const UCHAR RIGHT_KEY = VK_D;
+const UCHAR UP_KEY = VK_W;
+const UCHAR DOWN_KEY = VK_S;
 
 #endif

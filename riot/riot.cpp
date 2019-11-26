@@ -21,13 +21,39 @@ Riot::~Riot()
 void Riot::initialize(HWND hwnd)
 {
 	Game::initialize(hwnd); // throws GameError
+	if (!playerTexture.initialize(graphics, PLAYER_IMAGE))
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player texture"));
+	// use full image for now
+	if (!playerImage.initialize(graphics, 0, 0, 0, &playerTexture))
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player"));
+	player = Player::Player(&playerImage);
+
 	return;
 }
 
 //=============================================================================
 // Update all game items
 //=============================================================================
-void Riot::update() {}
+void Riot::update() 
+{	
+	// does not take deltatime into account yet
+	if (input->isKeyDown(UP_KEY))
+	{
+		playerImage.setY(playerImage.getY() - player.getVelocity());
+	}
+	if (input->isKeyDown(DOWN_KEY))
+	{
+		playerImage.setY(playerImage.getY() + player.getVelocity());
+	}
+	if (input->isKeyDown(LEFT_KEY))
+	{
+		playerImage.setX(playerImage.getX() - player.getVelocity());
+	}
+	if (input->isKeyDown(RIGHT_KEY))
+	{
+		playerImage.setX(playerImage.getX() + player.getVelocity());
+	}
+}
 
 //=============================================================================
 // Artificial Intelligence
@@ -45,6 +71,9 @@ void Riot::collisions() {}
 void Riot::render()
 {
 	graphics->spriteBegin();                // begin drawing sprites
+
+	player.draw();
+
 	graphics->spriteEnd();                  // end drawing sprites
 }
 
