@@ -1,23 +1,22 @@
 #pragma once
 
-#include <typeinfo>
+#include "typeUtil.h"
 
 namespace ECS {
 
 typedef unsigned int EntityIdType;
 
-template<typename EntityType>
 class Entity {
 	private:
 		EntityIdType id;
-		const std::type_info& entityType = typeid(EntityType);
+		Types::TypeId entityTypeId = Types::NothingTypeId;
 	public:
-		Entity() {};
-		Entity(EntityIdType id) { this->id = id; };
-		~Entity() {};
+		Entity();
+		Entity(EntityIdType id, Types::TypeId entityTypeId);
+		~Entity();
 
 		EntityIdType getId() { return id; };
-		template<typename T> bool isType() { typeid(T) == entityType; };
+		template<typename T> bool isSameType();
 };
 
 }
