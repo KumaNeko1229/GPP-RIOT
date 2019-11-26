@@ -36,7 +36,8 @@ LRESULT Game::messageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		case WM_DESTROY:
 			PostQuitMessage(0);        //tell Windows to kill this program
 			return 0;
-		case WM_KEYDOWN: case WM_SYSKEYDOWN:    // key down
+		case WM_KEYDOWN: 
+		case WM_SYSKEYDOWN:    // key down
 			input->keyDown(wParam);
 			return 0;
 		case WM_KEYUP: case WM_SYSKEYUP:        // key up
