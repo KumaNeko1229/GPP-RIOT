@@ -34,6 +34,5 @@ Entity::~Entity() {}
 
 bool Entity::collidesWith(Entity* entity) {
 	this->collidable.collidesWith(entity->getCollidable());
-
-	return true;
+	return false;
 }

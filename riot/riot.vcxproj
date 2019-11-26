@@ -156,6 +156,7 @@
     <ClInclude Include="textureManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\map.jpg" />
     <Image Include="enemy.png" />
     <Image Include="player.png" />
   </ItemGroup>

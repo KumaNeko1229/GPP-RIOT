@@ -6,34 +6,36 @@
 #include "game.h"
 #include "textureManager.h"
 #include "image.h"
-#include "Player.h"
 
 //=============================================================================
 // Create game class
 //=============================================================================
 class Riot : public Game
 {
-	private:
-		// variables (to be cleaned up later)
-		TextureManager playerTexture;
-		Image playerImage;
-		Player player;
+private:
+	// variables
+	TextureManager mapTexture;
+	TextureManager enemyTexture;
+	TextureManager playerTexture;
+	Image map;
+	Image enemy;
+	Image player;
 
-	public:
-		// Constructor
-		Riot();
+public:
+	// Constructor
+	Riot();
 
-		// Destructor
-		virtual ~Riot();
+	// Destructor
+	virtual ~Riot();
 
-		// Initialize the game
-		void initialize(HWND hwnd);
-		void update();      // must override pure virtual from Game
-		void ai();          // "
-		void collisions();  // "
-		void render();      // "
-		void releaseAll();
-		void resetAll();
+	// Initialize the game
+	void initialize(HWND hwnd);
+	void update();      // must override pure virtual from Game
+	void ai();          // "
+	void collisions();  // "
+	void render();      // "
+	void releaseAll();
+	void resetAll();
 };
 
 #endif
