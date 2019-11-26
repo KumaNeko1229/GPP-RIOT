@@ -2,6 +2,13 @@
 
 namespace ECS {
 
+EntityIdType Entity::createEntityId(EntityIdType previousId) {
+	// Assuming that previousId is some number which can be incremented
+	// Take note that previousId may also be NULL, but since NULL is 0, it can
+	// still be incremented.
+	return previousId + 1;
+}
+
 Entity::Entity() {
 	this->id = NULL;
 }

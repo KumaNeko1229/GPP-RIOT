@@ -11,6 +11,8 @@ class Entity {
 		EntityIdType id;
 		Types::TypeId entityTypeId = Types::NothingTypeId;
 	public:
+		static EntityIdType createEntityId(EntityIdType previousId);
+
 		Entity();
 		Entity(EntityIdType id, Types::TypeId entityTypeId);
 		~Entity();
