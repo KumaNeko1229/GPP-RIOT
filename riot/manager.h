@@ -8,6 +8,7 @@
 
 #include "typeUtil.h"
 #include "entity.h"
+#include "system.h"
 
 namespace ECS {
 
@@ -23,13 +24,16 @@ class Manager {
 		std::unordered_map<EntityIdType, std::unordered_map<Types::TypeId, int>> entityComponents;
 		EntityIdType lastCreatedEntityId = NULL;
 
+		std::vector<System*> systems;
 	public:
 		template<typename EntityType> EntityIdType createEntity();
 
 		template<typename ComponentType> std::vector<ComponentType> getComponents();
 		template<typename ComponentType> ComponentType getEntityComponent(EntityIdType id);
+		std::vector<System*> getSystems() { return this->systems; };
 
 		template<typename ComponentType> void addComponent(EntityIdType id, ComponentType component);
+		void registerSystem(System* system);
 
 		template<typename EntityType> void removeEntity(EntityIdType id);
 };

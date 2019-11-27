@@ -64,6 +64,10 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 	}
 }
 
+void Manager::registerSystem(System* system) {
+	this->systems.push_back(system);
+}
+
 template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	Types::TypeId entityTypeId = Types::toTypeId(EntityType);
 
