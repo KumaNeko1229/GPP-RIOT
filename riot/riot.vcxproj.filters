@@ -16,6 +16,9 @@
     <Filter Include="Header Files\ECS">
       <UniqueIdentifier>{ec48d1d4-f841-4f79-90f7-a180cf50e60c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ECS">
+      <UniqueIdentifier>{ca1f5dc8-952d-4769-a9ce-cf8a4823a001}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -46,13 +49,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="entity.cpp">
-      <Filter>Header Files\ECS</Filter>
+      <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="manager.cpp">
-      <Filter>Header Files\ECS</Filter>
+      <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="typeUtil.cpp">
-      <Filter>Header Files\ECS</Filter>
+      <Filter>Source Files\ECS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
