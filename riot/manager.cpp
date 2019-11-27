@@ -87,3 +87,5 @@ template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	// Remove the entity from the list of entities
 	this->entities.erase(entityTypeId);
 }
+
+}
