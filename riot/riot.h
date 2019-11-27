@@ -6,20 +6,14 @@
 #include "game.h"
 #include "textureManager.h"
 #include "image.h"
+#include "manager.h"
 
 //=============================================================================
 // Create game class
 //=============================================================================
-class Riot : public Game
-{
+class Riot : public Game {
 private:
-	// variables
-	TextureManager mapTexture;
-	TextureManager enemyTexture;
-	TextureManager playerTexture;
-	Image map;
-	Image enemy;
-	Image player;
+	ECS::Manager manager;
 
 public:
 	// Constructor

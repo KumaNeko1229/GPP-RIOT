@@ -98,6 +98,9 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="system.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="player.png">

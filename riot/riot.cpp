@@ -22,30 +22,22 @@ void Riot::initialize(HWND hwnd)
 {
 	Game::initialize(hwnd); // throws GameError
 
-	// nebula texture
-	if (!mapTexture.initialize(graphics, MAP_IMAGE))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing map texture"));
-	// planet texture
-	if (!enemyTexture.initialize(graphics, ENEMY_IMAGE))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing enemy texture"));
-	// ship texture
-	if (!playerTexture.initialize(graphics, PLAYER_IMAGE))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player texture"));
+	// TODO: Create the systems and register them to the manager
 
-	if (!map.initialize(graphics, 0, 0, 0, &mapTexture))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing map"));
-	if (!enemy.initialize(graphics, 0, 0, 0, &enemyTexture))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player"));
-	if (!player.initialize(graphics, 0, 0, 0, &playerTexture))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player"));
-
-	return;
+	// Initialize the systems
+	for (ECS::System* systemPtr : manager.getSystems()) {
+		systemPtr->initialize();
+	}
 }
 
 //=============================================================================
 // Update all game items
 //=============================================================================
-void Riot::update() {}
+void Riot::update() {
+	for (ECS::System* systemPtr : manager.getSystems()) {
+		systemPtr->update();
+	}
+}
 
 //=============================================================================
 // Render game items
@@ -53,6 +45,11 @@ void Riot::update() {}
 void Riot::render()
 {
 	graphics->spriteBegin();                // begin drawing sprites
+
+	for (ECS::System* systemPtr : manager.getSystems()) {
+		systemPtr->render();
+	}
+
 	graphics->spriteEnd();                  // end drawing sprites
 }
 
@@ -62,6 +59,10 @@ void Riot::render()
 //=============================================================================
 void Riot::releaseAll()
 {
+	for (ECS::System* systemPtr : manager.getSystems()) {
+		systemPtr->releaseAll();
+	}
+
 	Game::releaseAll();
 	return;
 }
@@ -73,5 +74,8 @@ void Riot::releaseAll()
 void Riot::resetAll()
 {
 	Game::resetAll();
-	return;
+
+	for (ECS::System* systemPtr : manager.getSystems()) {
+		systemPtr->resetAll();
+	}
 }
