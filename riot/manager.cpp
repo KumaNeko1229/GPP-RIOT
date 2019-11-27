@@ -9,17 +9,17 @@ template<typename EntityType> EntityIdType Manager::createEntity() {
 	Entity entity = Entity(newEntityId, entityType);
 
 	// Add the entity to the entities map
-	std::pair<EntityIdType, Entity> entityRecord (newEntityId, entity);
+	std::pair<EntityIdType, Entity*> entityRecord (newEntityId, &entity);
 	this->entities.insert(entityRecord);
 
 	// Add the entity to the entityFamilies map
 	if (this->entityFamilies.find(entityType) == this->entityFamilies.end())
 	{
 		// Add an empty vector with the entityType if it does not exist
-		std::pair<Types::TypeId, std::vector<EntityIdType>> emptyRecord (entityType, std::vector<EntityIdType>());
+		std::pair<Types::TypeId, std::vector<EntityIdType>*> emptyRecord (entityType, &std::vector<EntityIdType>());
 		this->entityFamilies.insert(emptyRecord);
 	}
-	this->entityFamilies.at(entityType).push_back(newEntityId);
+	this->entityFamilies.at(entityType)->push_back(newEntityId);
 
 	return newEntityId;
 }
@@ -86,7 +86,7 @@ template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	this->entityComponents.erase(id);
 
 	// Remove the entity from the entityFamilies map
-	this->entityFamilies.at(entityTypeId).erase(id);
+	this->entityFamilies.at(entityTypeId)->erase(id);
 
 	// Remove the entity from the list of entities
 	this->entities.erase(entityTypeId);

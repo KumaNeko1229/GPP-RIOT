@@ -15,9 +15,9 @@ namespace ECS {
 class Manager {
 	private:
 		// EntityId -> Entity
-		std::unordered_map<EntityIdType, Entity> entities;
+		std::unordered_map<EntityIdType, Entity*> entities;
 		// EntityType -> unordered_set<EntityId>
-		std::unordered_map<Types::TypeId, std::unordered_set<EntityIdType>> entityFamilies;
+		std::unordered_map<Types::TypeId, std::unordered_set<EntityIdType>*> entityFamilies;
 		// Component -> vector<T>
 		std::unordered_map<Types::TypeId, void*> components;
 		// EntityId -> ComponentType -> vector index
