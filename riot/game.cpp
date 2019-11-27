@@ -36,7 +36,7 @@ LRESULT Game::messageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		case WM_DESTROY:
 			PostQuitMessage(0);        //tell Windows to kill this program
 			return 0;
-		case WM_KEYDOWN: 
+		case WM_KEYDOWN:
 		case WM_SYSKEYDOWN:    // key down
 			input->keyDown(wParam);
 			return 0;
@@ -192,13 +192,11 @@ void Game::run(HWND hwnd)
 
 	timeStart = timeEnd;
 
-	// update(), ai(), and collisions() are pure virtual functions.
+	// update() is a pure virtual functions.
 	// These functions must be provided in the class that inherits from Game.
 	if (!paused)                    // if not paused
 	{
 		update();                   // update all game items
-		ai();                       // artificial intelligence
-		collisions();               // handle collisions
 	}
 	renderGame();                   // draw all game items
 

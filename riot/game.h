@@ -1,5 +1,5 @@
 
-#ifndef _GAME_H                 // prevent multiple definitions if this 
+#ifndef _GAME_H                 // prevent multiple definitions if this
 #define _GAME_H                 // ..file is included in more than one place
 #define WIN32_LEAN_AND_MEAN
 
@@ -75,12 +75,6 @@ public:
 
 	// Update game items.
 	virtual void update() = 0;
-
-	// Perform AI calculations.
-	virtual void ai() = 0;
-
-	// Check for collisions.
-	virtual void collisions() = 0;
 
 	// Render graphics.
 	// Call graphics->spriteBegin();
