@@ -12,3 +12,5 @@ const TypeId NothingTypeId = toTypeId<void>();
 
 }
 }
+
+#include "typeUtil.tpp"
