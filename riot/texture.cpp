@@ -2,13 +2,13 @@
 
 namespace Component {
 
-bool Texture::loadTexture(Graphics* graphics, std::string filePath) {
+bool Texture::loadTexture(Graphics* graphics, const char* filePath) {
 	this->filePath = filePath;
 
 	try
 	{
 		HRESULT hr = graphics->loadTexture(
-			filePath.c_str,
+			filePath,
 			TRANSCOLOR,
 			this->totalWidth,
 			this->totalHeight,

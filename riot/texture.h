@@ -18,7 +18,7 @@ struct Texture : ECS::Component {
 	std::string filePath;
 	LP_TEXTURE texture;
 
-	bool loadTexture(Graphics* graphics, std::string filePath);
+	bool loadTexture(Graphics* graphics, const char* filePath);
 };
 
 }
