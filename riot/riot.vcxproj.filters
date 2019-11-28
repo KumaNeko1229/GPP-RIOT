@@ -19,6 +19,21 @@
     <Filter Include="Source Files\ECS">
       <UniqueIdentifier>{ca1f5dc8-952d-4769-a9ce-cf8a4823a001}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{12ce016a-060a-42a5-a4bf-875a98e1de1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{cae9569f-339b-4ee9-9ccc-74c21016c349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{ebbbb58d-0223-4e89-a08a-5ef6fdc02ee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systems">
+      <UniqueIdentifier>{9ed30fb3-c6f8-4e3b-9154-3091bbde942e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components">
+      <UniqueIdentifier>{dc147066-73cc-4396-8de9-accd7860e575}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -45,9 +60,6 @@
     <ClCompile Include="collision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
@@ -56,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="typeUtil.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +104,6 @@
     <ClInclude Include="collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="manager.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
@@ -101,6 +116,21 @@
     <ClInclude Include="system.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="manager.tpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="player.png">
@@ -112,5 +142,10 @@
     <Image Include="..\..\..\..\Downloads\map.jpg">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="typeUtil.tpp">
+      <Filter>Source Files\ECS</Filter>
+    </None>
   </ItemGroup>
 </Project>

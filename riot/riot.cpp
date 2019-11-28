@@ -13,7 +13,6 @@ Riot::~Riot()
 {
 	releaseAll();           // call onLostDevice() for every graphics item
 }
-
 //=============================================================================
 // Initializes the game
 // Throws GameError on error
@@ -59,10 +58,7 @@ void Riot::render()
 //=============================================================================
 void Riot::releaseAll()
 {
-	for (ECS::System* systemPtr : manager.getSystems()) {
-		systemPtr->releaseAll();
-	}
-
+	manager.releaseAll();
 	Game::releaseAll();
 	return;
 }

@@ -138,32 +138,40 @@
     <ClCompile Include="image.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="manager.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="riot.cpp" />
+    <ClCompile Include="texture.cpp" />
     <ClCompile Include="textureManager.cpp" />
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="collision.h" />
+    <ClInclude Include="component.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="manager.tpp" />
     <ClInclude Include="image.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="manager.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="system.h" />
+    <ClInclude Include="texture.h" />
     <ClInclude Include="textureManager.h" />
+    <ClInclude Include="transform.h" />
     <ClInclude Include="typeUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Downloads\map.jpg" />
     <Image Include="enemy.png" />
     <Image Include="player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="typeUtil.tpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
