@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <typeindex>
 
+#include "constants.h"
 #include "typeUtil.h"
 #include "entity.h"
 #include "component.h"
@@ -22,7 +23,7 @@ class Manager {
 		// Component -> vector<Component>*
 		std::unordered_map<Types::TypeId, std::vector<Component>*> components;
 		// EntityId -> ComponentType -> vector index
-		std::unordered_map<EntityIdType, std::unordered_map<Types::TypeId, int>> entityComponents;
+		std::unordered_map<EntityIdType, std::unordered_map<Types::TypeId, int>*> entityComponents;
 		EntityIdType lastCreatedEntityId = NULL;
 
 		std::vector<System*> systems;
@@ -33,10 +34,13 @@ class Manager {
 		template<typename ComponentType> ComponentType getEntityComponent(EntityIdType id);
 		std::vector<System*> getSystems() { return this->systems; };
 
-		template<typename ComponentType> void addComponent(EntityIdType id, ComponentType component);
+		void addComponent(EntityIdType id, Component component);
 		void registerSystem(System* system);
 
 		template<typename EntityType> void removeEntity(EntityIdType id);
+		void removeEntity(EntityIdType id, Types::TypeId entityType);
+
+		void releaseAll();
 };
 
 }

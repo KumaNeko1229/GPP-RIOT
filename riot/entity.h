@@ -18,6 +18,7 @@ class Entity {
 		~Entity();
 
 		EntityIdType getId() { return id; };
+		Types::TypeId getTypeId() { return entityTypeId; };
 		template<typename T> bool isSameType();
 };
 
