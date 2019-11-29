@@ -16,7 +16,7 @@
 //=============================================================================
 class Riot : public Game {
 private:
-	ECS::Manager* manager;
+	ECS::Manager* manager = NULL;
 	ECS::SystemRunner systemRunner;
 
 public:

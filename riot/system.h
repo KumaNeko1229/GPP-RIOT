@@ -6,19 +6,23 @@
 namespace ECS {
 
 class System {
+	protected:
+		Manager* manager = NULL;
+		Graphics* graphics = NULL;
+
 	public:
-		System() {};
-		~System() {};
+		System();
+		~System();
 
-		virtual void initialize(Manager* manager, Graphics* graphics) = 0;
+		virtual void initialize(Manager* manager, Graphics* graphics);
 
-		virtual void update(Manager* manager) = 0;
+		virtual void update() = 0;
 
-		virtual void render(Manager* manager) = 0;
+		virtual void render() = 0;
 
-		virtual void releaseAll(Manager* manager) = 0;
+		virtual void releaseAll() = 0;
 
-		virtual void resetAll(Manager* manager) = 0;
+		virtual void resetAll() = 0;
 };
 
 }
