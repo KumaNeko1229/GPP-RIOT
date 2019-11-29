@@ -16,7 +16,7 @@ class System {
 
 		virtual void initialize(Manager* manager, Graphics* graphics);
 
-		virtual void update() = 0;
+		virtual void update(float frameTime) = 0;
 
 		virtual void render() = 0;
 

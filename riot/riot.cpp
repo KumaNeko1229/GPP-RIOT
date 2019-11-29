@@ -21,18 +21,17 @@ void Riot::initialize(HWND hwnd)
 {
 	Game::initialize(hwnd); // throws GameError
 	this->manager = new ECS::Manager();
-	this->systemRunner.setManager(this->manager);
 
 	// TODO: Create the systems and register them to the manager
 
-	this->systemRunner.initialize(this->graphics);
+	this->systemRunner.initialize(this->manager, this->graphics);
 }
 
 //=============================================================================
 // Update all game items
 //=============================================================================
 void Riot::update() {
-	this->systemRunner.update();
+	this->systemRunner.update(this->frameTime);
 }
 
 //=============================================================================

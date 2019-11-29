@@ -9,20 +9,17 @@ namespace ECS {
 
 class SystemRunner {
 	private:
-		Manager* manager = NULL;
 		std::vector<System*> systems;
 
 	public:
 		SystemRunner() {};
 		~SystemRunner() {};
 
-		void setManager(Manager* manager);
-
 		std::vector<System*> getSystems() { return this->systems; };
 		void registerSystem(System* system);
 
-		void initialize(Graphics* graphics);
-		void update();
+		void initialize(Manager* manager, Graphics* graphics);
+		void update(float frameTime);
 		void render();
 		void releaseAll();
 		void resetAll();
