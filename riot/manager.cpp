@@ -2,10 +2,6 @@
 
 namespace ECS {
 
-void Manager::registerSystem(System* system) {
-	this->systems.push_back(system);
-}
-
 void Manager::addComponent(EntityIdType id, Component component) {
 	Types::TypeId componentTypeId = Types::toTypeId<Component>();
 
@@ -61,11 +57,6 @@ void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 }
 
 void Manager::releaseAll() {
-	// Release all of the systems
-	for (ECS::System* systemPtr : this->getSystems()) {
-		systemPtr->releaseAll();
-	}
-
 	// Delete all entities
 	// Create a copy of the entity ids and types
 	std::vector<std::pair<EntityIdType, Types::TypeId>> entityCopy;
@@ -88,12 +79,21 @@ void Manager::releaseAll() {
 	{
 		SAFE_DELETE(kv.second);
 	}
+	this->entityFamilies.clear();
 
 	// Clean up components
 	for (auto kv : this->components)
 	{
 		SAFE_DELETE(kv.second);
 	}
+	this->components.clear();
+
+	// Clean up entityComponents
+	for (auto kv : this->entityComponents)
+	{
+		SAFE_DELETE(kv.second);
+	}
+	this->entityComponents.clear();
 }
 
 }
