@@ -1,5 +1,8 @@
 #pragma once
 
+#include "manager.h"
+#include "graphics.h"
+
 namespace ECS {
 
 class System {
@@ -7,15 +10,15 @@ class System {
 		System() {};
 		~System() {};
 
-		virtual void initialize() = 0;
+		virtual void initialize(Manager* manager, Graphics* graphics) = 0;
 
-		virtual void update() = 0;
+		virtual void update(Manager* manager) = 0;
 
-		virtual void render() = 0;
+		virtual void render(Manager* manager) = 0;
 
-		virtual void releaseAll() = 0;
+		virtual void releaseAll(Manager* manager) = 0;
 
-		virtual void resetAll() = 0;
+		virtual void resetAll(Manager* manager) = 0;
 };
 
 }
