@@ -20,22 +20,19 @@ Riot::~Riot()
 void Riot::initialize(HWND hwnd)
 {
 	Game::initialize(hwnd); // throws GameError
+	this->manager = new ECS::Manager();
+	this->systemRunner.setManager(this->manager);
 
 	// TODO: Create the systems and register them to the manager
 
-	// Initialize the systems
-	for (ECS::System* systemPtr : manager.getSystems()) {
-		systemPtr->initialize();
-	}
+	this->systemRunner.initialize(this->graphics);
 }
 
 //=============================================================================
 // Update all game items
 //=============================================================================
 void Riot::update() {
-	for (ECS::System* systemPtr : manager.getSystems()) {
-		systemPtr->update();
-	}
+	this->systemRunner.update();
 }
 
 //=============================================================================
@@ -45,9 +42,7 @@ void Riot::render()
 {
 	graphics->spriteBegin();                // begin drawing sprites
 
-	for (ECS::System* systemPtr : manager.getSystems()) {
-		systemPtr->render();
-	}
+	this->systemRunner.render();
 
 	graphics->spriteEnd();                  // end drawing sprites
 }
@@ -58,7 +53,7 @@ void Riot::render()
 //=============================================================================
 void Riot::releaseAll()
 {
-	manager.releaseAll();
+	this->systemRunner.releaseAll();
 	Game::releaseAll();
 	return;
 }
@@ -71,7 +66,5 @@ void Riot::resetAll()
 {
 	Game::resetAll();
 
-	for (ECS::System* systemPtr : manager.getSystems()) {
-		systemPtr->resetAll();
-	}
+	this->systemRunner.resetAll();
 }

@@ -7,13 +7,17 @@
 #include "textureManager.h"
 #include "image.h"
 #include "manager.h"
+#include "systemRunner.h"
+#include "typeUtil.h"
+#include "player.h"
 
 //=============================================================================
 // Create game class
 //=============================================================================
 class Riot : public Game {
 private:
-	ECS::Manager manager;
+	ECS::Manager* manager;
+	ECS::SystemRunner systemRunner;
 
 public:
 	// Constructor
