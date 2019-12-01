@@ -11,7 +11,7 @@ namespace System {
 		public:
 			void initialize(ECS::Manager* manager);
 
-			void movePlayer(int x, int y);
+			void update(int x, int y) {}
 		};
 
 }

@@ -7,13 +7,17 @@
 
 namespace System {
 
-	class DamageSystem : ECS::System {
+	class CollisionSystem : ECS::System {
 	public:
 		void initialize(ECS::Manager* manager);
 
-		void processDamage(ECS::Entity* entity, int damage); // called in the update function
-
 		void update();
+
+		void collideWithBullet();
+
+		void collideWithEnemies();
+
+		void collideWithWall();
 	};
 
 }

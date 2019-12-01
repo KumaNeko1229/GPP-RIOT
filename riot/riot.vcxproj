@@ -132,12 +132,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="collision.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
+    <ClCompile Include="DamageSystem.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="PlayerAttackSystem.cpp" />
+    <ClCompile Include="PlayerMovementSystem.cpp" />
+    <ClCompile Include="ReaperSystem.cpp" />
     <ClCompile Include="renderSystem.cpp" />
     <ClCompile Include="riot.cpp" />
     <ClCompile Include="system.cpp" />
@@ -148,18 +153,28 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="attack.h" />
+    <ClInclude Include="collidable.h" />
     <ClInclude Include="collision.h" />
+    <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="component.h" />
     <ClInclude Include="constants.h" />
+    <ClInclude Include="damage.h" />
+    <ClInclude Include="DamageSystem.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="life.h" />
     <ClInclude Include="manager.tpp" />
     <ClInclude Include="image.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="manager.h" />
+    <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="PlayerAttackSystem.h" />
+    <ClInclude Include="PlayerMovementSystem.h" />
+    <ClInclude Include="ReaperSystem.h" />
     <ClInclude Include="renderSystem.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="system.h" />
@@ -167,6 +182,7 @@
     <ClInclude Include="texture.h" />
     <ClInclude Include="textureManager.h" />
     <ClInclude Include="transform.h" />
+    <ClInclude Include="physics.h" />
     <ClInclude Include="typeUtil.h" />
   </ItemGroup>
   <ItemGroup>

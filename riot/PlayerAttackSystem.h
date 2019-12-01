@@ -11,7 +11,7 @@ namespace System {
 		public:
 			void initialize(ECS::Manager* manager);
 
-			void fireBullet();
+			void update();
 		};
 
 }
