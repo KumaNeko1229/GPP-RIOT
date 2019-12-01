@@ -1,5 +1,5 @@
 
-#ifndef _GRAPHICS_H             // prevent multiple definitions if this 
+#ifndef _GRAPHICS_H             // prevent multiple definitions if this
 #define _GRAPHICS_H             // ..file is included in more than one place
 #define WIN32_LEAN_AND_MEAN
 
@@ -53,20 +53,6 @@ namespace graphicsNS
 
 	enum DISPLAY_MODE { TOGGLE, FULLSCREEN, WINDOW };
 }
-
-struct SpriteData
-{
-	int         width;      // width of sprite in pixels
-	int         height;     // height of sprite in pixels
-	float       x;          // screen location (top left corner of sprite)
-	float       y;
-	float       scale;      // <1 smaller, >1 bigger
-	float       angle;      // rotation angle in radians
-	RECT        rect;       // used to select an image from a larger texture
-	LP_TEXTURE  texture;    // pointer to texture
-	bool        flipHorizontal; // true to flip sprite horizontally (mirror)
-	bool        flipVertical;   // true to flip sprite vertically
-};
 
 class Graphics
 {
@@ -186,10 +172,8 @@ public:
 
 	// Load the texture into default D3D memory (normal texture use)
 	HRESULT loadTexture(const char* filename, COLOR_ARGB transcolor, UINT& width, UINT& height, LP_TEXTURE& texture);
-	// Draw the sprite described in SpriteData structure.
-	void    drawSprite(const SpriteData& spriteData, // sprite to draw
-		COLOR_ARGB color = graphicsNS::WHITE); // default to white 
-												 //color filter (no change)
+
+	void drawSprite(LPDIRECT3DTEXTURE9 pTexture, const RECT *pSrcRect, const D3DXVECTOR3 *pCenter, const D3DXVECTOR3 *pPosition, D3DCOLOR Color);
 
 };
 

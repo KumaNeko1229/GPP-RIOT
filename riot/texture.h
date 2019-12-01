@@ -9,6 +9,8 @@
 namespace Component {
 
 struct Texture : ECS::Component {
+	bool visible;
+
 	UINT totalWidth;
 	UINT totalHeight;
 
@@ -16,6 +18,7 @@ struct Texture : ECS::Component {
 
 	std::string filePath;
 	LP_TEXTURE texture;
+	COLOR_ARGB filter = graphicsNS::WHITE;
 
 	bool loadTexture(Graphics* graphics, const char* filePath);
 };

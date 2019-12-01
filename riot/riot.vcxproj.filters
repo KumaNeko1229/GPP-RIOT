@@ -19,20 +19,23 @@
     <Filter Include="Source Files\ECS">
       <UniqueIdentifier>{ca1f5dc8-952d-4769-a9ce-cf8a4823a001}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Entities">
-      <UniqueIdentifier>{12ce016a-060a-42a5-a4bf-875a98e1de1b}</UniqueIdentifier>
+    <Filter Include="Source Files\Component">
+      <UniqueIdentifier>{dc147066-73cc-4396-8de9-accd7860e575}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Components">
+    <Filter Include="Header Files\Component">
       <UniqueIdentifier>{cae9569f-339b-4ee9-9ccc-74c21016c349}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Entities">
-      <UniqueIdentifier>{ebbbb58d-0223-4e89-a08a-5ef6fdc02ee9}</UniqueIdentifier>
+    <Filter Include="Header Files\Entity">
+      <UniqueIdentifier>{12ce016a-060a-42a5-a4bf-875a98e1de1b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Systems">
+    <Filter Include="Header Files\System">
       <UniqueIdentifier>{9ed30fb3-c6f8-4e3b-9154-3091bbde942e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Components">
-      <UniqueIdentifier>{dc147066-73cc-4396-8de9-accd7860e575}</UniqueIdentifier>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{ebbbb58d-0223-4e89-a08a-5ef6fdc02ee9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{b739e50d-7f7b-4d26-84c5-a41325652ec7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,9 +43,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="graphics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="input.cpp">
@@ -70,7 +70,19 @@
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
-      <Filter>Source Files\Components</Filter>
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="systemRunner.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="renderSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="system.cpp">
+      <Filter>Source Files\ECS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,16 +126,25 @@
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="texture.h">
-      <Filter>Header Files\Components</Filter>
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="transform.h">
-      <Filter>Header Files\Components</Filter>
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="component.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="manager.tpp">
       <Filter>Source Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="renderSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="systemRunner.h">
+      <Filter>Header Files\ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

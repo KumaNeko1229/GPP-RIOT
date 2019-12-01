@@ -5,7 +5,6 @@
 
 #include "game.h"
 #include "textureManager.h"
-#include "image.h"
 #include "manager.h"
 #include "systemRunner.h"
 #include "typeUtil.h"

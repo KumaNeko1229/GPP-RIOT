@@ -43,13 +43,13 @@ template<typename ComponentType> std::vector<ComponentType>* Manager::getCompone
 	if (this->components.find(componentTypeId) == this->components.end())
 	{
 		// Add an empty vector with the componentType if it does not exist
-		std::vector<ComponentType> componentVector = new std::vector<ComponentType>();
-		std::pair<Types::TypeId, std::vector<ComponentType>*> emptyRecord
-			(componentTypeId, &componentVector);
+		std::vector<Component>* componentVector = new std::vector<Component>();
+		std::pair<Types::TypeId, std::vector<Component>*> emptyRecord
+			(componentTypeId, componentVector);
 		this->components.insert(emptyRecord);
 	}
 
-	std::vector<ComponentType>* componentVectorPtr = this->components.at(componentTypeId);
+	std::vector<ComponentType>* componentVectorPtr = (std::vector<ComponentType>*) this->components.at(componentTypeId);
 	return componentVectorPtr;
 }
 

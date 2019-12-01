@@ -61,7 +61,7 @@ void Graphics::initialize(HWND hw, int w, int h, bool full)
 	D3DCAPS9 caps;
 	DWORD behavior;
 	result = direct3d->GetDeviceCaps(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &caps);
-	// If device doesn't support HW T&L or doesn't support 1.1 vertex 
+	// If device doesn't support HW T&L or doesn't support 1.1 vertex
 	// shaders in hardware, then switch to software vertex processing.
 	if ((caps.DevCaps & D3DDEVCAPS_HWTRANSFORMANDLIGHT) == 0 ||
 		caps.VertexShaderVersion < D3DVS_VERSION(1, 1))
@@ -218,52 +218,7 @@ HRESULT Graphics::loadTexture(const char* filename, COLOR_ARGB transcolor, UINT&
 	return result;
 }
 
-void Graphics::drawSprite(const SpriteData& spriteData, COLOR_ARGB color)
+void Graphics::drawSprite(LP_TEXTURE pTexture, const RECT *pSrcRect, const D3DXVECTOR3 *pCenter, const D3DXVECTOR3 *pPosition, D3DCOLOR Color)
 {
-	if (spriteData.texture == NULL)      // if no texture
-		return;
-	// Find center of sprite
-	D3DXVECTOR2 spriteCenter = D3DXVECTOR2((float)(spriteData.width / 2 * spriteData.scale),
-		(float)(spriteData.height / 2 * spriteData.scale));
-
-	// Screen position of the sprite
-	D3DXVECTOR2 translate = D3DXVECTOR2((float)spriteData.x, (float)spriteData.y);
-	// Scaling X,Y
-
-	D3DXVECTOR2 scaling(spriteData.scale, spriteData.scale);
-
-	if (spriteData.flipHorizontal)  // if flip horizontal
-	{
-		scaling.x *= -1;            // negative X scale to flip
-		// Get center of flipped image.
-		spriteCenter.x -= (float)(spriteData.width * spriteData.scale);
-		// Flip occurs around left edge, translate right to put
-		// Flipped image in same location as original.
-		translate.x += (float)(spriteData.width * spriteData.scale);
-	}
-	if (spriteData.flipVertical)    // if flip vertical
-	{
-		scaling.y *= -1;            // negative Y scale to flip
-		// Get center of flipped image
-		spriteCenter.y -= (float)(spriteData.height * spriteData.scale);
-		// Flip occurs around top edge, translate down to put
-		// Flipped image in same location as original.
-		translate.y += (float)(spriteData.height * spriteData.scale);
-	}
-
-	// Create a matrix to rotate, scale and position our sprite
-	D3DXMATRIX matrix;
-	D3DXMatrixTransformation2D(
-		&matrix,                // the matrix
-		NULL,                   // keep origin at top left when scaling
-		0.0f,                   // no scaling rotation
-		&scaling,               // scale amount
-		&spriteCenter,          // rotation center
-		(float)(spriteData.angle),  // rotation angle
-		&translate);            // X,Y location
-
-	sprite->SetTransform(&matrix);
-
-	// Draw the sprite
-	sprite->Draw(spriteData.texture, &spriteData.rect, NULL, NULL, color);
+	sprite->Draw(pTexture, pSrcRect, pCenter, pPosition, Color);
 }
