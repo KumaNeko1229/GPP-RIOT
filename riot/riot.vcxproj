@@ -135,11 +135,13 @@
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
-    <ClCompile Include="image.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="renderSystem.cpp" />
     <ClCompile Include="riot.cpp" />
+    <ClCompile Include="system.cpp" />
+    <ClCompile Include="systemRunner.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="textureManager.cpp" />
     <ClCompile Include="typeUtil.cpp" />
@@ -158,8 +160,10 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="renderSystem.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="system.h" />
+    <ClInclude Include="systemRunner.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="textureManager.h" />
     <ClInclude Include="transform.h" />
