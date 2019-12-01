@@ -72,9 +72,6 @@
     <ClCompile Include="texture.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -124,9 +121,6 @@
     </ClInclude>
     <ClInclude Include="component.h">
       <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files\Entities</Filter>
     </ClInclude>
     <ClInclude Include="manager.tpp">
       <Filter>Source Files\ECS</Filter>

@@ -4,7 +4,6 @@
 #include <string>
 #include "component.h"
 #include "graphics.h"
-
 #define LP_TEXTURE LPDIRECT3DTEXTURE9
 
 namespace Component {

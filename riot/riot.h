@@ -9,7 +9,6 @@
 #include "manager.h"
 #include "systemRunner.h"
 #include "typeUtil.h"
-#include "player.h"
 
 //=============================================================================
 // Create game class
@@ -29,7 +28,7 @@ public:
 	// Initialize the game
 	void initialize(HWND hwnd);
 	void update();      // must override pure virtual from Game
-	void render();      // "
+	void render();      
 	void releaseAll();
 	void resetAll();
 };
