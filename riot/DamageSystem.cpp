@@ -2,9 +2,9 @@
 
 namespace System {
 
-	void initialize(ECS::Manager* manager) {}
+	void DamageSystem::initialize(ECS::Manager* manager) {}
 
-	void update() {
+	void DamageSystem::update() {
 		// call the process damage function with parameters
 	}
 
