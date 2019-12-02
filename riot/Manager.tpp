@@ -53,7 +53,7 @@ template<typename ComponentType> std::vector<ComponentType>* Manager::getCompone
 	return componentVectorPtr;
 }
 
-template<typename ComponentType> ComponentType Manager::getEntityComponent(EntityIdType id) {
+template<typename ComponentType> ComponentType& Manager::getEntityComponent(EntityIdType id) {
 	// Ensure that the ComponentType is a Component
 	static_assert(
 		std::is_base_of<Component, ComponentType>::value,
@@ -64,7 +64,7 @@ template<typename ComponentType> ComponentType Manager::getEntityComponent(Entit
 	std::unordered_map<Types::TypeId, int> a = *this->entityComponents.at(id);
 	int componentIndex = this->entityComponents.at(id)->at(componentTypeId);
 	std::vector<ComponentType>* componentVectorPtr = (std::vector<ComponentType>*) this->components.at(componentTypeId);
-	return (ComponentType) componentVectorPtr->at(componentIndex);
+	return (ComponentType&) componentVectorPtr->at(componentIndex);
 }
 
 template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
