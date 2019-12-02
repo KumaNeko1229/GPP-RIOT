@@ -18,7 +18,7 @@ class SystemRunner {
 		std::vector<System*> getSystems() { return this->systems; };
 		void registerSystem(System* system);
 
-		void initialize(Manager* manager, Graphics* graphics);
+		void initialize(Manager* manager, Graphics* graphics, Input* input);
 		void update(float frameTime);
 		void render();
 		void releaseAll();

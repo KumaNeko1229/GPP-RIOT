@@ -173,8 +173,7 @@ public:
 	// Load the texture into default D3D memory (normal texture use)
 	HRESULT loadTexture(const char* filename, COLOR_ARGB transcolor, UINT& width, UINT& height, LP_TEXTURE& texture);
 
-	void drawSprite(LPDIRECT3DTEXTURE9 pTexture, const RECT *pSrcRect, const D3DXVECTOR3 *pCenter, const D3DXVECTOR3 *pPosition, D3DCOLOR Color);
-
+	LP_SPRITE getSprite() { return this->sprite; }
 };
 
 #endif

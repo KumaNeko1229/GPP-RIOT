@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -150,7 +150,6 @@
     <ClCompile Include="system.cpp" />
     <ClCompile Include="systemRunner.cpp" />
     <ClCompile Include="texture.cpp" />
-    <ClCompile Include="textureManager.cpp" />
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
@@ -170,20 +169,20 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="life.h" />
     <ClInclude Include="manager.tpp" />
-    <ClInclude Include="image.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="PlayerAttackSystem.h" />
     <ClInclude Include="PlayerMovementSystem.h" />
+    <ClInclude Include="position.h" />
     <ClInclude Include="ReaperSystem.h" />
     <ClInclude Include="renderSystem.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="system.h" />
     <ClInclude Include="systemRunner.h" />
     <ClInclude Include="texture.h" />
-    <ClInclude Include="textureManager.h" />
+    <ClInclude Include="tile.h" />
     <ClInclude Include="transform.h" />
     <ClInclude Include="physics.h" />
     <ClInclude Include="typeUtil.h" />

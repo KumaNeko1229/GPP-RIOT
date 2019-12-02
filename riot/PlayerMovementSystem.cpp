@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void initialize(ECS::Manager* manager) {}
+	void PlayerMovementSystem::initialize(ECS::Manager* manager) {}
 
 	void PlayerMovementSystem::update(float frameTime) 
 	{

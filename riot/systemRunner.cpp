@@ -6,9 +6,9 @@ void SystemRunner::registerSystem(System* system) {
 	this->systems.push_back(system);
 }
 
-void SystemRunner::initialize(Manager* manager, Graphics* graphics) {
+void SystemRunner::initialize(Manager* manager, Graphics* graphics, Input* input) {
 	for (ECS::System* systemPtr : this->getSystems()) {
-		systemPtr->initialize(manager, graphics);
+		systemPtr->initialize(manager, graphics, input);
 	}
 }
 
