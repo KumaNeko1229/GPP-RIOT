@@ -46,4 +46,4 @@ class Manager {
 
 }
 
-#include "manager.tpp"
+#include "Manager.tpp"
