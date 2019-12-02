@@ -27,7 +27,7 @@ public:
 	// Initialize the game
 	void initialize(HWND hwnd);
 	void update();      // must override pure virtual from Game
-	void render();      
+	void render();
 	void releaseAll();
 	void resetAll();
 };
