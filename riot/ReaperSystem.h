@@ -4,7 +4,7 @@
 
 namespace System {
 
-	class ReaperSystem : ECS::System {
+	class ReaperSystem : public ECS::System {
 	public:
 		void initialize(ECS::Manager* manager);
 

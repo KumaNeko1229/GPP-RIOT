@@ -26,6 +26,7 @@ void Riot::initialize(HWND hwnd)
 
 	// TODO: Create the systems and register them to the manager
 	this->systemRunner.registerSystem(new System::RenderSystem());
+	this->systemRunner.registerSystem(new System::PlayerMovementSystem());
 	this->systemRunner.initialize(this->manager, this->graphics, this->input);
 }
 

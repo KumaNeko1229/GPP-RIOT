@@ -7,7 +7,7 @@
 
 namespace System {
 
-	class DamageSystem : ECS::System {
+	class DamageSystem : public ECS::System {
 	public:
 		void initialize(ECS::Manager* manager);
 
