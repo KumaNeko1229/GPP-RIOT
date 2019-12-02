@@ -20,7 +20,7 @@ class Manager {
 		// EntityType -> unordered_set<EntityId>*
 		std::unordered_map<Types::TypeId, std::unordered_set<EntityIdType>*> entityFamilies;
 		// Component -> vector<Component>*
-		std::unordered_map<Types::TypeId, std::vector<Component>*> components;
+		std::unordered_map<Types::TypeId, void*> components;
 		// EntityId -> ComponentType -> vector index
 		std::unordered_map<EntityIdType, std::unordered_map<Types::TypeId, int>*> entityComponents;
 		EntityIdType lastCreatedEntityId = NULL;
@@ -35,7 +35,7 @@ class Manager {
 		template<typename ComponentType> std::vector<ComponentType>* getComponents();
 		template<typename ComponentType> ComponentType getEntityComponent(EntityIdType id);
 
-		void addComponent(EntityIdType id, Component component);
+		template<typename ComponentType> void addComponent(EntityIdType id, ComponentType component);
 
 		template<typename EntityType> void removeEntity(EntityIdType id);
 		void removeEntity(EntityIdType id, Types::TypeId entityType);

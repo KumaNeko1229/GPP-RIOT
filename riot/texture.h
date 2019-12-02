@@ -9,10 +9,10 @@
 namespace Component {
 
 struct Texture : ECS::Component {
-	bool visible;
+	bool visible = false;
 
-	UINT totalWidth;
-	UINT totalHeight;
+	UINT totalWidth = 0;
+	UINT totalHeight = 0;
 
 	RECT viewableRect;
 

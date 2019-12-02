@@ -60,16 +60,47 @@ template<typename ComponentType> ComponentType Manager::getEntityComponent(Entit
 		"Attempting to getComponents of non-Component type"
 	);
 
-	Types::TypeId componentTypeId = Types::toTypeId(ComponentType);
+	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
 	int componentIndex = this->entityComponents.at(id)->at(componentTypeId);
-	std::vector<ComponentType>* componentVectorPtr = this->components.at(componentTypeId);
-	return componentVectorPtr->at(componentIndex);
+	std::vector<ComponentType>* componentVectorPtr = (std::vector<ComponentType>*) this->components.at(componentTypeId);
+	return (ComponentType) componentVectorPtr->at(componentIndex);
 }
 
 template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	Types::TypeId entityTypeId = Types::toTypeId(EntityType);
 
 	this->removeEntity(id, entityTypeId);
+}
+
+template<typename ComponentType> void Manager::addComponent(EntityIdType id, ComponentType component) {
+	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
+
+	if (this->components.find(componentTypeId) == this->components.end())
+	{
+		// Add an empty vector with the componentType if it does not exist
+		std::vector<ComponentType>* componentVector = new std::vector<ComponentType>();
+		std::pair<Types::TypeId, std::vector<ComponentType>*> emptyRecord
+			(componentTypeId, componentVector);
+		this->components.insert(emptyRecord);
+	}
+
+	((std::vector<ComponentType>*) this->components.at(componentTypeId))->push_back(component);
+
+	// Add to the entity components
+	// Check if there is a map for the entity id
+	if (this->entityComponents.find(id) == this->entityComponents.end())
+	{
+		// Create an empty map
+		std::unordered_map<Types::TypeId, int>* emptyMap = new std::unordered_map<Types::TypeId, int>();
+		// Add the map to the entity components map
+		std::pair<EntityIdType, std::unordered_map<Types::TypeId, int>*> emptyRecord =
+			std::make_pair(id, emptyMap);
+		this->entityComponents.insert(emptyRecord);
+	}
+
+	int componentIndex = ((std::vector<ComponentType>*) this->components.at(componentTypeId))->size() - 1;
+	std::pair<Types::TypeId, int> componentIndexPair = std::make_pair(componentTypeId, componentIndex);
+	this->entityComponents.at(id)->insert(componentIndexPair);
 }
 
 }
