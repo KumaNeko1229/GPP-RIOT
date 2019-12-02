@@ -96,6 +96,9 @@
     <ClCompile Include="ReaperSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="environment.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -185,8 +188,8 @@
     <ClInclude Include="ReaperSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="tile.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="environment.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="position.h">
       <Filter>Header Files\Component</Filter>
