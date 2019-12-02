@@ -120,6 +120,12 @@
     <ClCompile Include="textDX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AnimationSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -237,6 +243,9 @@
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
   </ItemGroup>

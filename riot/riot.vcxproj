@@ -131,6 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationSystem.cpp" />
+    <ClCompile Include="AnimationSystem.h" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="collision.cpp" />
@@ -160,6 +162,7 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animatable.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />
