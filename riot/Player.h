@@ -4,6 +4,7 @@
 #include "manager.h"
 #include "texture.h"
 #include "transform.h"
+#include "Animatable.h"
 #include "graphics.h"
 #include "constants.h"
 #include "attack.h"
