@@ -103,7 +103,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
-      <Filter>Source Files\System</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -211,7 +211,19 @@
     <Image Include="enemy.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\map.jpg">
+    <Image Include="bullets.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tear Gas Smoke.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tear Gas Smoke 2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="menu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pause.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
