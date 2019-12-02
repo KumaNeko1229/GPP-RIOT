@@ -61,6 +61,7 @@ template<typename ComponentType> ComponentType Manager::getEntityComponent(Entit
 	);
 
 	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
+	std::unordered_map<Types::TypeId, int> a = *this->entityComponents.at(id);
 	int componentIndex = this->entityComponents.at(id)->at(componentTypeId);
 	std::vector<ComponentType>* componentVectorPtr = (std::vector<ComponentType>*) this->components.at(componentTypeId);
 	return (ComponentType) componentVectorPtr->at(componentIndex);
@@ -84,6 +85,8 @@ template<typename ComponentType> void Manager::addComponent(EntityIdType id, Com
 		this->components.insert(emptyRecord);
 	}
 
+	// Set the entity id
+	component.entityId = id;
 	((std::vector<ComponentType>*) this->components.at(componentTypeId))->push_back(component);
 
 	// Add to the entity components

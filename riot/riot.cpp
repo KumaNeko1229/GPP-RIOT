@@ -24,8 +24,11 @@ void Riot::initialize(HWND hwnd)
 	Game::initialize(hwnd); // throws GameError
 	this->manager = new ECS::Manager();
 
+	Entity::createPlayerEntity(this->manager, this->graphics);
+
 	// TODO: Create the systems and register them to the manager
 	this->systemRunner.registerSystem(new System::RenderSystem());
+	this->systemRunner.registerSystem(new System::PlayerMovementSystem());
 	this->systemRunner.initialize(this->manager, this->graphics, this->input);
 
 	Entity::createPlayerEntity(this->manager, this->graphics);

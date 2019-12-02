@@ -21,6 +21,12 @@ bool Texture::loadTexture(Graphics* graphics, const char* filePath) {
 			return false;
 		}
 
+		// Set the viewable rectangle to the whole image
+		this->viewableRect.left = 0;
+		this->viewableRect.right = this->totalWidth;
+		this->viewableRect.top = 0;
+		this->viewableRect.bottom = this->totalHeight;
+
 		return true;
 	}
 	catch (...)

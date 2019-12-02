@@ -1,5 +1,5 @@
 #include "CollisionSystem.h"
 
-namespace ECS {
+namespace System {
 	// implementation of collision methods here
 }
