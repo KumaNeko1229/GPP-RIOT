@@ -5,7 +5,7 @@
 #include <string>
 #include "Text.h"
 #include "Button.h"
-
+#include "Position.h"
 namespace System {
 
 	class TextSystem : ECS::System {
