@@ -1,22 +1,25 @@
 #pragma once
 
-#include "image.h"
-#include "collision.h"
+#include "typeUtil.h"
+
+namespace ECS {
+
+typedef unsigned int EntityIdType;
 
 class Entity {
-
-	protected:
-		Image* image;
-		Collidable collidable;
-
+	private:
+		EntityIdType id;
+		Types::TypeId entityTypeId = Types::NothingTypeId;
 	public:
+		static EntityIdType createEntityId(EntityIdType previousId);
+
 		Entity();
-		Entity(Image* image, CollisionType collisionType);
-		virtual ~Entity();
+		Entity(EntityIdType id, Types::TypeId entityTypeId);
+		~Entity();
 
-		Image* getImagePtr() { return this->image; }
-		void draw() { image->draw(); return;  }
-		Collidable getCollidable() { return this->collidable; };
-
-		bool collidesWith(Entity* entity);
+		EntityIdType getId() { return id; };
+		Types::TypeId getTypeId() { return entityTypeId; };
+		template<typename T> bool isSameType();
 };
+
+}

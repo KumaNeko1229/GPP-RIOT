@@ -13,7 +13,6 @@ Riot::~Riot()
 {
 	releaseAll();           // call onLostDevice() for every graphics item
 }
-
 //=============================================================================
 // Initializes the game
 // Throws GameError on error
@@ -21,41 +20,18 @@ Riot::~Riot()
 void Riot::initialize(HWND hwnd)
 {
 	Game::initialize(hwnd); // throws GameError
+	this->manager = new ECS::Manager();
 
-	// nebula texture
-	if (!mapTexture.initialize(graphics, MAP_IMAGE))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing map texture"));
-	// planet texture
-	if (!enemyTexture.initialize(graphics, ENEMY_IMAGE))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing enemy texture"));
-	// ship texture
-	if (!playerTexture.initialize(graphics, PLAYER_IMAGE))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player texture"));
-
-	if (!map.initialize(graphics, 0, 0, 0, &mapTexture))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing map"));
-	if (!enemy.initialize(graphics, 0, 0, 0, &enemyTexture))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player"));
-	if (!player.initialize(graphics, 0, 0, 0, &playerTexture))
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing player"));
-
-	return;
+	// TODO: Create the systems and register them to the manager
+	this->systemRunner.initialize(this->manager, this->graphics);
 }
 
 //=============================================================================
 // Update all game items
 //=============================================================================
-void Riot::update() {}
-
-//=============================================================================
-// Artificial Intelligence
-//=============================================================================
-void Riot::ai() {}
-
-//=============================================================================
-// Handle collisions
-//=============================================================================
-void Riot::collisions() {}
+void Riot::update() {
+	this->systemRunner.update(this->frameTime);
+}
 
 //=============================================================================
 // Render game items
@@ -63,6 +39,9 @@ void Riot::collisions() {}
 void Riot::render()
 {
 	graphics->spriteBegin();                // begin drawing sprites
+
+	this->systemRunner.render();
+
 	graphics->spriteEnd();                  // end drawing sprites
 }
 
@@ -72,6 +51,7 @@ void Riot::render()
 //=============================================================================
 void Riot::releaseAll()
 {
+	this->systemRunner.releaseAll();
 	Game::releaseAll();
 	return;
 }
@@ -83,5 +63,6 @@ void Riot::releaseAll()
 void Riot::resetAll()
 {
 	Game::resetAll();
-	return;
+
+	this->systemRunner.resetAll();
 }

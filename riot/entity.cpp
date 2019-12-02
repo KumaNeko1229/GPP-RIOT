@@ -1,38 +1,31 @@
 #include "entity.h"
 
-Entity::Entity() {
-	image = NULL;
+namespace ECS {
+
+EntityIdType Entity::createEntityId(EntityIdType previousId) {
+	// Assuming that previousId is some number which can be incremented
+	// Take note that previousId may also be NULL, but since NULL is 0, it can
+	// still be incremented.
+	return previousId + 1;
 }
 
-Entity::Entity(Image* image, CollisionType collisionType) {
-	this->image = image;
+Entity::Entity() {
+	this->id = NULL;
+}
 
-	// Calculate half of image height and width
-	float halfHeight = (image->getHeight() * image->getScale()) / 2.0;
-	float halfWidth = (image->getWidth() * image->getScale()) / 2.0;
-
-	// Get the edges regardless of getX or getY's positioning
-	RECT imageEdges;
-	imageEdges.top = image->getCenterY() - halfHeight;
-	imageEdges.left = image->getCenterX() - halfWidth;
-	imageEdges.bottom = image->getCenterY() + halfHeight;
-	imageEdges.right = image->getCenterX() + halfWidth;
-
-	Collidable collidable = Collidable(
-		collisionType,
-		// Arbitrarily assign the width as the radius
-		halfWidth,
-		imageEdges,
-		image->getCenterX(),
-		image->getCenterY()
-	);
-
-	this->collidable = collidable;
+// entityTypeId is passed as an argument so that it is easier to manage
+// entities in container types
+Entity::Entity(EntityIdType id, Types::TypeId entityTypeId) {
+	this->id = id;
+	this->entityTypeId = entityTypeId;
 }
 
 Entity::~Entity() {}
 
-bool Entity::collidesWith(Entity* entity) {
-	this->collidable.collidesWith(entity->getCollidable());
-	return false;
+// template is used here over passing TypeId as a variable so that toTypeId
+// does not have to be used
+template<typename T> bool Entity::isSameType() {
+	return Types::isSameType(Types::toTypeId<T>(), this->entityTypeId);
+}
+
 }
