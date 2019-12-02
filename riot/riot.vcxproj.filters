@@ -140,10 +140,10 @@
     <ClInclude Include="system.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="texture.h">
+    <ClInclude Include="Texture.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="transform.h">
+    <ClInclude Include="Transform.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="component.h">
@@ -164,13 +164,13 @@
     <ClInclude Include="MovementSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="physics.h">
+    <ClInclude Include="Physics.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="attack.h">
+    <ClInclude Include="Attack.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="damage.h">
+    <ClInclude Include="Damage.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAttackSystem.h">
@@ -185,10 +185,10 @@
     <ClInclude Include="CollisionSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="collidable.h">
+    <ClInclude Include="Collidable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="life.h">
+    <ClInclude Include="Life.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="ReaperSystem.h">
@@ -197,7 +197,7 @@
     <ClInclude Include="environment.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="position.h">
+    <ClInclude Include="Position.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="bullet.h">

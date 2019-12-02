@@ -149,26 +149,26 @@
     <ClCompile Include="riot.cpp" />
     <ClCompile Include="system.cpp" />
     <ClCompile Include="systemRunner.cpp" />
-    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="environment.cpp" />
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="attack.h" />
+    <ClInclude Include="Attack.h" />
     <ClInclude Include="bullet.h" />
-    <ClInclude Include="collidable.h" />
+    <ClInclude Include="Collidable.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="component.h" />
     <ClInclude Include="constants.h" />
-    <ClInclude Include="damage.h" />
+    <ClInclude Include="Damage.h" />
     <ClInclude Include="DamageSystem.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="graphics.h" />
-    <ClInclude Include="life.h" />
+    <ClInclude Include="Life.h" />
     <ClInclude Include="manager.tpp" />
     <ClInclude Include="input.h" />
     <ClInclude Include="manager.h" />
@@ -176,16 +176,16 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="PlayerAttackSystem.h" />
     <ClInclude Include="PlayerMovementSystem.h" />
-    <ClInclude Include="position.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="ReaperSystem.h" />
     <ClInclude Include="renderSystem.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="system.h" />
     <ClInclude Include="systemRunner.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="environment.h" />
-    <ClInclude Include="transform.h" />
-    <ClInclude Include="physics.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="anvironment.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="typeUtil.h" />
   </ItemGroup>
   <ItemGroup>
