@@ -1,0 +1,18 @@
+#pragma once
+
+#include "entity.h"
+#include "graphics.h"
+#include "manager.h"
+#include "physics.h"
+#include "collision.h"
+#include "transform.h"
+#include "texture.h"
+#include "position.h"
+
+namespace Entity {
+
+	class Bullet : ECS::Entity {};
+
+	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics);
+
+}

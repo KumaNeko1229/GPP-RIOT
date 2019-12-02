@@ -3,7 +3,9 @@
 #include <vector>
 
 #include "system.h"
+#include "physics.h"
 #include "manager.h"
+#include "position.h"
 
 namespace System {
 
@@ -11,7 +13,7 @@ namespace System {
 		public:
 			void initialize(ECS::Manager* manager);
 
-			void update(int x, int y) {}
+			void update(float frameTime);
 		};
 
 }

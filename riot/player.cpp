@@ -17,9 +17,20 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) 
 	// Create transform component
 	Component::Transform transformComponent = Component::Transform();
 
+	// Create position component
+	Component::Position positionComponent = Component::Position();
+
+	// Create the physics component
+	Component::Physics physicsComponent = Component::Physics();
+
+	Component::Attack attackComponent = Component::Attack();
+
 	// Add the components
-	manager->addComponent(playerId, textureComponent);
-	manager->addComponent(playerId, transformComponent);
+	manager->addComponent<Component::Texture>(playerId, textureComponent);
+	manager->addComponent<Component::Transform>(playerId, transformComponent);
+	manager->addComponent<Component::Position>(playerId, positionComponent);
+	manager->addComponent<Component::Physics>(playerId, physicsComponent);
+	manager->addComponent<Component::Attack>(playerId, attackComponent);
 
 	return playerId;
 }

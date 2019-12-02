@@ -6,6 +6,9 @@
 #include "transform.h"
 #include "graphics.h"
 #include "constants.h"
+#include "attack.h"
+#include "physics.h"
+#include "position.h"
 
 namespace Entity {
 

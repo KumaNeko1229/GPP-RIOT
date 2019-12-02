@@ -3,86 +3,113 @@
 namespace System {
 
 void RenderSystem::update(float frameTime) {
+}
+
+void RenderSystem::render() {
+	this->graphics->spriteBegin();
+
+	LP_SPRITE sprite = this->graphics->getSprite();
+
 	// Get all texture components
 	std::vector<Component::Texture>* componentsPtr =
 		this->manager->getComponents<Component::Texture>();
 
-	for (Component::Texture textureComponent : *componentsPtr) {
+	for (Component::Texture textureComponent : *componentsPtr)
+	{
 		// Ignore non-visible components
 		if (!textureComponent.visible) {
 			continue;
 		}
 
+		// Get the transform component
+		Component::Transform transformComponent =
+			this->manager->getEntityComponent<Component::Transform>(textureComponent.entityId);
+
+		// Get the position component
+		Component::Position positionComponent =
+			this->manager->getEntityComponent<Component::Position>(textureComponent.entityId);
+
 		long viewableWidth = textureComponent.viewableRect.right - textureComponent.viewableRect.left;
 		long viewableHeight = textureComponent.viewableRect.bottom - textureComponent.viewableRect.top;
 
-		/*D3DXVECTOR2 spriteCenter = D3DXVECTOR2(
-			(float)(viewableWidth / 2 * spriteData.scale),
-			(float)(viewableHeight / 2 * spriteData.scale)
-		);*/
+		D3DXVECTOR2 spriteCenter = D3DXVECTOR2(
+			(float)(viewableWidth / 2 * transformComponent.scale),
+			(float)(viewableHeight / 2 * transformComponent.scale)
+		);
+
+		D3DXVECTOR2 translate = D3DXVECTOR2(
+			positionComponent.x,
+			positionComponent.y
+		);
+
+		D3DXVECTOR2 scaling = D3DXVECTOR2(
+			transformComponent.scale,
+			transformComponent.scale
+		);
+
+		if (transformComponent.flipHorizontal)
+		{
+			scaling.x *= -1;
+			spriteCenter.x -= (float)(viewableWidth * transformComponent.scale);
+			translate.x += (float)(viewableWidth * transformComponent.scale);
+		}
+
+		if (transformComponent.flipVertical)
+		{
+			scaling.y *= -1;
+			spriteCenter.y -= (float)(viewableHeight * transformComponent.scale);
+			translate.y += (float)(viewableHeight * transformComponent.scale);
+		}
+
+		D3DXMATRIX matrix;
+		D3DXMatrixTransformation2D(
+			&matrix,                   // the matrix
+			NULL,                      // keep origin at top left when scaling
+			0.0f,                      // no scaling rotation
+			&scaling,                  // scale amount
+			&spriteCenter,             // rotation center
+			transformComponent.angle,  // rotation angle
+			&translate);               // X,Y location
+
+		sprite->SetTransform(&matrix);
+		sprite->Draw(
+			textureComponent.texture,
+			&textureComponent.viewableRect,
+			NULL,
+			NULL,
+			textureComponent.filter
+		);
 	}
-	//// get fresh texture incase onReset() was called
-	//spriteData.texture = textureManager->getTexture();
 
-	////////////
-
-	//if (spriteData.texture == NULL)      // if no texture
-	//	return;
-
-	//// Find center of sprite
-	//D3DXVECTOR2 spriteCenter = D3DXVECTOR2((float)(spriteData.width / 2 * spriteData.scale),
-	//	(float)(spriteData.height / 2 * spriteData.scale));
-	//// Screen position of the sprite
-	//D3DXVECTOR2 translate = D3DXVECTOR2((float)spriteData.x, (float)spriteData.y);
-	//// Scaling X,Y
-	//D3DXVECTOR2 scaling(spriteData.scale, spriteData.scale);
-
-	//if (spriteData.flipHorizontal)  // if flip horizontal
-	//{
-	//	scaling.x *= -1;            // negative X scale to flip
-	//	// Get center of flipped image.
-	//	spriteCenter.x -= (float)(spriteData.width * spriteData.scale);
-	//	// Flip occurs around left edge, translate right to put
-	//	// Flipped image in same location as original.
-	//	translate.x += (float)(spriteData.width * spriteData.scale);
-	//}
-	//if (spriteData.flipVertical)    // if flip vertical
-	//{
-	//	scaling.y *= -1;            // negative Y scale to flip
-	//	// Get center of flipped image
-	//	spriteCenter.y -= (float)(spriteData.height * spriteData.scale);
-	//	// Flip occurs around top edge, translate down to put
-	//	// Flipped image in same location as original.
-	//	translate.y += (float)(spriteData.height * spriteData.scale);
-	//}
-
-	//// Create a matrix to rotate, scale and position our sprite
-	//D3DXMATRIX matrix;
-	//D3DXMatrixTransformation2D(
-	//	&matrix,                // the matrix
-	//	NULL,                   // keep origin at top left when scaling
-	//	0.0f,                   // no scaling rotation
-	//	&scaling,               // scale amount
-	//	&spriteCenter,          // rotation center
-	//	(float)(spriteData.angle),  // rotation angle
-	//	&translate);            // X,Y location
-
-	//sprite->SetTransform(&matrix);
-
-	//// Draw the sprite
-	//sprite->Draw(spriteData.texture, &spriteData.rect, NULL, NULL, color);
-}
-
-void RenderSystem::render() {
-
+	this->graphics->spriteEnd();
 }
 
 void RenderSystem::releaseAll() {
+	// Get all texture components
+	std::vector<Component::Texture>* componentsPtr =
+		this->manager->getComponents<Component::Texture>();
 
+	// Release textures
+	for (Component::Texture textureComponent : *componentsPtr)
+	{
+		SAFE_RELEASE(textureComponent.texture);
+	}
 }
 
 void RenderSystem::resetAll() {
+	// Get all texture components
+	std::vector<Component::Texture>* componentsPtr =
+		this->manager->getComponents<Component::Texture>();
 
+	// Release textures
+	for (Component::Texture textureComponent : *componentsPtr)
+	{
+		if (!textureComponent.loadTexture(graphics, PLAYER_IMAGE))
+		{
+			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
+		}
+		textureComponent.visible = true;
+	}
 }
 
 }

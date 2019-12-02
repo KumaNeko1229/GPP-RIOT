@@ -217,8 +217,3 @@ HRESULT Graphics::loadTexture(const char* filename, COLOR_ARGB transcolor, UINT&
 	}
 	return result;
 }
-
-void Graphics::drawSprite(LP_TEXTURE pTexture, const RECT *pSrcRect, const D3DXVECTOR3 *pCenter, const D3DXVECTOR3 *pPosition, D3DCOLOR Color)
-{
-	sprite->Draw(pTexture, pSrcRect, pCenter, pPosition, Color);
-}
