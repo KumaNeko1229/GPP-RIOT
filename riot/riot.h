@@ -1,6 +1,4 @@
-
-#ifndef _RIOT_H             // prevent multiple definitions if this
-#define _RIOT_H            // ..file is included in more than one place
+#pragma once
 #define WIN32_LEAN_AND_MEAN
 
 #include "game.h"
@@ -9,7 +7,6 @@
 #include "PlayerMovementSystem.h"
 #include "manager.h"
 #include "systemRunner.h"
-#include "typeUtil.h"
 #include "player.h"
 
 //=============================================================================
@@ -34,5 +31,3 @@ public:
 	void releaseAll();
 	void resetAll();
 };
-
-#endif

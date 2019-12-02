@@ -11,15 +11,7 @@ namespace System {
 
 	class PlayerMovementSystem : public ECS::System {
 		public:
-			void initialize(ECS::Manager* manager);
-
 			void update(float frameTime);
-
-			void render();
-
-			void releaseAll();
-
-			void resetAll();
 		};
 
 }
