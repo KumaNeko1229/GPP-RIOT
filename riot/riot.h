@@ -6,6 +6,7 @@
 #include "game.h"
 #include "textureManager.h"
 #include "renderSystem.h"
+#include "PlayerMovementSystem.h"
 #include "manager.h"
 #include "systemRunner.h"
 #include "typeUtil.h"

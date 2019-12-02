@@ -7,7 +7,7 @@
 
 namespace System {
 
-	class CollisionSystem : ECS::System {
+	class CollisionSystem : public ECS::System {
 	public:
 		void initialize(ECS::Manager* manager);
 
