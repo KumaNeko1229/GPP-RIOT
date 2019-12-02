@@ -5,6 +5,7 @@
 #include "system.h"
 #include "physics.h"
 #include "manager.h"
+#include "position.h"
 
 namespace System {
 

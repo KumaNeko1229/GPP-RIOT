@@ -18,9 +18,9 @@ namespace Entity {
 
 		// create the texture component 
 
-		manager->addComponent<Component::Position>(playerId, positionComponent);
-		manager->addComponent<Component::Physics>(playerId, physicsComponent);
-		manager->addComponent<Component::Transform>(playerId, transformComponent);
+		manager->addComponent<Component::Position>(bulletId, positionComponent);
+		manager->addComponent<Component::Physics>(bulletId, physicsComponent);
+		manager->addComponent<Component::Transform>(bulletId, transformComponent);
 
 		return bulletId;
 	}

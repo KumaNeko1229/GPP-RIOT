@@ -2,7 +2,7 @@
 
 namespace System {
 	
-	void initialize(ECS::Manager* manager) {}
+	void PlayerAttackSystem::initialize(ECS::Manager* manager) {}
 
 	// check for the timer, and create the bullets here
 	void PlayerAttackSystem::update(float frameTime) 
