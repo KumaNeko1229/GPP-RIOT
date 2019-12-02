@@ -189,9 +189,13 @@
     <ClInclude Include="typeUtil.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\map.jpg" />
+    <Image Include="bullets.png" />
     <Image Include="enemy.png" />
+    <Image Include="menu.png" />
+    <Image Include="pause.png" />
     <Image Include="player.png" />
+    <Image Include="Tear Gas Smoke 2.png" />
+    <Image Include="Tear Gas Smoke.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="typeUtil.tpp" />

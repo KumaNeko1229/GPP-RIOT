@@ -99,6 +99,12 @@
     <ClCompile Include="environment.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -194,6 +200,9 @@
     <ClInclude Include="position.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="player.png">
@@ -202,7 +211,19 @@
     <Image Include="enemy.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\map.jpg">
+    <Image Include="bullets.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tear Gas Smoke.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tear Gas Smoke 2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="menu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pause.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
