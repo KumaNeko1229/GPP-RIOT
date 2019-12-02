@@ -4,6 +4,7 @@
 
 #include "system.h"
 #include "manager.h"
+#include "attack.h"
 
 namespace System {
 
@@ -11,7 +12,7 @@ namespace System {
 		public:
 			void initialize(ECS::Manager* manager);
 
-			void update();
+			void update(float frameTime);
 		};
 
 }

@@ -10,6 +10,8 @@ namespace System {
 	class MovementSystem : ECS::System {
 		public:
 			void initialize(ECS::Manager* manager);
+
+			void update(float frameTime);
 		};
 
 }

@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bullet.cpp" />
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DamageSystem.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="manager.cpp" />
+    <ClCompile Include="MovementSystem.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="PlayerAttackSystem.cpp" />
     <ClCompile Include="PlayerMovementSystem.cpp" />
@@ -154,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="attack.h" />
+    <ClInclude Include="bullet.h" />
     <ClInclude Include="collidable.h" />
     <ClInclude Include="collision.h" />
     <ClInclude Include="CollisionSystem.h" />
