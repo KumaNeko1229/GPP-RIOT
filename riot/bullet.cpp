@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, int x, int y)
+	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, int x, int y, float angle)
 	{
 		ECS::EntityIdType bulletId = manager->createEntity<Bullet>();
 
@@ -11,15 +11,28 @@ namespace Entity {
 		Component::Collidable collidableComponent = Component::Collidable();
 
 		// create the physics component
-		Component::Physics physicsComponent = Component::Physics();
+		Component::Physics physicsComponent = Component::Physics();	
+		if (angle == UP_ANGLE)
+		{
+			physicsComponent.velocityY = -500.0f;
+		}
+		if (angle == DOWN_ANGLE)
+		{
+			physicsComponent.velocityY = 500.0f;
+		}
+		if (angle == LEFT_ANGLE)
+		{
+			physicsComponent.velocityX = -500.0f;
+		}
+		if (angle == RIGHT_ANGLE)
+		{
+			physicsComponent.velocityX = 500.0f;
+		}
 
 		// create the transform component
 		Component::Transform transformComponent = Component::Transform();
-
-		// create the position component
-		Component::Position positionComponent = Component::Position();
-		positionComponent.x = ((x + 30) * SCALE_FACTOR);
-		positionComponent.y = ((y + 30) * SCALE_FACTOR);
+		transformComponent.angle = angle;
+		transformComponent.scale = SCALE_FACTOR * 2;
 
 		// create the texture component
 		Component::Texture textureComponent = Component::Texture();
@@ -28,6 +41,11 @@ namespace Entity {
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading bullet entity texture"));
 		}
 		textureComponent.visible = true;
+
+		// create the position component
+		Component::Position positionComponent = Component::Position();
+		positionComponent.x = x;
+		positionComponent.y = y - (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) /2;
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);
 		manager->addComponent<Component::Collidable>(bulletId, collidableComponent);

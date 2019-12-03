@@ -9,8 +9,9 @@ namespace System {
 		for (Component::Physics& physicsComponent : *componentsPtr)
 		{
 			Component::Position& positionComponent = manager->getEntityComponent<Component::Position>(physicsComponent.entityId);
-			positionComponent.x += physicsComponent.velocityX * SCALE_FACTOR;
-			positionComponent.y += physicsComponent.velocityY * SCALE_FACTOR;
+
+			positionComponent.x += physicsComponent.velocityX * frameTime * SCALE_FACTOR;
+			positionComponent.y += physicsComponent.velocityY * frameTime * SCALE_FACTOR;
 		}
 	}
 

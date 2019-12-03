@@ -139,10 +139,16 @@
     <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DamageSystem.cpp" />
-    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Blocker.cpp" />
+    <ClCompile Include="EliteGuard.cpp" />
+    <ClCompile Include="EliteSoldier.cpp" />
+    <ClCompile Include="EnemyAttackSystem.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="Guard.cpp" />
+    <ClCompile Include="HealthBar.cpp" />
+    <ClCompile Include="HUDSystem.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="MenuSystem.cpp" />
@@ -158,7 +164,7 @@
     <ClCompile Include="textDX.cpp" />
     <ClCompile Include="TextSystem.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
@@ -168,6 +174,7 @@
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CircleCircleCollisionStrategy.h" />
+    <ClInclude Include="ButtonClickSystem.h" />
     <ClInclude Include="Clickable.h" />
     <ClInclude Include="Collidable.h" />
     <ClInclude Include="CollisionStrategy.h" />
@@ -177,12 +184,17 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="Damage.h" />
     <ClInclude Include="DamageSystem.h" />
-    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Blocker.h" />
+    <ClInclude Include="EliteGuard.h" />
+    <ClInclude Include="EliteSoldier.h" />
+    <ClInclude Include="EnemyAttackSystem.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="Environment.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="Guard.h" />
+    <ClInclude Include="HealthBar.h" />
+    <ClInclude Include="HUDSystem.h" />
     <ClInclude Include="Life.h" />
     <ClInclude Include="Manager.tpp" />
     <ClInclude Include="input.h" />
@@ -202,6 +214,7 @@
     <ClInclude Include="textDX.h" />
     <ClInclude Include="TextSystem.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="typeUtil.h" />
@@ -209,6 +222,7 @@
   <ItemGroup>
     <Image Include="bullets.png" />
     <Image Include="enemy.png" />
+    <Image Include="floor.png" />
     <Image Include="menu.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />

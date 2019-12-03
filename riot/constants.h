@@ -33,6 +33,9 @@ const char PLAYER_IMAGE[] = "player.png";
 const char ENEMY_IMAGE[] = "enemy.png";
 const char MAP_IMAGE[] = "map.png";
 const char BULLET_IMAGE[] = "bullets.png";
+const char FLOOR_IMAGE[] = "floor.png";
+const char WALL_IMAGE[] = "wall.png";
+const char HALFWALL_IMAGE[] = "halfwall.png";
 
 // window
 const char CLASS_NAME[] = "Riot";
@@ -44,10 +47,20 @@ const float SCALE_FACTOR = 1;
 
 // game
 const double PI = 3.14159265;
+const float UP_ANGLE = 0.0f;
+const float LEFT_ANGLE = PI * 3 / 2;
+const float RIGHT_ANGLE = PI / 2;
+const float DOWN_ANGLE = PI;
 const float FRAME_RATE = 200.0f;               // the target frame rate (frames/sec)
 const float MIN_FRAME_RATE = 10.0f;             // the minimum frame rate
 const float MIN_FRAME_TIME = 1.0f / FRAME_RATE;   // minimum desired time for 1 frame
 const float MAX_FRAME_TIME = 1.0f / MIN_FRAME_RATE; // maximum time used in calculations
+const int levelWidth = 40;
+const int levelHeight = 20;
+const int tileHeight = 16;
+const int tileWidth = 16;
+const int visibleX = GAME_WIDTH / tileWidth;
+const int visibleY = GAME_HEIGHT / tileHeight;
 
 // key mappings
 // In this game simple constants are used for key mappings. If variables were used
