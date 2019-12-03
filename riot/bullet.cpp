@@ -45,7 +45,7 @@ namespace Entity {
 		// create the position component
 		Component::Position positionComponent = Component::Position();
 		positionComponent.x = x;
-		positionComponent.y = y - (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top);
+		positionComponent.y = y - (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) /2;
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);
 		manager->addComponent<Component::Collidable>(bulletId, collidableComponent);

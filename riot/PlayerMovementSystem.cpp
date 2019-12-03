@@ -9,7 +9,6 @@ namespace System {
 		for (ECS::EntityIdType id : *playerPtrs)
 		{
 			Component::Physics& physicsComponent = this->manager->getEntityComponent<Component::Physics>(id);
-			Component::Animatable& animatableComponent = this->manager->getEntityComponent<Component::Animatable>(id);
 			Component::Transform& transformComponent = this->manager->getEntityComponent<Component::Transform>(id);
 
 			// reset the velocity of the object
