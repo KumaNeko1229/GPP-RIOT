@@ -26,7 +26,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) 
 	animatableComponent.endFrame = 7;
 	animatableComponent.currentFrame = 7;
 	animatableComponent.frameDelay = 0.2f;
-	animatableComponent.frameTimeLeft = 0.2f;
+	animatableComponent.frameTimeLeft = 1.0f;
 
 	// Create position component
 	Component::Position positionComponent = Component::Position();

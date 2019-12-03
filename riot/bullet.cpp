@@ -11,7 +11,7 @@ namespace Entity {
 		Component::Collidable collidableComponent = Component::Collidable();
 
 		// create the physics component
-		Component::Physics physicsComponent = Component::Physics();
+		Component::Physics physicsComponent = Component::Physics();	
 		if (angle == UP_ANGLE)
 		{
 			physicsComponent.velocityY = -500.0f;
