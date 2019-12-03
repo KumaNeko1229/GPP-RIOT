@@ -1,18 +1,29 @@
 #pragma once
 
-#include "component.h"
-#include "manager.h"
+#include <functional>
+#include <unordered_set>
+#include "CollisionType.h"
+#include "Component.h"
+#include "Manager.h"
 
 namespace Component {
 
 	struct Collidable : ECS::Component {
-		int collideWith[5] = {};
+		float radius;
+		RECT edges;
 
-		void onEnter(ECS::Manager* manager, int id);
+		Collision::CollisionType collisionType;
 
-		void onStay(ECS::Manager* manager, int id);
+		std::unordered_set<ECS::EntityIdType> collidingWith;
 
-		void onExit(ECS::Manager* manager, int id);
+		std::function<void(ECS::Manager* manager, ECS::EntityIdType entityId)> onEnter;
+
+		std::function<void(ECS::Manager* manager, ECS::EntityIdType entityId)> onStay;
+
+		std::function<void(ECS::Manager* manager, ECS::EntityIdType entityId)> onExit;
+
+		float getXCenter();
+		float getYCenter();
 	};
 
 }
