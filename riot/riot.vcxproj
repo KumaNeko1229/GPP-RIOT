@@ -135,7 +135,7 @@
     <ClCompile Include="AnimationSystem.h" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="collision.cpp" />
+    <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DamageSystem.cpp" />
     <ClCompile Include="Blocker.cpp" />
@@ -174,10 +174,12 @@
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ButtonClickSystem.h" />
+    <ClInclude Include="CircleCircleCollisionStrategy.h" />
     <ClInclude Include="Clickable.h" />
     <ClInclude Include="Collidable.h" />
-    <ClInclude Include="collision.h" />
+    <ClInclude Include="CollisionStrategy.h" />
     <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="CollisionType.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="Damage.h" />
@@ -225,8 +227,7 @@
     <Image Include="menu.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />
-    <Image Include="Tear Gas Smoke 2.png" />
-    <Image Include="Tear Gas Smoke.png" />
+    <Image Include="tear gas.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="typeUtil.tpp" />
