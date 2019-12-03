@@ -14,19 +14,19 @@ namespace Entity {
 		Component::Physics physicsComponent = Component::Physics();
 		if (angle == UP_ANGLE)
 		{
-			physicsComponent.velocityY = -10.0f;
+			physicsComponent.velocityY = -500.0f;
 		}
 		if (angle == DOWN_ANGLE)
 		{
-			physicsComponent.velocityY = 10.0f;
+			physicsComponent.velocityY = 500.0f;
 		}
 		if (angle == LEFT_ANGLE)
 		{
-			physicsComponent.velocityX = -10.0f;
+			physicsComponent.velocityX = -500.0f;
 		}
 		if (angle == RIGHT_ANGLE)
 		{
-			physicsComponent.velocityX = 10.0f;
+			physicsComponent.velocityX = 500.0f;
 		}
 
 		// create the transform component
