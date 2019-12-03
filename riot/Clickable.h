@@ -7,6 +7,6 @@ namespace Component {
 
 	struct Clickable : ECS::Component {
 
-		void isClickable(ECS::Manager* manager) {}
+		void isClickable(ECS::Manager* manager);
 	};
 }

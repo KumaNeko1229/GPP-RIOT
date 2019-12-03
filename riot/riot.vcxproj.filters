@@ -96,13 +96,13 @@
     <ClCompile Include="ReaperSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="MenuSystem.cpp">
@@ -120,10 +120,28 @@
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="bullet.cpp">
+    <ClCompile Include="HealthBar.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
+    <ClCompile Include="Blocker.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Guard.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EliteGuard.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EliteSoldier.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="HUDSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
@@ -218,13 +236,13 @@
     <ClInclude Include="Position.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="Clickable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="MenuSystem.h">
@@ -242,10 +260,31 @@
     <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="bullet.h">
+    <ClInclude Include="ButtonClickSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthBar.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Tile.h">
+    <ClInclude Include="Blocker.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Guard.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EliteGuard.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EliteSoldier.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="HUDSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAttackSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>
@@ -259,9 +298,6 @@
     <Image Include="bullets.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Tear Gas Smoke.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Tear Gas Smoke 2.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -271,7 +307,7 @@
     <Image Include="pause.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="floor.png">
+    <Image Include="Tear Gas Smoke.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
