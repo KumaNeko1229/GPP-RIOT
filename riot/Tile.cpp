@@ -7,7 +7,7 @@ namespace Entity {
 		// Create the components
 	// Create texture Component
 		Component::Texture textureComponent = Component::Texture();
-		
+
 		if (!textureComponent.loadTexture(graphics, FLOOR_IMAGE))
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
