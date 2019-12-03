@@ -226,8 +226,7 @@
     <Image Include="menu.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />
-    <Image Include="Tear Gas Smoke 2.png" />
-    <Image Include="Tear Gas Smoke.png" />
+    <Image Include="tear gas.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="typeUtil.tpp" />

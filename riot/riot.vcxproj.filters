@@ -313,9 +313,6 @@
     <Image Include="bullets.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Tear Gas Smoke 2.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="menu.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -325,7 +322,7 @@
     <Image Include="floor.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Tear Gas Smoke.png">
+    <Image Include="tear gas.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
