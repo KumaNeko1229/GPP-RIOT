@@ -7,6 +7,7 @@
 #include "position.h"
 #include "texture.h"
 #include "transform.h"
+#include "Collidable.h"
 
 namespace Entity {
 
