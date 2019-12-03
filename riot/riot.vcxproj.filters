@@ -37,6 +37,12 @@
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{b739e50d-7f7b-4d26-84c5-a41325652ec7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Collision">
+      <UniqueIdentifier>{84491237-c513-4aef-899d-ccdb7ddafc77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Collision">
+      <UniqueIdentifier>{dce786ca-ca0f-429b-b6df-f48523cf4a10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="game.cpp">
@@ -52,9 +58,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="winmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="collision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
@@ -99,6 +102,9 @@
     <ClCompile Include="Environment.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -123,8 +129,11 @@
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="bullet.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="CircleCircleCollisionStrategy.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Collidable.cpp">
+      <Filter>Source Files\Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -144,9 +153,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
@@ -218,6 +224,9 @@
     <ClInclude Include="Position.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Environment.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -245,8 +254,14 @@
     <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="bullet.h">
-      <Filter>Header Files\Entity</Filter>
+    <ClInclude Include="CollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleCircleCollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionType.h">
+      <Filter>Header Files\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
