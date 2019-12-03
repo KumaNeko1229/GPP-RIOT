@@ -63,6 +63,9 @@
     <ClCompile Include="CircleCircleCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Collidable.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
     <ClCompile Include="CollisionSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
