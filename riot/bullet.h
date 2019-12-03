@@ -4,7 +4,6 @@
 #include "graphics.h"
 #include "manager.h"
 #include "physics.h"
-#include "collision.h"
 #include "transform.h"
 #include "Collidable.h"
 #include "texture.h"
