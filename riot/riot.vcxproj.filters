@@ -141,6 +141,9 @@
     <ClCompile Include="EnemyAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h">
@@ -281,6 +284,9 @@
     <ClInclude Include="EnemyAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="player.png">
@@ -302,7 +308,7 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Tear Gas Smoke.png">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
