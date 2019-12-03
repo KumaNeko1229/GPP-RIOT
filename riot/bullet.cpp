@@ -18,8 +18,8 @@ namespace Entity {
 
 		// create the position component
 		Component::Position positionComponent = Component::Position();
-		positionComponent.x = x;
-		positionComponent.y = y;
+		positionComponent.x = ((x + 30) * SCALE_FACTOR);
+		positionComponent.y = ((y + 30) * SCALE_FACTOR);
 
 		// create the texture component
 		Component::Texture textureComponent = Component::Texture();
@@ -33,6 +33,7 @@ namespace Entity {
 		manager->addComponent<Component::Collidable>(bulletId, collidableComponent);
 		manager->addComponent<Component::Physics>(bulletId, physicsComponent);
 		manager->addComponent<Component::Transform>(bulletId, transformComponent);
+		manager->addComponent<Component::Texture>(bulletId, textureComponent);
 
 		return bulletId;
 	}
