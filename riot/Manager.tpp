@@ -67,6 +67,12 @@ template<typename ComponentType> ComponentType& Manager::getEntityComponent(Enti
 	return (ComponentType&) componentVectorPtr->at(componentIndex);
 }
 
+template<typename EntityType> std::unordered_set<EntityIdType>* Manager::getEntities() {
+	Types::TypeId entityType = Types::toTypeId<EntityType>();
+
+	return this->entityFamilies.at(entityType);
+}
+
 template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	Types::TypeId entityTypeId = Types::toTypeId(EntityType);
 
