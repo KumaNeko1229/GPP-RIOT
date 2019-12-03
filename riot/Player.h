@@ -10,6 +10,7 @@
 #include "attack.h"
 #include "physics.h"
 #include "position.h"
+#include "Damage.h"
 
 namespace Entity {
 
