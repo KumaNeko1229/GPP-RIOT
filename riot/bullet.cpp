@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, int x, int y)
+	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, int x, int y, float angle)
 	{
 		ECS::EntityIdType bulletId = manager->createEntity<Bullet>();
 
@@ -12,11 +12,26 @@ namespace Entity {
 
 		// create the physics component
 		Component::Physics physicsComponent = Component::Physics();
-		physicsComponent.velocityX = 10.0f;
+		if (angle == UP_ANGLE)
+		{
+			physicsComponent.velocityY = -10.0f;
+		}
+		if (angle == DOWN_ANGLE)
+		{
+			physicsComponent.velocityY = 10.0f;
+		}
+		if (angle == LEFT_ANGLE)
+		{
+			physicsComponent.velocityX = -10.0f;
+		}
+		if (angle == RIGHT_ANGLE)
+		{
+			physicsComponent.velocityX = 10.0f;
+		}
 
 		// create the transform component
 		Component::Transform transformComponent = Component::Transform();
-		transformComponent.angle = PI / 2;
+		transformComponent.angle = angle;
 		transformComponent.scale = SCALE_FACTOR * 2;
 
 		// create the texture component

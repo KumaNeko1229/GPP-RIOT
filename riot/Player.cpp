@@ -16,14 +16,15 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) 
 
 	// Create transform component
 	Component::Transform transformComponent = Component::Transform();
+	transformComponent.angle = PI / 2;
 
 	// Create animatable component
 	Component::Animatable animatableComponent = Component::Animatable();
-	animatableComponent.columns = 4;
-	animatableComponent.rows = 2;
-	animatableComponent.startFrame = 1;
-	animatableComponent.endFrame = 8;
-	animatableComponent.currentFrame = 1;
+	animatableComponent.columns = 2;
+	animatableComponent.rows = 4;
+	animatableComponent.startFrame = 7;
+	animatableComponent.endFrame = 7;
+	animatableComponent.currentFrame = 7;
 	animatableComponent.frameDelay = 0.2f;
 	animatableComponent.frameTimeLeft = 0.2f;
 
@@ -33,6 +34,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) 
 	// Create the physics component
 	Component::Physics physicsComponent = Component::Physics();
 
+	// Create the attack component
 	Component::Attack attackComponent = Component::Attack();
 
 	// Add the components
