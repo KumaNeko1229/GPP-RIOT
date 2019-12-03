@@ -160,6 +160,7 @@
     <ClCompile Include="riot.cpp" />
     <ClCompile Include="System.cpp" />
     <ClCompile Include="SystemRunner.cpp" />
+    <ClCompile Include="TearGas.cpp" />
     <ClCompile Include="textDX.cpp" />
     <ClCompile Include="TextSystem.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -207,6 +208,7 @@
     <ClInclude Include="riot.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="SystemRunner.h" />
+    <ClInclude Include="TearGas.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="textDX.h" />
     <ClInclude Include="TextSystem.h" />

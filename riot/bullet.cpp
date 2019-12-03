@@ -7,10 +7,10 @@ namespace Entity {
 		ECS::EntityIdType bulletId = manager->createEntity<Bullet>();
 
 		// Create the components
-		// Create the collidable component
+		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
 
-		// create the physics component
+		// create the physics component, and set its path or velocity
 		Component::Physics physicsComponent = Component::Physics();	
 		if (angle == UP_ANGLE)
 		{
@@ -45,6 +45,7 @@ namespace Entity {
 		// create the position component
 		Component::Position positionComponent = Component::Position();
 		positionComponent.x = x;
+		// to centre the bullet position with the player's gun
 		positionComponent.y = y - (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) /2;
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);
