@@ -6,31 +6,31 @@ namespace System {
 	{
 		std::vector<Component::Physics>* componentsPtr = this->manager->getComponents<Component::Physics>();
 
-		for (Component::Physics physicsComponent : *componentsPtr)
+		for (Component::Physics& physicsComponent : *componentsPtr)
 		{
-			// get the position component of the objects
-			Component::Position positionComponent = manager->getEntityComponent<Component::Position>(physicsComponent.entityId);
-			// update the velocity of the component'
-			physicsComponent.velocity += physicsComponent.acceleration * frameTime;
+			// reset the velocity of the object
+			physicsComponent.velocityX = 0.0f;
+			physicsComponent.velocityY = 0.0f;
 
+			// check for WASD to add a velocity component
 			if (input->isKeyDown(UP_KEY))
 			{
-				positionComponent.y -= physicsComponent.velocity * frameTime;
+				physicsComponent.velocityY = -5.0f;
 			}
 
 			if (input->isKeyDown(DOWN_KEY))
 			{
-				positionComponent.y += physicsComponent.velocity * frameTime;
+				physicsComponent.velocityY = 5.0f;
 			}
 
 			if (input->isKeyDown(LEFT_KEY))
 			{
-				positionComponent.x -= physicsComponent.velocity * frameTime;
+				physicsComponent.velocityX = -5.0f;
 			}
 
 			if (input->isKeyDown(RIGHT_KEY))
 			{
-				positionComponent.x += physicsComponent.velocity * frameTime;
+				physicsComponent.velocityX = 5.0f;
 			}
 		}
 	}

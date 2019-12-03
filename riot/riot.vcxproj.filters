@@ -99,9 +99,6 @@
     <ClCompile Include="Environment.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="bullet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -125,6 +122,9 @@
     </ClCompile>
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,9 +218,6 @@
     <ClInclude Include="Position.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="bullet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Environment.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -247,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

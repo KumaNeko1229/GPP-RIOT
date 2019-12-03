@@ -2,8 +2,6 @@
 
 namespace System {
 
-	void PlayerAttackSystem::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {};
-
 	// check for the timer, and create the bullets here
 	void PlayerAttackSystem::update(float frameTime)
 	{
@@ -14,8 +12,13 @@ namespace System {
 			attackComponent.cooldownTime -= frameTime;
 			if (attackComponent.cooldownTime >= 0)
 			{
-				// create the bullet here
-				attackComponent.cooldownTime = attackComponent.interval;
+				if (input->getMouseLButton())
+				{
+					// create the bullet here
+					Entity::createBulletEntity(this->manager, this->graphics, x, y);
+					attackComponent.cooldownTime = attackComponent.interval;
+					input->setMouseLButton(FALSE);
+				}
 			}
 		}
 	}
