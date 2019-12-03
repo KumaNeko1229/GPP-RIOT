@@ -7,6 +7,8 @@
 #include <string>
 #include "Entity.h"
 #include "Tile.h"
+#include "Player.h"
+#include "SystemRunner.h"
 
 namespace System {
 
@@ -14,7 +16,8 @@ namespace System {
 	private:
 		std::wstring level;
 	public:
-		void initialize(ECS::Manager* manager);
+		void initialize(ECS::Manager* manager, Graphics* graphics, Input* input);
+		void releaseAll();
 
 	};
 

@@ -227,10 +227,12 @@
     <Image Include="bullets.png" />
     <Image Include="enemy.png" />
     <Image Include="floor.png" />
+    <Image Include="halfwall.png" />
     <Image Include="menu.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />
     <Image Include="tear gas.png" />
+    <Image Include="wall.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="typeUtil.tpp" />
