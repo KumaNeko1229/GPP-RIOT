@@ -1,15 +1,14 @@
-
-#ifndef _RIOT_H             // prevent multiple definitions if this
-#define _RIOT_H            // ..file is included in more than one place
+#pragma once
 #define WIN32_LEAN_AND_MEAN
 
 #include "game.h"
 #include "textureManager.h"
 #include "renderSystem.h"
 #include "PlayerMovementSystem.h"
+#include "AnimationSystem.h"
 #include "manager.h"
 #include "systemRunner.h"
-#include "typeUtil.h"
+#include "player.h"
 
 //=============================================================================
 // Create game class
@@ -33,5 +32,3 @@ public:
 	void releaseAll();
 	void resetAll();
 };
-
-#endif

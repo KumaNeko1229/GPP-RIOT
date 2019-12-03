@@ -2,9 +2,7 @@
 
 namespace System {
 
-	void PlayerMovementSystem::initialize(ECS::Manager* manager) {}
-
-	void PlayerMovementSystem::update(float frameTime) 
+	void PlayerMovementSystem::update(float frameTime)
 	{
 		std::vector<Component::Physics>* componentsPtr = this->manager->getComponents<Component::Physics>();
 

@@ -33,7 +33,7 @@ class Manager {
 		template<typename EntityType> EntityIdType createEntity();
 
 		template<typename ComponentType> std::vector<ComponentType>* getComponents();
-		template<typename ComponentType> ComponentType getEntityComponent(EntityIdType id);
+		template<typename ComponentType> ComponentType& getEntityComponent(EntityIdType id);
 
 		template<typename ComponentType> void addComponent(EntityIdType id, ComponentType component);
 
@@ -46,4 +46,4 @@ class Manager {
 
 }
 
-#include "manager.tpp"
+#include "Manager.tpp"

@@ -18,7 +18,13 @@ class System {
 
 		virtual void initialize(Manager* manager, Graphics* graphics, Input* input);
 
-		virtual void update(float frameTime) = 0;
+		virtual void update(float frameTime) {};
+
+		virtual void render() {};
+
+		virtual void releaseAll() {};
+
+		virtual void resetAll() {};
 };
 
 }

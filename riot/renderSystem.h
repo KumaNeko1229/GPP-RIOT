@@ -12,8 +12,6 @@ namespace System {
 
 class RenderSystem : public ECS::System {
 	public:
-		void initialize(ECS::Manager* manager, Graphics* graphics);
-
 		void update(float frameTime);
 
 		void render();

@@ -57,25 +57,25 @@
     <ClCompile Include="collision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="entity.cpp">
+    <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="manager.cpp">
+    <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="typeUtil.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="systemRunner.cpp">
+    <ClCompile Include="SystemRunner.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="renderSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="system.cpp">
+    <ClCompile Include="System.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="texture.cpp">
@@ -96,8 +96,35 @@
     <ClCompile Include="ReaperSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="environment.cpp">
+    <ClCompile Include="Environment.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="TextSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="textDX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationSystem.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,49 +149,49 @@
     <ClInclude Include="collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="manager.h">
+    <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="entity.h">
+    <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="system.h">
+    <ClInclude Include="System.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="texture.h">
+    <ClInclude Include="Texture.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="transform.h">
+    <ClInclude Include="Transform.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="component.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
+    <ClInclude Include="Player.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="manager.tpp">
+    <ClInclude Include="Manager.tpp">
       <Filter>Source Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="renderSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="systemRunner.h">
+    <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="MovementSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="physics.h">
+    <ClInclude Include="Physics.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="attack.h">
+    <ClInclude Include="Attack.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="damage.h">
+    <ClInclude Include="Damage.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAttackSystem.h">
@@ -179,19 +206,46 @@
     <ClInclude Include="CollisionSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="collidable.h">
+    <ClInclude Include="Collidable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="life.h">
+    <ClInclude Include="Life.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="ReaperSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="environment.h">
+    <ClInclude Include="Position.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="position.h">
+    <ClInclude Include="Clickable.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="textDX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
   </ItemGroup>
@@ -202,7 +256,19 @@
     <Image Include="enemy.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\map.jpg">
+    <Image Include="bullets.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tear Gas Smoke.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tear Gas Smoke 2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="menu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pause.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

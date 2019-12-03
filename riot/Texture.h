@@ -17,7 +17,7 @@ struct Texture : ECS::Component {
 	RECT viewableRect;
 
 	std::string filePath;
-	LP_TEXTURE texture;
+	LP_TEXTURE texture = NULL;
 	COLOR_ARGB filter = graphicsNS::WHITE;
 
 	bool loadTexture(Graphics* graphics, const char* filePath);

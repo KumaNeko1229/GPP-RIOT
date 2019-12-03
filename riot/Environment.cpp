@@ -1,4 +1,4 @@
-#include "environment.h"
+#include "Environment.h"
 
 namespace Entity{
 
@@ -35,7 +35,7 @@ namespace Entity{
 	auto Environment::GetTile(float x, float y) {
 		if (x >= 0 && x < levelWidth && y >= 0 && y < levelHeight) {
 			return level[y * levelWidth + x];
-		} 
+		}
 		else {
 			return(L' ');
 		}

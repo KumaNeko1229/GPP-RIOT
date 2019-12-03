@@ -1,11 +1,11 @@
 #include "PlayerAttackSystem.h"
 
 namespace System {
-	
-	void PlayerAttackSystem::initialize(ECS::Manager* manager) {}
+
+	void PlayerAttackSystem::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {};
 
 	// check for the timer, and create the bullets here
-	void PlayerAttackSystem::update(float frameTime) 
+	void PlayerAttackSystem::update(float frameTime)
 	{
 		std::vector<Component::Attack>* componentPtrs = this->manager->getComponents<Component::Attack>();
 
@@ -18,5 +18,5 @@ namespace System {
 				attackComponent.cooldownTime = attackComponent.interval;
 			}
 		}
-	} 
+	}
 }

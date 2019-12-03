@@ -16,7 +16,7 @@ namespace Entity {
 		// create the position component
 		Component::Position positionComponent = Component::Position();
 
-		// create the texture component 
+		// create the texture component
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);
 		manager->addComponent<Component::Physics>(bulletId, physicsComponent);
