@@ -9,6 +9,8 @@ namespace System {
 		for (ECS::EntityIdType id : *playerPtrs)
 		{
 			Component::Physics& physicsComponent = this->manager->getEntityComponent<Component::Physics>(id);
+			Component::Animatable& animatableComponent = this->manager->getEntityComponent<Component::Animatable>(id);
+			Component::Transform& transformComponent = this->manager->getEntityComponent<Component::Transform>(id);
 
 			// reset the velocity of the object
 			physicsComponent.velocityX = 0.0f;
@@ -18,21 +20,25 @@ namespace System {
 			if (input->isKeyDown(UP_KEY))
 			{
 				physicsComponent.velocityY = -5.0f;
+				transformComponent.angle = UP_ANGLE;
 			}
 
 			if (input->isKeyDown(DOWN_KEY))
 			{
 				physicsComponent.velocityY = 5.0f;
+				transformComponent.angle = DOWN_ANGLE;
 			}
 
 			if (input->isKeyDown(LEFT_KEY))
 			{
 				physicsComponent.velocityX = -5.0f;
+				transformComponent.angle = LEFT_ANGLE;
 			}
 
 			if (input->isKeyDown(RIGHT_KEY))
 			{
 				physicsComponent.velocityX = 5.0f;
+				transformComponent.angle = RIGHT_ANGLE;
 			}
 		}
 	}
