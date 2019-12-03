@@ -15,6 +15,7 @@ void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 	}
 
 	// Remove the entity from the entityComponents map
+	SAFE_DELETE(this->entityComponents.at(id));
 	this->entityComponents.erase(id);
 
 	// Remove the entity from the entityFamilies map

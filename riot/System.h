@@ -14,7 +14,7 @@ class System {
 
 	public:
 		System();
-		~System();
+		virtual ~System();
 
 		virtual void initialize(Manager* manager, Graphics* graphics, Input* input);
 
