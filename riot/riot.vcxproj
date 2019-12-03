@@ -157,7 +157,7 @@
     <ClCompile Include="textDX.cpp" />
     <ClCompile Include="TextSystem.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="typeUtil.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
@@ -176,7 +176,6 @@
     <ClInclude Include="DamageSystem.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="Environment.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="graphics.h" />
@@ -199,6 +198,7 @@
     <ClInclude Include="textDX.h" />
     <ClInclude Include="TextSystem.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="typeUtil.h" />
@@ -206,6 +206,7 @@
   <ItemGroup>
     <Image Include="bullets.png" />
     <Image Include="enemy.png" />
+    <Image Include="floor.png" />
     <Image Include="menu.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />

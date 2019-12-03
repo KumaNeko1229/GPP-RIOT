@@ -96,9 +96,6 @@
     <ClCompile Include="ReaperSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="Environment.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -124,6 +121,9 @@
       <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="bullet.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
   </ItemGroup>
@@ -218,9 +218,6 @@
     <ClInclude Include="Position.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Environment.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="Clickable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -248,6 +245,9 @@
     <ClInclude Include="bullet.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="player.png">
@@ -269,6 +269,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="pause.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="floor.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
