@@ -8,11 +8,32 @@ namespace Entity {
 	// Create texture Component
 		Component::Texture textureComponent = Component::Texture();
 
-		if (!textureComponent.loadTexture(graphics, FLOOR_IMAGE))
+		if (TileType == 0)
 		{
-			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
+			if (!textureComponent.loadTexture(graphics, FLOOR_IMAGE))
+			{
+				throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
+			}
+			textureComponent.visible = true;
+		} else if (TileType == 1)
+		{
+			if (!textureComponent.loadTexture(graphics, WALL_IMAGE))
+			{
+				throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
+			}
+			textureComponent.visible = true;
+			Component::Collidable collidableComponent = Component::Collidable();
+			manager->addComponent<Component::Collidable>(tileId, collidableComponent);
+		} else
+		{
+			if (!textureComponent.loadTexture(graphics, HALFWALL_IMAGE))
+			{
+				throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
+			}
+			textureComponent.visible = true;
+			Component::Collidable collidableComponent = Component::Collidable();
+			manager->addComponent<Component::Collidable>(tileId, collidableComponent);
 		}
-		textureComponent.visible = true;
 
 		// Create transform component
 		Component::Transform transformComponent = Component::Transform();

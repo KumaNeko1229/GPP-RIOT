@@ -39,3 +39,4 @@ namespace System {
 	}
 
 	void HUDSystem::resetAll() {}
+}
