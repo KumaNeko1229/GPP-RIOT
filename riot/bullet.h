@@ -8,6 +8,7 @@
 #include "transform.h"
 #include "Collidable.h"
 #include "texture.h"
+#include "Animatable.h"
 #include "position.h"
 
 namespace Entity {
