@@ -1,4 +1,4 @@
-#include "TextSystem.h";
+#include "TextSystem.h"
 
 namespace System {
 
@@ -36,8 +36,8 @@ namespace System {
 			long viewableWidth = textureComponent.viewableRect.right - textureComponent.viewableRect.left;
 			long viewableHeight = textureComponent.viewableRect.bottom - textureComponent.viewableRect.top;
 
-			float spriteCenterX = viewableWidth / 2 * transformComponent.scale;
-			float spriteCenterY = viewableHeight / 2 * transformComponent.scale;
+			int spriteCenterX = (int) (viewableWidth / 2 * transformComponent.scale);
+			int spriteCenterY = (int) (viewableHeight / 2 * transformComponent.scale);
 
 			textComponent.font->print(textComponent.text, spriteCenterX, spriteCenterY);
 

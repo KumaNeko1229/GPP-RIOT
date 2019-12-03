@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, int x, int y, float angle)
+	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float angle)
 	{
 		ECS::EntityIdType bulletId = manager->createEntity<Bullet>();
 
@@ -11,7 +11,7 @@ namespace Entity {
 		Component::Collidable collidableComponent = Component::Collidable();
 
 		// create the physics component, and set its path or velocity
-		Component::Physics physicsComponent = Component::Physics();	
+		Component::Physics physicsComponent = Component::Physics();
 		if (angle == UP_ANGLE)
 		{
 			physicsComponent.velocityY = -500.0f;
@@ -46,7 +46,7 @@ namespace Entity {
 		Component::Position positionComponent = Component::Position();
 		positionComponent.x = x;
 		// to centre the bullet position with the player's gun
-		positionComponent.y = y - (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) /2;
+		positionComponent.y = (float) (y - (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top)/2);
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);
 		manager->addComponent<Component::Collidable>(bulletId, collidableComponent);

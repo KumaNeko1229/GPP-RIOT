@@ -8,8 +8,8 @@
 
 #include "constants.h"
 #include "typeUtil.h"
-#include "entity.h"
-#include "component.h"
+#include "Entity.h"
+#include "Component.h"
 
 namespace ECS {
 

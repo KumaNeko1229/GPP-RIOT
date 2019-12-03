@@ -1,5 +1,5 @@
 
-#ifndef _CONSTANTS_H            // prevent multiple definitions if this 
+#ifndef _CONSTANTS_H            // prevent multiple definitions if this
 #define _CONSTANTS_H            // ..file is included in more than one place
 #define WIN32_LEAN_AND_MEAN
 
@@ -47,10 +47,10 @@ const UINT GAME_HEIGHT = 768;               // height of game in pixels
 const float SCALE_FACTOR = 1;
 
 // game
-const double PI = 3.14159265;
+const float PI = 3.14159265f;
 const float UP_ANGLE = 0.0f;
-const float LEFT_ANGLE = PI * 3 / 2;
-const float RIGHT_ANGLE = PI / 2;
+const float LEFT_ANGLE = PI * 3 / 2.0f;
+const float RIGHT_ANGLE = PI / 2.0f;
 const float DOWN_ANGLE = PI;
 const float FRAME_RATE = 200.0f;               // the target frame rate (frames/sec)
 const float MIN_FRAME_RATE = 10.0f;             // the minimum frame rate

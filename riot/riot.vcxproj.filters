@@ -51,9 +51,6 @@
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClCompile>
     <ClCompile Include="Blocker.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -166,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Attack.h">
       <Filter>Header Files\Component</Filter>

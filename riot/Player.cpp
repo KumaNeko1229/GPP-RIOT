@@ -16,7 +16,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) 
 
 	// Create transform component
 	Component::Transform transformComponent = Component::Transform();
-	transformComponent.angle = PI / 2;
+	transformComponent.angle = PI / 2.0f;
 
 	// Create animatable component
 	Component::Animatable animatableComponent = Component::Animatable();

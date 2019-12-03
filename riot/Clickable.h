@@ -1,7 +1,7 @@
 #pragma once
 
-#include "component.h";
-#include "manager.h";
+#include "Component.h"
+#include "Manager.h"
 
 namespace Component {
 

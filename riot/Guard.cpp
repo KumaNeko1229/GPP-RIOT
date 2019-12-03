@@ -1,4 +1,4 @@
-#include "Guard.h";
+#include "Guard.h"
 
 namespace Entity {
 
@@ -17,7 +17,7 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 
 		Component::Attack attackComponent = Component::Attack();
-		attackComponent.attackDelay = 0.4;
+		attackComponent.attackDelay = 0.4f;
 		attackComponent.interval = 1;
 		Component::Damage damageComponent = Component::Damage();
 		damageComponent.health = 45;
