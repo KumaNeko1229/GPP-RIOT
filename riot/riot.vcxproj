@@ -136,7 +136,6 @@
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
-    <ClCompile Include="collision.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DamageSystem.cpp" />
     <ClCompile Include="Blocker.cpp" />

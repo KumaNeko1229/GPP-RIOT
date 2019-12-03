@@ -1,29 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Header Files\ECS">
-      <UniqueIdentifier>{ec48d1d4-f841-4f79-90f7-a180cf50e60c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ECS">
-      <UniqueIdentifier>{ca1f5dc8-952d-4769-a9ce-cf8a4823a001}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Component">
-      <UniqueIdentifier>{dc147066-73cc-4396-8de9-accd7860e575}</UniqueIdentifier>
+    <Filter Include="Header Files\Collision">
+      <UniqueIdentifier>{fb0a087a-3e51-4094-8b4c-a8a9922cf6a4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Component">
       <UniqueIdentifier>{cae9569f-339b-4ee9-9ccc-74c21016c349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ECS">
+      <UniqueIdentifier>{ec48d1d4-f841-4f79-90f7-a180cf50e60c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Entity">
       <UniqueIdentifier>{12ce016a-060a-42a5-a4bf-875a98e1de1b}</UniqueIdentifier>
@@ -31,103 +20,54 @@
     <Filter Include="Header Files\System">
       <UniqueIdentifier>{9ed30fb3-c6f8-4e3b-9154-3091bbde942e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Collision">
+      <UniqueIdentifier>{be1ecbe7-85bd-40b8-bec1-472612f53291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component">
+      <UniqueIdentifier>{dc147066-73cc-4396-8de9-accd7860e575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS">
+      <UniqueIdentifier>{ca1f5dc8-952d-4769-a9ce-cf8a4823a001}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Entity">
       <UniqueIdentifier>{ebbbb58d-0223-4e89-a08a-5ef6fdc02ee9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{b739e50d-7f7b-4d26-84c5-a41325652ec7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Collision">
-      <UniqueIdentifier>{fb0a087a-3e51-4094-8b4c-a8a9922cf6a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Collision">
-      <UniqueIdentifier>{be1ecbe7-85bd-40b8-bec1-472612f53291}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="riot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="winmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="collision.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="Manager.cpp">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="typeUtil.cpp">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="SystemRunner.cpp">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="renderSystem.cpp">
+    <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="System.cpp">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>Source Files\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerAttackSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerMovementSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="DamageSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="ReaperSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="TextSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="textDX.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AnimationSystem.h">
       <Filter>Header Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="HealthBar.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
     <ClCompile Include="Blocker.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Guard.cpp">
+    <ClCompile Include="bullet.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleCircleCollisionStrategy.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageSystem.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="EliteGuard.cpp">
       <Filter>Source Files\Entity</Filter>
@@ -135,145 +75,130 @@
     <ClCompile Include="EliteSoldier.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="HUDSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
     <ClCompile Include="EnemyAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="bullet.cpp">
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Guard.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
+    <ClCompile Include="HealthBar.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="HUDSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSystem.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="CircleCircleCollisionStrategy.cpp">
-      <Filter>Source Files\Collision</Filter>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovementSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="ReaperSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="renderSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="riot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemRunner.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="textDX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="typeUtil.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="winmain.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="riot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="input.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameError.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Manager.h">
-      <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="typeUtil.h">
-      <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="System.h">
-      <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Transform.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="component.h">
-      <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="Manager.tpp">
-      <Filter>Source Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="renderSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="SystemRunner.h">
-      <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="MovementSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics.h">
+    <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="Attack.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Damage.h">
-      <Filter>Header Files\Component</Filter>
+    <ClInclude Include="Blocker.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerAttackSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMovementSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="DamageSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="Collidable.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Life.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="ReaperSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="Position.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Clickable.h">
-      <Filter>Header Files\Component</Filter>
+    <ClInclude Include="bullet.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="MenuSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="textDX.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Animatable.h">
-      <Filter>Header Files\Component</Filter>
-    </ClInclude>
     <ClInclude Include="ButtonClickSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="HealthBar.h">
-      <Filter>Header Files\Entity</Filter>
+    <ClInclude Include="CircleCircleCollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Blocker.h">
-      <Filter>Header Files\Entity</Filter>
+    <ClInclude Include="Clickable.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Guard.h">
-      <Filter>Header Files\Entity</Filter>
+    <ClInclude Include="Collidable.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionType.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Damage.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="EliteGuard.h">
       <Filter>Header Files\Entity</Filter>
@@ -281,36 +206,108 @@
     <ClInclude Include="EliteSoldier.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="HUDSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
     <ClInclude Include="EnemyAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="bullet.h">
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Guard.h">
       <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthBar.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="HUDSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Life.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.tpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovementSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ReaperSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="renderSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="riot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemRunner.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="textDX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="CircleCircleCollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+    <ClInclude Include="Transform.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionType.h">
-      <Filter>Header Files\Collision</Filter>
+    <ClInclude Include="typeUtil.h">
+      <Filter>Header Files\ECS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="player.png">
+    <Image Include="bullets.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="enemy.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="bullets.png">
+    <Image Include="floor.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="menu.png">
@@ -319,7 +316,7 @@
     <Image Include="pause.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="floor.png">
+    <Image Include="player.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="tear gas.png">
