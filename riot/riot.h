@@ -9,6 +9,8 @@
 #include "manager.h"
 #include "systemRunner.h"
 #include "player.h"
+#include "MovementSystem.h"
+#include "PlayerAttackSystem.h"
 
 //=============================================================================
 // Create game class

@@ -32,6 +32,7 @@
 const char PLAYER_IMAGE[] = "player.png";
 const char ENEMY_IMAGE[] = "enemy.png";
 const char MAP_IMAGE[] = "map.png";
+const char BULLET_IMAGE[] = "bullets.png";
 
 // window
 const char CLASS_NAME[] = "Riot";
@@ -39,6 +40,7 @@ const char GAME_TITLE[] = "Riot";
 const bool FULLSCREEN = false;              // windowed or fullscreen
 const UINT GAME_WIDTH = 1366;               // width of game in pixels
 const UINT GAME_HEIGHT = 768;               // height of game in pixels
+const float SCALE_FACTOR = 1;
 
 // game
 const double PI = 3.14159265;

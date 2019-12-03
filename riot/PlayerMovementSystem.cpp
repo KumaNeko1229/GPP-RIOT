@@ -4,33 +4,35 @@ namespace System {
 
 	void PlayerMovementSystem::update(float frameTime)
 	{
-		std::vector<Component::Physics>* componentsPtr = this->manager->getComponents<Component::Physics>();
+		std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();
 
-		for (Component::Physics physicsComponent : *componentsPtr)
+		for (ECS::EntityIdType id : *playerPtrs)
 		{
-			// get the position component of the objects
-			Component::Position positionComponent = manager->getEntityComponent<Component::Position>(physicsComponent.entityId);
-			// update the velocity of the component'
-			physicsComponent.velocity += physicsComponent.acceleration * frameTime;
+			Component::Physics& physicsComponent = this->manager->getEntityComponent<Component::Physics>(id);
 
+			// reset the velocity of the object
+			physicsComponent.velocityX = 0.0f;
+			physicsComponent.velocityY = 0.0f;
+
+			// check for WASD to add a velocity to the component
 			if (input->isKeyDown(UP_KEY))
 			{
-				positionComponent.y -= physicsComponent.velocity * frameTime;
+				physicsComponent.velocityY = -5.0f;
 			}
 
 			if (input->isKeyDown(DOWN_KEY))
 			{
-				positionComponent.y += physicsComponent.velocity * frameTime;
+				physicsComponent.velocityY = 5.0f;
 			}
 
 			if (input->isKeyDown(LEFT_KEY))
 			{
-				positionComponent.x -= physicsComponent.velocity * frameTime;
+				physicsComponent.velocityX = -5.0f;
 			}
 
 			if (input->isKeyDown(RIGHT_KEY))
 			{
-				positionComponent.x += physicsComponent.velocity * frameTime;
+				physicsComponent.velocityX = 5.0f;
 			}
 		}
 	}
