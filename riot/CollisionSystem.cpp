@@ -19,6 +19,7 @@ namespace System {
 	void CollisionSystem::initialize() {
 		// Add the collision strategies
 		this->strategies.push_back(new Collision::CircleCircleCollisionStrategy());
+		this->strategies.push_back(new Collision::AABBAABBCollisionStrategy());
 	}
 
 	void CollisionSystem::update(float frameTime) {
