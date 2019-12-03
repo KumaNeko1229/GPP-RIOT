@@ -12,6 +12,7 @@
 #include "MovementSystem.h"
 #include "PlayerAttackSystem.h"
 #include "MenuSystem.h"
+#include "CollisionSystem.h"
 
 //=============================================================================
 // Create game class

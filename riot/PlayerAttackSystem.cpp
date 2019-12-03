@@ -22,8 +22,8 @@ namespace System {
 				{
 					// create the bullet here
 					Entity::createBulletEntity(this->manager, this->graphics,
-						positionComponent.x + (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2,
-						positionComponent.y + (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) / 2,
+						positionComponent.x + (textureComponent.viewableRect.right - textureComponent.viewableRect.left) /2,
+						positionComponent.y + (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) /2,
 						transformComponent.angle
 					);
 					attackComponent.cooldownTime = attackComponent.interval;

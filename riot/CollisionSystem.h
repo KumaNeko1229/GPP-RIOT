@@ -2,22 +2,23 @@
 
 #include <vector>
 
-#include "system.h"
-#include "manager.h"
+#include "CollisionStrategy.h"
+#include "CircleCircleCollisionStrategy.h"
+#include "Collidable.h"
+#include "System.h"
+#include "Manager.h"
 
 namespace System {
 
 	class CollisionSystem : public ECS::System {
-	public:
-		void initialize(ECS::Manager* manager);
+		private:
+			std::vector<Collision::CollisionStrategy*> strategies;
+			bool colliding(Component::Collidable a, Component::Collidable b);
 
-		void update();
-
-		void collideWithBullet();
-
-		void collideWithEnemies();
-
-		void collideWithWall();
+		public:
+			void initialize();
+			void update(float frameTime);
+			void releaseAll();
 	};
 
 }
