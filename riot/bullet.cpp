@@ -26,28 +26,36 @@ namespace Entity {
 		if (playerAngle == UP_ANGLE)
 		{
 			// position and velocity
-			positionComponent.x = x;
-			positionComponent.y = y - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			positionComponent.x = x - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			positionComponent.y = y;
+			physicsComponent.velocityX = 500 * cos(bulletAngle);
+			physicsComponent.velocityY = 500 * sin(bulletAngle);
 		}
 		if (playerAngle == DOWN_ANGLE)
 		{
-			positionComponent.x = x;
-			positionComponent.y = y + (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			positionComponent.x = x - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			positionComponent.y = y;
+			physicsComponent.velocityX = 500 * cos(bulletAngle);
+			physicsComponent.velocityY = 500 * sin(bulletAngle);
 		}
 		if (playerAngle == LEFT_ANGLE)
 		{
-			positionComponent.x = x - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
-			positionComponent.y = y;
+			positionComponent.x = x;
+			positionComponent.y = y - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			physicsComponent.velocityX = 500 * cos(bulletAngle);
+			physicsComponent.velocityY = 500 * sin(bulletAngle);
 		}
 		if (playerAngle == RIGHT_ANGLE)
 		{
-			positionComponent.x = x + (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
-			positionComponent.y = y;
+			positionComponent.x = x;
+			positionComponent.y = y - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			physicsComponent.velocityX = 500 * cos(bulletAngle);
+			physicsComponent.velocityY = 500 * sin(bulletAngle);
 		}
 
 		// create the transform component
 		Component::Transform transformComponent = Component::Transform();
-		transformComponent.angle = bulletAngle;
+		transformComponent.angle = bulletAngle + PI / 2;
 		transformComponent.scale = SCALE_FACTOR * 2;
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);

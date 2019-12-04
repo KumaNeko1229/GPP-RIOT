@@ -29,8 +29,13 @@ namespace Entity {
 
 		// create the animatable component
 		Component::Animatable animatableComponent = Component::Animatable();
-		//animatableComponent.rows = 
-		//animatableComponent.columns = 
+		animatableComponent.rows = 2;
+		animatableComponent.columns = 1;
+		animatableComponent.currentFrame = 1;
+		animatableComponent.startFrame = 1;
+		animatableComponent.endFrame = 1;
+		animatableComponent.frameDelay = 0.2f;
+		animatableComponent.frameTimeLeft = 0.2f;
 
 		manager->addComponent<Component::Physics>(tearGasID, physicsComponent);
 		manager->addComponent<Component::Position>(tearGasID, positionComponent);

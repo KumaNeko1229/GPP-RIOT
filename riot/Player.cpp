@@ -38,6 +38,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 
 	// Create the attack component
 	Component::Attack attackComponent = Component::Attack();
+	attackComponent.interval = 0.1;
 
 	// Create the damage component
 	Component::Damage damageComponent = Component::Damage();
