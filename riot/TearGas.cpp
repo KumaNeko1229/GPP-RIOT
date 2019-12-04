@@ -16,11 +16,18 @@ namespace Entity {
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
 		collidableComponent.onEnter = [tearGasID](ECS::Manager* manager, ECS::EntityIdType id) {
-			// on collide with player start dealing initial damage
+			if (manager->getEntity(id)->isSameType<Entity::Player>())
+			{
+				manager->getEntityComponent<Component::Damage>(id).health -= 2;
+			}
 		};
 
-		collidableComponent.onStay = [tearGasID](ECS::Manager* manager, ECS::EntityIdType id) {
+		collidableComponent.onStay = [tearGasID](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
 			// mimmick the damage per second
+			if (manager->getEntity(id)->isSameType<Entity::Player>())
+			{
+				manager->getEntityComponent<Component::Damage>(id).health -= 4 * frameTime;
+			}
 		};
 
 		// create the texture component
