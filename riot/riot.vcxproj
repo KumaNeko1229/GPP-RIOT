@@ -131,8 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
-    <ClCompile Include="AnimationSystem.h" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
@@ -170,7 +170,9 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBAABBCollisionStrategy.h" />
     <ClInclude Include="Animatable.h" />
+    <ClInclude Include="AnimationSystem.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />

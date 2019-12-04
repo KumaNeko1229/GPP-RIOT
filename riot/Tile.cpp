@@ -38,8 +38,8 @@ namespace Entity {
 		// Create transform component
 		Component::Transform transformComponent = Component::Transform();
 
-		float posX = X * tileWidth;
-		float posY = Y * tileHeight;
+		float posX = (float) (X * tileWidth);
+		float posY = (float) (Y * tileHeight);
 
 		// Create position component
 		Component::Position positionComponent = Component::Position();

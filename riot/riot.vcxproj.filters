@@ -45,11 +45,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AABBAABBCollisionStrategy.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimationSystem.h">
-      <Filter>Header Files\System</Filter>
     </ClCompile>
     <ClCompile Include="Blocker.cpp">
       <Filter>Source Files\Entity</Filter>
@@ -135,6 +135,9 @@
     <ClCompile Include="SystemRunner.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="TearGas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="textDX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -158,8 +161,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBAABBCollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
     <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Attack.h">
       <Filter>Header Files\Component</Filter>
@@ -283,6 +292,9 @@
     </ClInclude>
     <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TearGas.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Header Files\Component</Filter>

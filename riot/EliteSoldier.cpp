@@ -1,4 +1,4 @@
-#include "EliteSoldier.h";
+#include "EliteSoldier.h"
 
 namespace Entity {
 
@@ -17,7 +17,7 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 
 		Component::Attack attackComponent = Component::Attack();
-		attackComponent.attackDelay = 0.2;
+		attackComponent.attackDelay = 0.2f;
 		attackComponent.interval = 1;
 		Component::Damage damageComponent = Component::Damage();
 		damageComponent.health = 60;

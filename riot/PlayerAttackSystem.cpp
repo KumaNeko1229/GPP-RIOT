@@ -23,8 +23,9 @@ namespace System {
 					// create the bullet here
 					Entity::createBulletEntity(this->manager, this->graphics,
 						// get the edges of the player so it renders outside of the player sprite by calculating the (x, y) with the size of the sprite
-						positionComponent.x + (textureComponent.viewableRect.right - textureComponent.viewableRect.left),
-						positionComponent.y + (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top),
+						positionComponent.x + (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2,
+						positionComponent.y + (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) / 2,
+						// possibly modify to cater for mouse click
 						transformComponent.angle
 					);
 					attackComponent.cooldownTime = attackComponent.interval;

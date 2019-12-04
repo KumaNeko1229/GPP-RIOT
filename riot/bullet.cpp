@@ -10,6 +10,18 @@ namespace Entity {
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
 
+		// create the position component
+		Component::Position positionComponent = Component::Position();
+
+
+		// create the texture component
+		Component::Texture textureComponent = Component::Texture();
+		if (!textureComponent.loadTexture(graphics, BULLET_IMAGE))
+		{
+			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading bullet entity texture"));
+		}
+		textureComponent.visible = true;
+
 		// create the physics component, and set its path or velocity
 		Component::Physics physicsComponent = Component::Physics();	
 		if (angle == UP_ANGLE)
@@ -33,20 +45,6 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 		transformComponent.angle = angle;
 		transformComponent.scale = SCALE_FACTOR * 2;
-
-		// create the texture component
-		Component::Texture textureComponent = Component::Texture();
-		if (!textureComponent.loadTexture(graphics, BULLET_IMAGE))
-		{
-			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading bullet entity texture"));
-		}
-		textureComponent.visible = true;
-
-		// create the position component
-		Component::Position positionComponent = Component::Position();
-		positionComponent.x = x;
-		// to centre the bullet position with the player's gun
-		positionComponent.y = y - (textureComponent.viewableRect.bottom - textureComponent.viewableRect.top) /2;
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);
 		manager->addComponent<Component::Collidable>(bulletId, collidableComponent);
