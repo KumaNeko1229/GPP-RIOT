@@ -131,8 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
-    <ClCompile Include="AnimationSystem.h" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
@@ -173,7 +173,9 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBAABBCollisionStrategy.h" />
     <ClInclude Include="Animatable.h" />
+    <ClInclude Include="AnimationSystem.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />
@@ -235,13 +237,18 @@
     <Image Include="floor.png" />
     <Image Include="halfwall.png" />
     <Image Include="menu.png" />
+    <Image Include="metalBullet.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />
+    <Image Include="rubberBullet.png" />
     <Image Include="tear gas.png" />
     <Image Include="wall.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="typeUtil.tpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

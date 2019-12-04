@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) {
+ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, int x, int y) {
 	ECS::EntityIdType playerId = manager->createEntity<Player>();
 
 	// Create the components
@@ -16,7 +16,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) 
 
 	// Create transform component
 	Component::Transform transformComponent = Component::Transform();
-	transformComponent.angle = PI / 2;
+	transformComponent.angle = PI / 2.0f;
 
 	// Create animatable component
 	Component::Animatable animatableComponent = Component::Animatable();
@@ -30,6 +30,8 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics) 
 
 	// Create position component
 	Component::Position positionComponent = Component::Position();
+	positionComponent.x = x * tileWidth;
+	positionComponent.y = y * tileHeight;
 
 	// Create the physics component
 	Component::Physics physicsComponent = Component::Physics();

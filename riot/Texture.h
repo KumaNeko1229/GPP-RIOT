@@ -2,7 +2,7 @@
 
 #include <d3d9.h>
 #include <string>
-#include "component.h"
+#include "Component.h"
 #include "graphics.h"
 #define LP_TEXTURE LPDIRECT3DTEXTURE9
 
