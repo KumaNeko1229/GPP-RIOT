@@ -23,3 +23,5 @@ class Entity {
 };
 
 }
+
+#include "Entity.tpp"
