@@ -74,7 +74,7 @@ template<typename EntityType> std::unordered_set<EntityIdType>* Manager::getEnti
 }
 
 template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
-	Types::TypeId entityTypeId = Types::toTypeId(EntityType);
+	Types::TypeId entityTypeId = Types::toTypeId<EntityType>();
 
 	this->removeEntity(id, entityTypeId);
 }
