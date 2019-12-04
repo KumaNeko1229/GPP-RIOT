@@ -14,6 +14,5 @@ namespace Entity {
 
 	class RubberBullet : ECS::Entity {};
 
-	ECS::EntityIdType createRubberBulletEntity(ECS::Manager* manager, Graphics* graphics, int x, int y, float angle);
-
+	ECS::EntityIdType createRubberBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float enemyAngle, float bulletAngle);
 }
