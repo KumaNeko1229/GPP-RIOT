@@ -32,6 +32,7 @@ class Manager {
 		// Managing ECS
 		template<typename EntityType> EntityIdType createEntity();
 
+		Entity* getEntity(EntityIdType id);
 		template<typename ComponentType> std::vector<ComponentType>* getComponents();
 		template<typename ComponentType> ComponentType& getEntityComponent(EntityIdType id);
 		template<typename EntityType> std::unordered_set<EntityIdType>* getEntities();

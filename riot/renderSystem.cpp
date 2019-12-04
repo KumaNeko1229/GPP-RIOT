@@ -2,9 +2,6 @@
 
 namespace System {
 
-void RenderSystem::update(float frameTime) {
-}
-
 void RenderSystem::render() {
 	this->graphics->spriteBegin();
 
@@ -94,6 +91,8 @@ void RenderSystem::releaseAll() {
 	{
 		SAFE_RELEASE(textureComponent.texture);
 	}
+
+	System::releaseAll();
 }
 
 void RenderSystem::resetAll() {
@@ -110,6 +109,8 @@ void RenderSystem::resetAll() {
 		}
 		textureComponent.visible = true;
 	}
+
+	System::resetAll();
 }
 
 }

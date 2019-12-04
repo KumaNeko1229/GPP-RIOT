@@ -12,8 +12,6 @@ namespace System {
 
 class RenderSystem : public ECS::System {
 	public:
-		void update(float frameTime);
-
 		void render();
 
 		void releaseAll();

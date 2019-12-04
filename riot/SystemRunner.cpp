@@ -27,7 +27,10 @@ void SystemRunner::render() {
 void SystemRunner::releaseAll() {
 	for (ECS::System* systemPtr : this->getSystems()) {
 		systemPtr->releaseAll();
+		SAFE_DELETE(systemPtr);
 	}
+
+	this->systems.clear();
 }
 
 void SystemRunner::resetAll() {

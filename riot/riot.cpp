@@ -21,14 +21,14 @@ Riot::~Riot()
 //=============================================================================
 void Riot::initialize(HWND hwnd)
 {
+
 	Game::initialize(hwnd); // throws GameError
 	this->manager = new ECS::Manager();
-
 	// TODO: Create the systems and register them to the manager
 
 	this->systemRunner.registerSystem(new System::MenuSystem());
 	this->systemRunner.registerSystem(new System::AnimationSystem());
-	//this->systemRunner.registerSystem(new System::CollisionSystem());
+	this->systemRunner.registerSystem(new System::CollisionSystem());
 	this->systemRunner.registerSystem(new System::RenderSystem());
 	this->systemRunner.registerSystem(new System::MovementSystem());
 	this->systemRunner.registerSystem(new System::PlayerMovementSystem());
@@ -62,8 +62,9 @@ void Riot::render()
 void Riot::releaseAll()
 {
 	this->systemRunner.releaseAll();
+	this->manager->releaseAll();
+	SAFE_DELETE(this->manager);
 	Game::releaseAll();
-	return;
 }
 
 //=============================================================================
