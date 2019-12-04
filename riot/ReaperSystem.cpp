@@ -2,9 +2,18 @@
 
 namespace System {
 	
-	void ReaperSystem::update()
+	void ReaperSystem::update(float frameTime)
 	{
-		// kill the entities here, makes use of the Life component
+		std::vector<Component::Life>* componentPtrs = this->manager->getComponents<Component::Life>();
+		
+		for (Component::Life& lifeComponent : *componentPtrs)
+		{
+			lifeComponent.timeToLive -= frameTime;
+			if (lifeComponent.timeToLive <= 0)
+			{
+				this->manager->removeEntity<Entity::TearGas>(lifeComponent.entityId);
+			}
+		}
 	}
 
 }

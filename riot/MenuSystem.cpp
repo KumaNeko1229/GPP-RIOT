@@ -18,6 +18,8 @@ namespace System {
 		int playerX;
 		int playerY;
 
+		std::vector<std::array<int, 3>> enemy;
+
 		for (int y = 0; y < visibleY; y++)
 		{
 			for (int x = 0; x < visibleX; x++)
@@ -35,6 +37,22 @@ namespace System {
 				case L'=':
 					Entity::createHalfwallEntity(this->manager, this->graphics, x, y);
 					break;
+				case L'b':
+					Entity::createTileEntity(this->manager, this->graphics, x, y);
+					enemy.push_back({ 1, x, y });
+					break;
+				case L'g':
+					Entity::createTileEntity(this->manager, this->graphics, x, y);
+					enemy.push_back({ 2, x, y });
+					break;
+				case L'G':
+					Entity::createTileEntity(this->manager, this->graphics, x, y);
+					enemy.push_back({ 3, x, y });
+					break;
+				case L'S':
+					Entity::createTileEntity(this->manager, this->graphics, x, y);
+					enemy.push_back({ 4, x, y });
+					break;
 				default:
 					Entity::createTileEntity(this->manager, this->graphics, x, y);
 					break;
@@ -45,6 +63,24 @@ namespace System {
 		if (playerX && playerY)
 		{
 			Entity::createPlayerEntity(this->manager, this->graphics, playerX, playerY);
+		}
+
+		for (int  i = 0; i < enemy.size(); i++)
+		{
+			switch (enemy[i][0]) {
+			case 1:
+				Entity::createBlockerEntity(this->manager, this->graphics, enemy[i][1], enemy[i][2]);
+				break;
+			case 2:
+				Entity::createGuardEntity(this->manager, this->graphics, enemy[i][1], enemy[i][2]);
+				break;
+			case 3:
+				Entity::createEliteGuardEntity(this->manager, this->graphics, enemy[i][1], enemy[i][2]);
+				break;
+			case 4:
+				Entity::createEliteSoldierEntity(this->manager, this->graphics, enemy[i][1], enemy[i][2]);
+				break;
+			}
 		}
 	}
 

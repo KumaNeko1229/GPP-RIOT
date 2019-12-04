@@ -7,8 +7,9 @@
 #include "Guard.h"
 #include "system.h"
 #include "manager.h"
-#include "bullet.h"
+#include "RubberBullet.h"
 #include "Entity.h"
+#include "Player.h"
 
 namespace System {
 

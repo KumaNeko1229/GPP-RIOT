@@ -11,7 +11,6 @@
 #include "physics.h"
 #include "position.h"
 #include "Damage.h"
-#include "Collidable.h"
 
 namespace Entity {
 

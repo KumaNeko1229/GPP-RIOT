@@ -9,6 +9,7 @@
 #include "texture.h"
 #include "Animatable.h"
 #include "position.h"
+#include "Damage.h"
 
 namespace Entity {
 

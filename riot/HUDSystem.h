@@ -8,6 +8,7 @@
 #include "system.h"
 #include "manager.h"
 #include "Player.h"
+#include "d3d9.h"
 
 namespace System {
 

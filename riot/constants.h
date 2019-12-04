@@ -37,6 +37,8 @@ const char FLOOR_IMAGE[] = "floor.png";
 const char WALL_IMAGE[] = "wall.png";
 const char TEAR_GAS_IMAGE[] = "tear gas.png";
 const char HALFWALL_IMAGE[] = "halfwall.png";
+const char RUBBER_BULLET_IMAGE[] = "rubberBullet.png";
+const char METAL_BULLET_IMAGE[] = "metalBullet.png";
 
 // window
 const char CLASS_NAME[] = "Riot";

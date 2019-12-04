@@ -156,6 +156,7 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="MenuSystem.cpp" />
+    <ClCompile Include="MetalBullet.cpp" />
     <ClCompile Include="MovementSystem.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerAttackSystem.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="ReaperSystem.cpp" />
     <ClCompile Include="renderSystem.cpp" />
     <ClCompile Include="riot.cpp" />
+    <ClCompile Include="RubberBullet.cpp" />
     <ClCompile Include="System.cpp" />
     <ClCompile Include="SystemRunner.cpp" />
     <ClCompile Include="TearGas.cpp" />

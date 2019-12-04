@@ -28,9 +28,6 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	animatableComponent.frameDelay = 0.2f;
 	animatableComponent.frameTimeLeft = 0.2f;
 
-	// Create collidable componet
-	Component::Collidable collidableComponent = Component::Collidable();
-
 	// Create position component
 	Component::Position positionComponent = Component::Position();
 	positionComponent.x = x * tileWidth;
@@ -45,6 +42,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 
 	// Create the damage component
 	Component::Damage damageComponent = Component::Damage();
+	damageComponent.health = 20;
 
 	// Add the components
 	manager->addComponent<Component::Texture>(playerId, textureComponent);

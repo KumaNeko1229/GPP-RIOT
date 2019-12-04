@@ -14,6 +14,6 @@ namespace Entity {
 
 	class EliteGuard : ECS::Entity {};
 
-	ECS::EntityIdType createEliteGuardEntity(ECS::Manager* manager, Graphics* graphics);
+	ECS::EntityIdType createEliteGuardEntity(ECS::Manager* manager, Graphics* graphics, int x, int y);
 
 }

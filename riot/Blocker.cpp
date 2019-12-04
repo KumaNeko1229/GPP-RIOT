@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType createBlockerEntity(ECS::Manager* manager, Graphics* graphics) {
+	ECS::EntityIdType createBlockerEntity(ECS::Manager* manager, Graphics* graphics, int x, int y) {
 		ECS::EntityIdType blockerId = manager->createEntity<Blocker>();
 		// Create the components
 		// Create texture Component
@@ -23,6 +23,8 @@ namespace Entity {
 		damageComponent.health = 40;
 
 		Component::Position positionComponent = Component::Position();
+		positionComponent.x = x * tileWidth;
+		positionComponent.y = y * tileHeight;
 
 		// Add the components
 		manager->addComponent(blockerId, textureComponent);

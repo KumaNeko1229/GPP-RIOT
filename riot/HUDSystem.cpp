@@ -1,8 +1,6 @@
 #include "HUDSystem.h"
 
 namespace System {
-
-	void HUDSystem::update(float frameTime) {};
 	
 	void HUDSystem::render() {
 		graphics->beginScene();
@@ -39,4 +37,7 @@ namespace System {
 	}
 
 	void HUDSystem::resetAll() {};
+
+	void HUDSystem::update(float frameTime) {};
+
 }

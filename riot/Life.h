@@ -6,7 +6,6 @@ namespace Component {
 
 	struct Life : ECS::Component {
 		float timeToLive = 0.0f;
-		bool killNow = 0;
 	};
 
 }

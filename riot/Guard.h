@@ -14,5 +14,5 @@ namespace Entity {
 
 	class Guard : ECS::Entity {};
 
-	ECS::EntityIdType createGuardEntity(ECS::Manager* manager, Graphics* graphics);
+	ECS::EntityIdType createGuardEntity(ECS::Manager* manager, Graphics* graphics, int x, int y);
 }

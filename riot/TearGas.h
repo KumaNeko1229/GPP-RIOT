@@ -9,6 +9,7 @@
 #include "Texture.h"
 #include "Transform.h"
 #include "Animatable.h"
+#include "Collidable.h"
 
 namespace Entity {
 

@@ -14,5 +14,5 @@ namespace Entity {
 
 	class Blocker : ECS::Entity {};
 
-	ECS::EntityIdType createBlockerEntity(ECS::Manager* manager, Graphics* graphics);
+	ECS::EntityIdType createBlockerEntity(ECS::Manager* manager, Graphics* graphics, int x, int y);
 }

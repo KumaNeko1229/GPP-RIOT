@@ -14,6 +14,6 @@ namespace Entity {
 
 	class EliteSoldier : ECS::Entity {};
 
-	ECS::EntityIdType createEliteSoldierEntity(ECS::Manager* manager, Graphics* graphics);
+	ECS::EntityIdType createEliteSoldierEntity(ECS::Manager* manager, Graphics* graphics, int x, int y);
 
 }
