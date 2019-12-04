@@ -30,6 +30,9 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 
 	// Create collidable componet
 	Component::Collidable collidableComponent = Component::Collidable();
+	collidableComponent.onEnter = [](ECS::Manager* manager, ECS::EntityIdType id) {
+		// collision response here
+	};
 
 	// Create position component
 	Component::Position positionComponent = Component::Position();
@@ -48,6 +51,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	damageComponent.health = 20;
 
 	// Add the components
+	manager->addComponent<Component::Collidable>(playerId, collidableComponent);
 	manager->addComponent<Component::Texture>(playerId, textureComponent);
 	manager->addComponent<Component::Transform>(playerId, transformComponent);
 	manager->addComponent<Component::Animatable>(playerId, animatableComponent);
