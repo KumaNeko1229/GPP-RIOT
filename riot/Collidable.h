@@ -2,6 +2,8 @@
 
 #include <functional>
 #include <unordered_set>
+#include <array>
+#include <d3dx9math.h>
 #include "CollisionType.h"
 #include "Component.h"
 #include "Manager.h"
@@ -10,7 +12,7 @@ namespace Component {
 
 	struct Collidable : ECS::Component {
 		float radius;
-		RECT edges;
+		std::array<D3DXVECTOR2, 4> corners;
 
 		Collision::CollisionType collisionType;
 
@@ -22,8 +24,9 @@ namespace Component {
 
 		std::function<void(ECS::Manager* manager, ECS::EntityIdType entityId)> onExit;
 
-		float getXCenter();
-		float getYCenter();
+		D3DXVECTOR2 getCenter();
+		// Sorts vectors in order of: top left, top right, bottom left, bottom right
+		std::array<D3DXVECTOR2, 4> getSortedCorners();
 	};
 
 }

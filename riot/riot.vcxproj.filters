@@ -168,6 +168,12 @@
     <ClCompile Include="EliteSoldierAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Halfwall.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="MetalBullet.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -348,6 +354,12 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="MetalBullet.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Halfwall.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>

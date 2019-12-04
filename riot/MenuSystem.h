@@ -7,6 +7,8 @@
 #include <string>
 #include "Entity.h"
 #include "Tile.h"
+#include "Wall.h"
+#include "Halfwall.h"
 #include "Player.h"
 #include "SystemRunner.h"
 #include <fstream>

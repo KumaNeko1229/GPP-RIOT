@@ -1,5 +1,6 @@
 #pragma once
 
+#include <d3dx9math.h>
 #include "CollisionStrategy.h"
 
 namespace Collision {
