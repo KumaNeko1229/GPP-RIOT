@@ -150,6 +150,7 @@
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Guard.cpp" />
     <ClCompile Include="GuardAttackSystem.cpp" />
+    <ClCompile Include="Halfwall.cpp" />
     <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="HUDSystem.cpp" />
     <ClCompile Include="input.cpp" />
@@ -170,6 +171,7 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="typeUtil.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +204,7 @@
     <ClInclude Include="graphics.h" />
     <ClInclude Include="Guard.h" />
     <ClInclude Include="GuardAttackSystem.h" />
+    <ClInclude Include="Halfwall.h" />
     <ClInclude Include="HealthBar.h" />
     <ClInclude Include="HUDSystem.h" />
     <ClInclude Include="Life.h" />
@@ -230,6 +233,7 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="typeUtil.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bullets.png" />

@@ -28,6 +28,9 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	animatableComponent.frameDelay = 0.2f;
 	animatableComponent.frameTimeLeft = 0.2f;
 
+	// Create collidable componet
+	Component::Collidable collidableComponent = Component::Collidable();
+
 	// Create position component
 	Component::Position positionComponent = Component::Position();
 	positionComponent.x = x * tileWidth;

@@ -25,18 +25,18 @@ namespace System {
 				int count = (y * levelWidth) + x;
 				switch (level[count]) {
 				case L'#':
-					Entity::createTileEntity(this->manager, this->graphics, x, y, 1);
+					Entity::createWallEntity(this->manager, this->graphics, x, y);
 					break;
 				case L'@':
-					Entity::createTileEntity(this->manager, this->graphics, x, y, 0);
+					Entity::createTileEntity(this->manager, this->graphics, x, y);
 					playerX = x;
 					playerY = y;
 					break;
 				case L'=':
-					Entity::createTileEntity(this->manager, this->graphics, x, y, 2);
+					Entity::createHalfwallEntity(this->manager, this->graphics, x, y);
 					break;
 				default:
-					Entity::createTileEntity(this->manager, this->graphics, x, y, 0);
+					Entity::createTileEntity(this->manager, this->graphics, x, y);
 					break;
 				}
 			}
