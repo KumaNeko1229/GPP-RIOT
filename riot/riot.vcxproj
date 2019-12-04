@@ -229,8 +229,10 @@
     <Image Include="floor.png" />
     <Image Include="halfwall.png" />
     <Image Include="menu.png" />
+    <Image Include="metalBullet.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />
+    <Image Include="rubberBullet.png" />
     <Image Include="tear gas.png" />
     <Image Include="wall.png" />
   </ItemGroup>
