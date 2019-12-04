@@ -131,8 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
-    <ClCompile Include="AnimationSystem.h" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
@@ -170,7 +170,9 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABBAABBCollisionStrategy.h" />
     <ClInclude Include="Animatable.h" />
+    <ClInclude Include="AnimationSystem.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />
@@ -225,10 +227,12 @@
     <Image Include="bullets.png" />
     <Image Include="enemy.png" />
     <Image Include="floor.png" />
+    <Image Include="halfwall.png" />
     <Image Include="menu.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />
     <Image Include="tear gas.png" />
+    <Image Include="wall.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="typeUtil.tpp" />

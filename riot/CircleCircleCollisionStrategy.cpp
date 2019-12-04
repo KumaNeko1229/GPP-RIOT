@@ -18,8 +18,8 @@ namespace Collision {
 
 	bool CircleCircleCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
 		// Find the difference between the centers
-		int xDiff = source.getXCenter() - target.getXCenter();
-		int yDiff = source.getYCenter() - target.getYCenter();
+		int xDiff = (int) (source.getXCenter() - target.getXCenter());
+		int yDiff = (int) (source.getYCenter() - target.getYCenter());
 
 		// Square both differences
 		xDiff *= xDiff;

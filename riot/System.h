@@ -1,6 +1,6 @@
 #pragma once
 
-#include "manager.h"
+#include "Manager.h"
 #include "graphics.h"
 #include "input.h"
 

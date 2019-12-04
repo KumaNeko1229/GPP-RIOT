@@ -4,6 +4,7 @@
 
 #include "CollisionStrategy.h"
 #include "CircleCircleCollisionStrategy.h"
+#include "AABBAABBCollisionStrategy.h"
 #include "Collidable.h"
 #include "System.h"
 #include "Manager.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "component.h";
+#include "Component.h"
 #include "textDX.h"
 #include <string>
 

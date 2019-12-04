@@ -1,5 +1,5 @@
 
-#ifndef _CONSTANTS_H            // prevent multiple definitions if this 
+#ifndef _CONSTANTS_H            // prevent multiple definitions if this
 #define _CONSTANTS_H            // ..file is included in more than one place
 #define WIN32_LEAN_AND_MEAN
 
@@ -47,19 +47,19 @@ const UINT GAME_HEIGHT = 768;               // height of game in pixels
 const float SCALE_FACTOR = 1;
 
 // game
-const double PI = 3.14159265;
+const float PI = 3.14159265f;
 const float UP_ANGLE = 0.0f;
-const float LEFT_ANGLE = PI * 3 / 2;
-const float RIGHT_ANGLE = PI / 2;
+const float LEFT_ANGLE = PI * 3 / 2.0f;
+const float RIGHT_ANGLE = PI / 2.0f;
 const float DOWN_ANGLE = PI;
 const float FRAME_RATE = 200.0f;               // the target frame rate (frames/sec)
 const float MIN_FRAME_RATE = 10.0f;             // the minimum frame rate
 const float MIN_FRAME_TIME = 1.0f / FRAME_RATE;   // minimum desired time for 1 frame
 const float MAX_FRAME_TIME = 1.0f / MIN_FRAME_RATE; // maximum time used in calculations
-const int levelWidth = 40;
+const int levelWidth = 50;
 const int levelHeight = 20;
-const int tileHeight = 16;
-const int tileWidth = 16;
+const int tileHeight = 32;
+const int tileWidth = 32;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 
