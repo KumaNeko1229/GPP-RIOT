@@ -28,12 +28,6 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	animatableComponent.frameDelay = 0.2f;
 	animatableComponent.frameTimeLeft = 0.2f;
 
-	// Create collidable componet
-	Component::Collidable collidableComponent = Component::Collidable();
-	collidableComponent.onEnter = [](ECS::Manager* manager, ECS::EntityIdType id) {
-		// collision response with wall
-	};
-
 	// Create position component
 	Component::Position positionComponent = Component::Position();
 	positionComponent.x = x * tileWidth;
@@ -51,7 +45,6 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	damageComponent.health = 20;
 
 	// Add the components
-	manager->addComponent<Component::Collidable>(playerId, collidableComponent);
 	manager->addComponent<Component::Texture>(playerId, textureComponent);
 	manager->addComponent<Component::Transform>(playerId, transformComponent);
 	manager->addComponent<Component::Animatable>(playerId, animatableComponent);
