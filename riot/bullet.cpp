@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, int x, int y, float angle)
+	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float angle)
 	{
 		ECS::EntityIdType bulletId = manager->createEntity<Bullet>();
 
