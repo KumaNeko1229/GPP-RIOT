@@ -11,8 +11,13 @@
 #include "Halfwall.h"
 #include "Player.h"
 #include "SystemRunner.h"
+#include "Guard.h"
+#include "Blocker.h"
+#include "EliteGuard.h"
+#include "EliteSoldier.h"
 #include <fstream>
 #include <codecvt>
+#include <list>
 
 namespace System {
 

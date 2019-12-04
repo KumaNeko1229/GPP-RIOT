@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType createGuardEntity(ECS::Manager* manager, Graphics* graphics) {
+	ECS::EntityIdType createGuardEntity(ECS::Manager* manager, Graphics* graphics, int x, int y) {
 		ECS::EntityIdType guardId = manager->createEntity<Guard>();
 		// Create the components
 		// Create texture Component
@@ -23,6 +23,8 @@ namespace Entity {
 		damageComponent.health = 45;
 
 		Component::Position positionComponent = Component::Position();
+		positionComponent.x = x * tileWidth;
+		positionComponent.y = y * tileHeight;
 
 		// Add the components
 		manager->addComponent(guardId, textureComponent);
