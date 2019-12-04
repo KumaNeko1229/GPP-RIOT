@@ -9,6 +9,9 @@ namespace Entity {
 		// Create the components
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
+		collidableComponent.onEnter = [bulletId](ECS::Manager* manager, ECS::EntityIdType id) {
+			manager->removeEntity<Entity::Bullet>(bulletId);
+		};
 
 		// create the position component
 		Component::Position positionComponent = Component::Position();

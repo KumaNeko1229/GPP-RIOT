@@ -42,6 +42,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 
 	// Create the damage component
 	Component::Damage damageComponent = Component::Damage();
+	damageComponent.health = 20;
 
 	// Add the components
 	manager->addComponent<Component::Texture>(playerId, textureComponent);
