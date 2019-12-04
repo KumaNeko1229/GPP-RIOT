@@ -10,6 +10,7 @@
 #include "Transform.h"
 #include "Animatable.h"
 #include "Collidable.h"
+#include "Player.h"
 
 namespace Entity {
 
