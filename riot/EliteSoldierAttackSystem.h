@@ -7,8 +7,9 @@
 #include "EliteSoldier.h"
 #include "system.h"
 #include "manager.h"
-#include "bullet.h"
+#include "MetalBullet.h"
 #include "Entity.h"
+#include "Player.h"
 
 namespace System {
 
