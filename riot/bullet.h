@@ -14,6 +14,6 @@ namespace Entity {
 
 	class Bullet : ECS::Entity {};
 
-	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float angle);
+	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float playerAngle, float bulletAngle);
 
 }
