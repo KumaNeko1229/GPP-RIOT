@@ -14,7 +14,33 @@ namespace Entity {
 		}
 		textureComponent.visible = true;
 		Component::Collidable collidableComponent = Component::Collidable();
-		manager->addComponent<Component::Collidable>(wallId, collidableComponent);
+		collidableComponent.onEnter = [wallId](ECS::Manager* manager, ECS::EntityIdType id) {
+			if (manager->getEntity(id)->isSameType<Entity::Player>() 
+				|| manager->getEntity(id)->isSameType<Entity::Blocker>() 
+				|| manager->getEntity(id)->isSameType<Entity::Guard>()
+				|| manager->getEntity(id)->isSameType<Entity::EliteGuard>()
+				|| manager->getEntity(id)->isSameType<Entity::EliteSoldier>())
+			{
+				Component::Position wallPos = manager->getEntityComponent<Component::Position>(wallId);
+				Component::Position entityPos = manager->getEntityComponent<Component::Position>(id);
+				float wallCenX = wallPos.x + (tileWidth / 2);
+				float wallCenY = wallPos.y + (tileHeight / 2);
+				float entityCenX = entityPos.x + (tileWidth / 2);
+				float entityCenY = entityPos.y + (tileHeight / 2);
+				if (wallCenX > entityCenX) {
+					entityPos.x = wallPos.x - tileWidth;
+				}
+				else {
+					entityPos.x = wallPos.x + tileWidth;
+				}
+				if (wallCenY > entityCenY) {
+					entityPos.y = wallPos.y - tileHeight;
+				}
+				else {
+					entityPos.y = wallPos.y + tileHeight;
+				}
+			}
+		};
 
 		// Create transform component
 		Component::Transform transformComponent = Component::Transform();
@@ -28,6 +54,7 @@ namespace Entity {
 		positionComponent.y = posY;
 
 		// Add the components
+		manager->addComponent<Component::Collidable>(wallId, collidableComponent);
 		manager->addComponent<Component::Texture>(wallId, textureComponent);
 		manager->addComponent<Component::Transform>(wallId, transformComponent);
 		manager->addComponent<Component::Position>(wallId, positionComponent);

@@ -49,8 +49,8 @@ namespace System {
 				}
 				else if (wasColliding && isColliding)
 				{
-					source.onStay(this->manager, target.entityId);
-					target.onStay(this->manager, source.entityId);
+					source.onStay(this->manager, target.entityId, frameTime);
+					target.onStay(this->manager, source.entityId, frameTime);
 				}
 				else
 				{

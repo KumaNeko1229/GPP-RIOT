@@ -18,7 +18,7 @@ namespace System {
 		int playerX;
 		int playerY;
 
-		std::vector<std::array<int, 3>> enemy;
+		std::vector<int[3]> enemy;
 
 		for (int y = 0; y < visibleY; y++)
 		{
