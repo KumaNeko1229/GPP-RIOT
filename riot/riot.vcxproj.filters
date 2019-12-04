@@ -54,6 +54,9 @@
     <ClCompile Include="Blocker.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="BlockerAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="bullet.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
@@ -75,8 +78,14 @@
     <ClCompile Include="EliteGuard.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="EliteGuardAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="EliteSoldier.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EliteSoldierAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
@@ -88,6 +97,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Guard.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="GuardAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Halfwall.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="HealthBar.cpp">
@@ -105,8 +120,14 @@
     <ClCompile Include="MenuSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="MetalBullet.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
       <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="OBBOBBCollisionStrategy.cpp">
+      <Filter>Source Files\Collision</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Entity</Filter>
@@ -126,11 +147,20 @@
     <ClCompile Include="riot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RubberBullet.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="System.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="SystemRunner.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="TearGas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TearGas.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TearGas.cpp">
       <Filter>Source Files</Filter>
@@ -150,35 +180,11 @@
     <ClCompile Include="typeUtil.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="winmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TearGas.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BlockerAttackSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="GuardAttackSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="EliteGuardAttackSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="EliteSoldierAttackSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
     <ClCompile Include="Wall.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Halfwall.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="MetalBullet.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="RubberBullet.cpp">
-      <Filter>Source Files\Entity</Filter>
+    <ClCompile Include="winmain.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GachaSystem.cpp">
       <Filter>Source Files</Filter>
@@ -199,6 +205,9 @@
     </ClInclude>
     <ClInclude Include="Blocker.h">
       <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockerAttackSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="bullet.h">
       <Filter>Header Files\Entity</Filter>
@@ -242,8 +251,14 @@
     <ClInclude Include="EliteGuard.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="EliteGuardAttackSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
     <ClInclude Include="EliteSoldier.h">
       <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EliteSoldierAttackSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
@@ -258,6 +273,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Guard.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="GuardAttackSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Halfwall.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="HealthBar.h">
@@ -281,8 +302,14 @@
     <ClInclude Include="MenuSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="MetalBullet.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="MovementSystem.h">
       <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="OBBOBBCollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Physics.h">
       <Filter>Header Files\Component</Filter>
@@ -308,11 +335,20 @@
     <ClInclude Include="riot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RubberBullet.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="System.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="TearGas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TearGas.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Header Files\Component</Filter>
@@ -379,7 +415,16 @@
     <Image Include="floor.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="halfwall.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="halfwall.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="menu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="metalBullet.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="pause.png">
@@ -388,23 +433,20 @@
     <Image Include="player.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="rubberBullet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="tear gas.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="wall.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="halfwall.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="rubberBullet.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="metalBullet.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Entity.tpp">
+      <Filter>Source Files\ECS</Filter>
+    </None>
     <None Include="typeUtil.tpp">
       <Filter>Source Files\ECS</Filter>
     </None>
