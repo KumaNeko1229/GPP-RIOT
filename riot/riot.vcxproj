@@ -141,12 +141,15 @@
     <ClCompile Include="DamageSystem.cpp" />
     <ClCompile Include="Blocker.cpp" />
     <ClCompile Include="EliteGuard.cpp" />
+    <ClCompile Include="EliteGuardAttackSystem.cpp" />
     <ClCompile Include="EliteSoldier.cpp" />
-    <ClCompile Include="EnemyAttackSystem.cpp" />
+    <ClCompile Include="BlockerAttackSystem.cpp" />
+    <ClCompile Include="EliteSoldierAttackSystem.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Guard.cpp" />
+    <ClCompile Include="GuardAttackSystem.cpp" />
     <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="HUDSystem.cpp" />
     <ClCompile Include="input.cpp" />
@@ -189,13 +192,16 @@
     <ClInclude Include="DamageSystem.h" />
     <ClInclude Include="Blocker.h" />
     <ClInclude Include="EliteGuard.h" />
+    <ClInclude Include="EliteGuardAttackSystem.h" />
     <ClInclude Include="EliteSoldier.h" />
-    <ClInclude Include="EnemyAttackSystem.h" />
+    <ClInclude Include="BlockerAttackSystem.h" />
+    <ClInclude Include="EliteSoldierAttackSystem.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="Guard.h" />
+    <ClInclude Include="GuardAttackSystem.h" />
     <ClInclude Include="HealthBar.h" />
     <ClInclude Include="HUDSystem.h" />
     <ClInclude Include="Life.h" />
@@ -203,6 +209,7 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="MenuSystem.h" />
+    <ClInclude Include="MetalBullet.h" />
     <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerAttackSystem.h" />
@@ -211,6 +218,7 @@
     <ClInclude Include="ReaperSystem.h" />
     <ClInclude Include="renderSystem.h" />
     <ClInclude Include="riot.h" />
+    <ClInclude Include="RubberBullet.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="SystemRunner.h" />
     <ClInclude Include="TearGas.h" />
@@ -229,13 +237,18 @@
     <Image Include="floor.png" />
     <Image Include="halfwall.png" />
     <Image Include="menu.png" />
+    <Image Include="metalBullet.png" />
     <Image Include="pause.png" />
     <Image Include="player.png" />
+    <Image Include="rubberBullet.png" />
     <Image Include="tear gas.png" />
     <Image Include="wall.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="typeUtil.tpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="map.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
