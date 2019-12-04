@@ -7,6 +7,10 @@ namespace Entity {
 		ECS::EntityIdType tearGasID = manager->createEntity<Entity::TearGas>();
 
 		// Create the components
+		// create the damage component
+		Component::Damage damageComponent = Component::Damage();
+		damageComponent.damage = 4;
+
 		// create the physics component
 		Component::Physics physicsComponent = Component::Physics();
 
@@ -22,11 +26,11 @@ namespace Entity {
 			}
 		};
 
-		collidableComponent.onStay = [tearGasID](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
+		collidableComponent.onStay = [tearGasID, damageComponent](ECS::Manager* manager, ECS::EntityIdType id, float frameTime) {
 			// mimmick the damage per second
 			if (manager->getEntity(id)->isSameType<Entity::Player>())
 			{
-				manager->getEntityComponent<Component::Damage>(id).health -= 4 * frameTime;
+				manager->getEntityComponent<Component::Damage>(id).health -= damageComponent.damage * frameTime;
 			}
 		};
 
@@ -56,6 +60,7 @@ namespace Entity {
 		manager->addComponent<Component::Texture>(tearGasID, textureComponent);
 		manager->addComponent<Component::Transform>(tearGasID, transformComponent);
 		manager->addComponent<Component::Animatable>(tearGasID, animatableComponent);
+
 		return tearGasID;
 	}
 
