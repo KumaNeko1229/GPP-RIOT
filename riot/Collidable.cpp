@@ -2,12 +2,16 @@
 
 namespace Component {
 
-	float Collidable::getXCenter() {
-		return ((float) (this->edges.left + this->edges.right)) / 2.0f;
-	}
+	D3DXVECTOR2 Collidable::getCenter() {
+		D3DXVECTOR2 centerVector {0, 0};
+		for (D3DXVECTOR2 cornerVector : this->corners)
+		{
+			centerVector += cornerVector;
+		}
 
-	float Collidable::getYCenter() {
-		return ((float) (this->edges.top + this->edges.bottom)) / 2.0f;
+		centerVector /= 4.0f;
+
+		return centerVector;
 	}
 
 }

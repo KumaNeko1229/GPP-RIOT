@@ -8,26 +8,19 @@ namespace Collision {
 	}
 
 	bool CircleCircleCollisionStrategy::isUseable(CollisionType source, CollisionType target) {
-		if (source == this->sourceType && source == this->targetType)
-		{
-			return true;
-		}
-
-		return false;
+		return (source == this->sourceType && source == this->targetType);
 	}
 
 	bool CircleCircleCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
 		// Find the difference between the centers
-		int xDiff = (int) (source.getXCenter() - target.getXCenter());
-		int yDiff = (int) (source.getYCenter() - target.getYCenter());
+		D3DXVECTOR2 centerDiff = source.getCenter() - target.getCenter();
 
-		// Square both differences
-		xDiff *= xDiff;
-		yDiff *= yDiff;
+		// Square both differences and add them together
+		float total = D3DXVec2Dot(&centerDiff, &centerDiff);
 
 		float radiiSquared = source.radius + target.radius;
 		radiiSquared *= radiiSquared;
 
-		return (xDiff + yDiff) < radiiSquared;
+		return total < radiiSquared;
 	}
 }
