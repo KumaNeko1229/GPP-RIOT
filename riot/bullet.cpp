@@ -14,6 +14,7 @@ namespace Entity {
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
 		collidableComponent.onEnter = [bulletId](ECS::Manager* manager, ECS::EntityIdType id) {
+			manager->getEntityComponent<Component::Damage>(id).health -= 5;
 			manager->removeEntity<Entity::Bullet>(bulletId);
 		};
 

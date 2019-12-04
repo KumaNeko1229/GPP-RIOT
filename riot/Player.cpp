@@ -31,7 +31,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	// Create collidable componet
 	Component::Collidable collidableComponent = Component::Collidable();
 	collidableComponent.onEnter = [](ECS::Manager* manager, ECS::EntityIdType id) {
-		// collision response here
+		// collision response with wall
 	};
 
 	// Create position component
