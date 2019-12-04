@@ -2,7 +2,7 @@
 
 namespace Entity {
 
-	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float angle)
+	ECS::EntityIdType createBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float playerAngle, float bulletAngle)
 	{
 		ECS::EntityIdType bulletId = manager->createEntity<Bullet>();
 
@@ -13,7 +13,6 @@ namespace Entity {
 		// create the position component
 		Component::Position positionComponent = Component::Position();
 
-
 		// create the texture component
 		Component::Texture textureComponent = Component::Texture();
 		if (!textureComponent.loadTexture(graphics, BULLET_IMAGE))
@@ -23,27 +22,32 @@ namespace Entity {
 		textureComponent.visible = true;
 
 		// create the physics component, and set its path or velocity
-		Component::Physics physicsComponent = Component::Physics();	
-		if (angle == UP_ANGLE)
+		Component::Physics physicsComponent = Component::Physics();
+		if (playerAngle == UP_ANGLE)
 		{
-			physicsComponent.velocityY = -500.0f;
+			// position and velocity
+			positionComponent.x = x;
+			positionComponent.y = y - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
 		}
-		if (angle == DOWN_ANGLE)
+		if (playerAngle == DOWN_ANGLE)
 		{
-			physicsComponent.velocityY = 500.0f;
+			positionComponent.x = x;
+			positionComponent.y = y + (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
 		}
-		if (angle == LEFT_ANGLE)
+		if (playerAngle == LEFT_ANGLE)
 		{
-			physicsComponent.velocityX = -500.0f;
+			positionComponent.x = x - (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			positionComponent.y = y;
 		}
-		if (angle == RIGHT_ANGLE)
+		if (playerAngle == RIGHT_ANGLE)
 		{
-			physicsComponent.velocityX = 500.0f;
+			positionComponent.x = x + (textureComponent.viewableRect.right - textureComponent.viewableRect.left) / 2;
+			positionComponent.y = y;
 		}
 
 		// create the transform component
 		Component::Transform transformComponent = Component::Transform();
-		transformComponent.angle = angle;
+		transformComponent.angle = bulletAngle;
 		transformComponent.scale = SCALE_FACTOR * 2;
 
 		manager->addComponent<Component::Position>(bulletId, positionComponent);
