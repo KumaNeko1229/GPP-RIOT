@@ -158,6 +158,7 @@
     <ClCompile Include="MenuSystem.cpp" />
     <ClCompile Include="MetalBullet.cpp" />
     <ClCompile Include="MovementSystem.cpp" />
+    <ClCompile Include="OBBOBBCollisionStrategy.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerAttackSystem.cpp" />
     <ClCompile Include="PlayerMovementSystem.cpp" />
@@ -216,6 +217,7 @@
     <ClInclude Include="MenuSystem.h" />
     <ClInclude Include="MetalBullet.h" />
     <ClInclude Include="MovementSystem.h" />
+    <ClInclude Include="OBBOBBCollisionStrategy.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerAttackSystem.h" />
     <ClInclude Include="PlayerMovementSystem.h" />
@@ -251,6 +253,7 @@
     <Image Include="wall.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Entity.tpp" />
     <None Include="typeUtil.tpp" />
   </ItemGroup>
   <ItemGroup>
