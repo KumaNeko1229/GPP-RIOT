@@ -7,8 +7,16 @@ namespace Entity {
 		ECS::EntityIdType bulletId = manager->createEntity<Bullet>();
 
 		// Create the components
+		// create the damage component
+		Component::Damage damageComponent = Component::Damage();
+		damageComponent.damage = 5;
+
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
+		collidableComponent.onEnter = [bulletId](ECS::Manager* manager, ECS::EntityIdType id) {
+			manager->getEntityComponent<Component::Damage>(id).health -= 5;
+			manager->removeEntity<Entity::Bullet>(bulletId);
+		};
 
 		// create the position component
 		Component::Position positionComponent = Component::Position();

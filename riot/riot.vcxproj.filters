@@ -311,9 +311,6 @@
     <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
-    <ClInclude Include="TearGas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -360,6 +357,9 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Halfwall.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="TearGas.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>

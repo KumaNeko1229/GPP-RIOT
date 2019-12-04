@@ -13,8 +13,15 @@ namespace Entity {
 		// create the position component 
 		Component::Position positionComponent = Component::Position();
 
-		// create the life component
-		Component::Life lifeComponent = Component::Life();
+		// create the collidable component
+		Component::Collidable collidableComponent = Component::Collidable();
+		collidableComponent.onEnter = [tearGasID](ECS::Manager* manager, ECS::EntityIdType id) {
+			// on collide with player start dealing initial damage
+		};
+
+		collidableComponent.onStay = [tearGasID](ECS::Manager* manager, ECS::EntityIdType id) {
+			// mimmick the damage per second
+		};
 
 		// create the texture component
 		Component::Texture textureComponent = Component::Texture();
@@ -39,7 +46,6 @@ namespace Entity {
 
 		manager->addComponent<Component::Physics>(tearGasID, physicsComponent);
 		manager->addComponent<Component::Position>(tearGasID, positionComponent);
-		manager->addComponent<Component::Life>(tearGasID, lifeComponent);
 		manager->addComponent<Component::Texture>(tearGasID, textureComponent);
 		manager->addComponent<Component::Transform>(tearGasID, transformComponent);
 		manager->addComponent<Component::Animatable>(tearGasID, animatableComponent);
