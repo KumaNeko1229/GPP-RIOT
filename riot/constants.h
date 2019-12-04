@@ -58,8 +58,8 @@ const float MIN_FRAME_TIME = 1.0f / FRAME_RATE;   // minimum desired time for 1 
 const float MAX_FRAME_TIME = 1.0f / MIN_FRAME_RATE; // maximum time used in calculations
 const int levelWidth = 50;
 const int levelHeight = 20;
-const int tileHeight = 32;
-const int tileWidth = 32;
+const int tileHeight = 48;
+const int tileWidth = 48;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 
