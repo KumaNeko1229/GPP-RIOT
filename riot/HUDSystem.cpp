@@ -3,11 +3,11 @@
 namespace System {
 
 	void HUDSystem::update(float frameTime) {};
-
+	
 	void HUDSystem::render() {
 		graphics->beginScene();
 		std::vector<Component::Texture>* TexturePtr = this->manager->getComponents<Component::Texture>();
-
+		
 		for (Component::Texture textureComponent : *TexturePtr)
 		{
 			// Ignore non-visible components

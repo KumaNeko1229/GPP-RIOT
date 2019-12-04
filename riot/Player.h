@@ -11,11 +11,12 @@
 #include "physics.h"
 #include "position.h"
 #include "Damage.h"
+#include "Collidable.h"
 
 namespace Entity {
 
 class Player : ECS::Entity {};
 
-ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics);
+ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, int x, int y);
 
 }

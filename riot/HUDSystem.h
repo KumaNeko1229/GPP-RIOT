@@ -7,6 +7,7 @@
 #include "position.h"
 #include "system.h"
 #include "manager.h"
+#include "Player.h"
 
 namespace System {
 

@@ -1,5 +1,3 @@
-#pragma once
-
 #include "entity.h"
 #include "Manager.h"
 #include "graphics.h"
@@ -11,8 +9,8 @@
 
 namespace Entity {
 
-	class Tile : ECS::Entity {};
+	class Halfwall : ECS::Entity {};
 
-	ECS::EntityIdType createTileEntity(ECS::Manager* manager, Graphics* graphics, int X, int Y);
+	ECS::EntityIdType createHalfwallEntity(ECS::Manager* manager, Graphics* graphics, int X, int Y);
 
 }
