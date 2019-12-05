@@ -8,11 +8,6 @@ namespace Entity {
 		// Create the components
 		// Create texture Component
 		Component::Texture textureComponent = Component::Texture();
-		//Should be health bar image
-		if (!textureComponent.loadTexture(graphics, PLAYER_IMAGE))
-		{
-			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading health bar entity texture"));
-		}
 		textureComponent.visible = true;
 
 		// Create transform component

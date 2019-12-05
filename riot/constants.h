@@ -39,6 +39,8 @@ const char TEAR_GAS_IMAGE[] = "tear gas.png";
 const char HALFWALL_IMAGE[] = "halfwall.png";
 const char RUBBER_BULLET_IMAGE[] = "rubberBullet.png";
 const char METAL_BULLET_IMAGE[] = "metalBullet.png";
+const char MENU_IMAGE[] = "menu.png";
+const char PAUSE_IMAGE[] = "pause.png";
 
 // window
 const char CLASS_NAME[] = "Riot";

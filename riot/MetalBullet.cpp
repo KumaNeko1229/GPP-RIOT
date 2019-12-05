@@ -5,9 +5,17 @@ namespace Entity {
 	ECS::EntityIdType createMetalBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float enemyAngle, float bulletAngle)
 	{
 		ECS::EntityIdType metalBulletId = manager->createEntity<MetalBullet>();
+
 		// Create the components
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
+		collidableComponent.onEnter = [metalBulletId](ECS::Manager* manager, ECS::EntityIdType id) {
+			if (manager->getEntity(id)->isSameType<Entity::Player>())
+			{
+				manager->getEntityComponent<Component::Damage>(id).health -= 4;
+				manager->removeEntity<Entity::MetalBullet>(metalBulletId);
+			}
+		};
 
 		// create the position component
 		Component::Position positionComponent = Component::Position();

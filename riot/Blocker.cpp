@@ -4,6 +4,7 @@ namespace Entity {
 
 	ECS::EntityIdType createBlockerEntity(ECS::Manager* manager, Graphics* graphics, int x, int y) {
 		ECS::EntityIdType blockerId = manager->createEntity<Blocker>();
+		
 		// Create the components
 		// Create texture Component
 		Component::Texture textureComponent = Component::Texture();
@@ -19,12 +20,22 @@ namespace Entity {
 		Component::Attack attackComponent = Component::Attack();
 		attackComponent.attackDelay = 0.5;
 		attackComponent.interval = 1;
+
 		Component::Damage damageComponent = Component::Damage();
 		damageComponent.health = 40;
 
 		Component::Position positionComponent = Component::Position();
 		positionComponent.x = x * tileWidth;
 		positionComponent.y = y * tileHeight;
+
+		// create the collidable component
+		Component::Collidable collidableComponent = Component::Collidable();
+		collidableComponent.onEnter = [](ECS::Manager* manager, ECS::EntityIdType id) {
+			if (manager->getEntity(id)->isSameType<Entity::Player>())
+			{
+				manager->getEntityComponent<Component::Damage>(id).health -= 5;
+			}
+		};
 
 		// Add the components
 		manager->addComponent(blockerId, textureComponent);

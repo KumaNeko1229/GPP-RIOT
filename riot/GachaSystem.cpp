@@ -1,7 +1,5 @@
 #include "GachaSystem.h"
 
-#include "GachaSystem.h"
-
 namespace System {
 
 	void System::GachaSystem::update()

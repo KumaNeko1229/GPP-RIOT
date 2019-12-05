@@ -69,6 +69,9 @@
     <ClCompile Include="CircleCircleCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="ClickSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="Collidable.cpp">
       <Filter>Source Files\Component</Filter>
     </ClCompile>
@@ -90,8 +93,14 @@
     <ClCompile Include="EliteSoldierAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="GachaSystem.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GachaSystem.cpp">
       <Filter>Source Files</Filter>
@@ -120,6 +129,9 @@
     <ClCompile Include="input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="Manager.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
@@ -134,6 +146,12 @@
     </ClCompile>
     <ClCompile Include="OBBOBBCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Pause.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenuSystem.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Entity</Filter>
@@ -186,20 +204,14 @@
     <ClCompile Include="typeUtil.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="vectorUtil.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
     <ClCompile Include="Wall.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GachaSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyAttackSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="ClickSystem.cpp">
-      <Filter>Source Files\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="Clickable.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ClickSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Collidable.h">
       <Filter>Header Files\Component</Filter>
@@ -281,8 +296,14 @@
     <ClInclude Include="EliteSoldierAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyAttackSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="GachaSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="GachaSystem.h">
       <Filter>Header Files\System</Filter>
@@ -311,6 +332,9 @@
     <ClInclude Include="Halfwall.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="Halfwall.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="HealthBar.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -322,6 +346,9 @@
     </ClInclude>
     <ClInclude Include="Life.h">
       <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
       <Filter>Header Files\ECS</Filter>
@@ -343,6 +370,12 @@
     </ClInclude>
     <ClInclude Include="OBBOBBCollisionStrategy.h">
       <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Pause.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenuSystem.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Physics.h">
       <Filter>Header Files\Component</Filter>
@@ -392,6 +425,12 @@
     <ClInclude Include="TearGas.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="TearGas.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="TearGas.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -413,26 +452,11 @@
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="vectorUtil.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
     <ClInclude Include="Wall.h">
       <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="Halfwall.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="TearGas.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="TearGas.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="GachaSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="ClickSystem.h">
-      <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyAttackSystem.h">
-      <Filter>Header Files\System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

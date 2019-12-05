@@ -9,6 +9,8 @@
 #include "Attack.h"
 #include "Position.h"
 #include "Damage.h"
+#include "Collidable.h"
+#include "Player.h"
 
 namespace Entity {
 

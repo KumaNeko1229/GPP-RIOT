@@ -6,6 +6,7 @@
 #include "manager.h"
 #include "Physics.h"
 #include "Position.h"
+#include "TearGas.h"
 
 namespace System {
 

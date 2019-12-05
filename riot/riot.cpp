@@ -73,6 +73,5 @@ void Riot::releaseAll()
 void Riot::resetAll()
 {
 	Game::resetAll();
-
 	this->systemRunner.resetAll();
 }
