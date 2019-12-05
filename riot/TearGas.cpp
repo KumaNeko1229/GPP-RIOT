@@ -10,6 +10,7 @@ namespace Entity {
 		// create the damage component
 		Component::Damage damageComponent = Component::Damage();
 		damageComponent.damage = 4;
+		damageComponent.projectileDistanceLeft = 600 * SCALE_FACTOR;
 
 		// create the physics component
 		Component::Physics physicsComponent = Component::Physics();
