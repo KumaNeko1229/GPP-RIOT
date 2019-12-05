@@ -154,6 +154,7 @@
     <ClCompile Include="GachaSystem.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameStateComponent.cpp" />
+    <ClCompile Include="GameStateEntity.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="GuardEntity.cpp" />
     <ClCompile Include="GuardAttackSystem.cpp" />

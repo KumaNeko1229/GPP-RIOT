@@ -117,6 +117,9 @@
     <ClCompile Include="GameStateComponent.cpp">
       <Filter>Source Files\Component</Filter>
     </ClCompile>
+    <ClCompile Include="GameStateEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
