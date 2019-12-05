@@ -73,6 +73,13 @@ template<typename EntityType> std::unordered_set<EntityIdType>* Manager::getEnti
 	return this->entityFamilies.at(entityType);
 }
 
+template<typename ComponentType> bool Manager::entityHasComponent(EntityIdType id) {
+	Types::TypeId componentTypeId = Types::toTypeId<ComponentType>();
+
+	std::unordered_map<Types::TypeId, int>* entityComponents = this->entityComponents.at(id);
+	return entityComponents->find(componentTypeId) != entityComponents->end();
+}
+
 template<typename EntityType> void Manager::removeEntity(EntityIdType id) {
 	Types::TypeId entityTypeId = Types::toTypeId<EntityType>();
 
