@@ -16,7 +16,8 @@ namespace System {
 		throw(GameError(gameErrorNS::FATAL_ERROR, "Unable to find collision strategy to handle collision."));
 	}
 
-	void CollisionSystem::initialize() {
+	void CollisionSystem::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
+		System::initialize(manager, graphics, input);
 		// Add the collision strategies
 		this->strategies.push_back(new Collision::AABBAABBCollisionStrategy());
 		this->strategies.push_back(new Collision::AABBCircleCollisionStrategy());

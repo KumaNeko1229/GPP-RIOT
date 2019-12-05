@@ -21,7 +21,7 @@ namespace System {
 			bool colliding(Component::Collidable a, Component::Collidable b);
 
 		public:
-			void initialize();
+			void initialize(ECS::Manager* manager, Graphics* graphics, Input* input);
 			void update(float frameTime);
 			void releaseAll();
 	};
