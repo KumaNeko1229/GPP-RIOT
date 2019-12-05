@@ -133,10 +133,12 @@
   <ItemGroup>
     <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
     <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
+    <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
+    <ClCompile Include="CircleOBBCollisionStrategy.cpp" />
     <ClCompile Include="ClickSystem.cpp" />
     <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
@@ -188,11 +190,13 @@
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h" />
     <ClInclude Include="AABBCircleCollisionStrategy.h" />
+    <ClInclude Include="AABBOBBCollisionStrategy.h" />
     <ClInclude Include="Animatable.h" />
     <ClInclude Include="AnimationSystem.h" />
     <ClInclude Include="Attack.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="CircleOBBCollisionStrategy.h" />
     <ClInclude Include="ClickSystem.h" />
     <ClInclude Include="CircleCircleCollisionStrategy.h" />
     <ClInclude Include="Clickable.h" />

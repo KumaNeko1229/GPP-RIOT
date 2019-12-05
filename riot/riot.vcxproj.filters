@@ -51,6 +51,9 @@
     <ClCompile Include="AABBCircleCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="AABBOBBCollisionStrategy.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
@@ -67,6 +70,9 @@
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="CircleCircleCollisionStrategy.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleOBBCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
     <ClCompile Include="ClickSystem.cpp">
@@ -221,6 +227,9 @@
     <ClInclude Include="AABBCircleCollisionStrategy.h">
       <Filter>Header Files\Collision</Filter>
     </ClInclude>
+    <ClInclude Include="AABBOBBCollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
     <ClInclude Include="Animatable.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
@@ -246,6 +255,9 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="CircleCircleCollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleOBBCollisionStrategy.h">
       <Filter>Header Files\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Clickable.h">
