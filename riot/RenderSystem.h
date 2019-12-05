@@ -4,6 +4,7 @@
 
 #include "System.h"
 #include "Manager.h"
+#include "GameStateComponent.h"
 #include "TextureComponent.h"
 #include "TransformComponent.h"
 #include "PositionComponent.h"

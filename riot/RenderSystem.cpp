@@ -11,6 +11,9 @@ void Render::render() {
 	std::vector<Component::Texture>* componentsPtr =
 		this->manager->getComponents<Component::Texture>();
 
+	// Get the game state entity
+	Component::GameState gameState = this->manager->getComponents<Component::GameState>()->at(0);
+
 	for (Component::Texture textureComponent : *componentsPtr)
 	{
 		// Ignore non-visible components
@@ -25,6 +28,10 @@ void Render::render() {
 		// Get the position component
 		Component::Position positionComponent =
 			this->manager->getEntityComponent<Component::Position>(textureComponent.entityId);
+
+		// Offset the position by the current render game state
+		positionComponent.x -= gameState.renderRect.left;
+		positionComponent.y -= gameState.renderRect.top;
 
 		long viewableWidth = textureComponent.viewableRect.right - textureComponent.viewableRect.left;
 		long viewableHeight = textureComponent.viewableRect.bottom - textureComponent.viewableRect.top;

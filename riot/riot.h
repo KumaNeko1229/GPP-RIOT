@@ -4,6 +4,7 @@
 #include "game.h"
 #include "textureManager.h"
 #include "renderSystem.h"
+#include "GameStateSystem.h"
 #include "PlayerMovementSystem.h"
 #include "AnimationSystem.h"
 #include "manager.h"

@@ -25,6 +25,7 @@ void Riot::initialize(HWND hwnd)
 	this->manager = new ECS::Manager();
 	// TODO: Create the systems and register them to the manager
 
+	this->systemRunner.registerSystem(new System::GameState());
 	this->systemRunner.registerSystem(new System::Menu());
 	this->systemRunner.registerSystem(new System::Animation());
 	this->systemRunner.registerSystem(new System::Collision());

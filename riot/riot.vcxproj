@@ -155,6 +155,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameStateComponent.cpp" />
     <ClCompile Include="GameStateEntity.cpp" />
+    <ClCompile Include="GameStateSystem.cpp" />
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="GuardEntity.cpp" />
     <ClCompile Include="GuardAttackSystem.cpp" />
@@ -223,6 +224,7 @@
     <ClInclude Include="gameError.h" />
     <ClInclude Include="GameStateComponent.h" />
     <ClInclude Include="GameStateEntity.h" />
+    <ClInclude Include="GameStateSystem.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="GuardEntity.h" />
     <ClInclude Include="GuardAttackSystem.h" />
