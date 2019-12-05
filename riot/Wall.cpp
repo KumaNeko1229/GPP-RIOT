@@ -14,6 +14,14 @@ namespace Entity {
 		}
 		textureComponent.visible = true;
 		Component::Collidable collidableComponent = Component::Collidable();
+		std::vector<D3DXVECTOR2> corners = { 
+			{(float)X * tileWidth, (float)Y * tileHeight},
+			{(float)(X + 1) * tileWidth, (float)Y * tileHeight},
+			{(float)X * tileHeight, (float)(Y + 1) * tileHeight},
+			{(float)(X + 1) * tileWidth, (float)(Y + 1) * tileHeight}
+		};
+		collidableComponent.collisionType = Collision::CollisionType::CIRCLE;
+		collidableComponent.corners = corners;
 		collidableComponent.onEnter = [wallId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Entity::Player>() 
 				|| manager->getEntity(id)->isSameType<Entity::Blocker>() 

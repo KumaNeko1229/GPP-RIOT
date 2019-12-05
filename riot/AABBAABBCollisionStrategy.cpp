@@ -8,7 +8,7 @@ namespace Collision {
 	}
 
 	bool AABBAABBCollisionStrategy::isUseable(CollisionType source, CollisionType target) {
-		return (source == this->sourceType && source == this->targetType);
+		return (source == this->sourceType && target == this->targetType);
 	}
 
 	bool AABBAABBCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {

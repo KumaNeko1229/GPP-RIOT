@@ -39,7 +39,7 @@ namespace Collision {
 	}
 
 	bool OBBOBBCollisionStrategy::isUseable(CollisionType source, CollisionType target) {
-		return (source == this->sourceType && source == this->targetType);
+		return (source == this->sourceType && target == this->targetType);
 	}
 
 	bool OBBOBBCollisionStrategy::isColliding(Component::Collidable source, Component::Collidable target) {
