@@ -1,4 +1,4 @@
-#include "renderSystem.h"
+#include "RenderSystem.h"
 
 namespace System {
 

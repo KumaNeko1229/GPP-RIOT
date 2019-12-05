@@ -1,14 +1,13 @@
 #pragma once
 
-#include "entity.h"
-#include "graphics.h"
-#include "manager.h"
-#include "physics.h"
-#include "transform.h"
+#include "Entity.h"
+#include "Manager.h"
+#include "Physics.h"
+#include "Transform.h"
 #include "Collidable.h"
-#include "texture.h"
+#include "Texture.h"
 #include "Animatable.h"
-#include "position.h"
+#include "Position.h"
 #include "Damage.h"
 
 namespace Entity {

@@ -2,11 +2,11 @@
 
 #include <vector>
 
-#include "texture.h"
-#include "transform.h"
-#include "position.h"
-#include "system.h"
-#include "manager.h"
+#include "Texture.h"
+#include "Transform.h"
+#include "Position.h"
+#include "System.h"
+#include "Manager.h"
 
 namespace System {
 

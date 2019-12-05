@@ -135,7 +135,7 @@
     <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
     <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
-    <ClCompile Include="bullet.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
     <ClCompile Include="CircleOBBCollisionStrategy.cpp" />
@@ -172,7 +172,7 @@
     <ClCompile Include="PlayerAttackSystem.cpp" />
     <ClCompile Include="PlayerMovementSystem.cpp" />
     <ClCompile Include="ReaperSystem.cpp" />
-    <ClCompile Include="renderSystem.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="riot.cpp" />
     <ClCompile Include="RubberBullet.cpp" />
     <ClCompile Include="System.cpp" />
@@ -194,7 +194,7 @@
     <ClInclude Include="Animatable.h" />
     <ClInclude Include="AnimationSystem.h" />
     <ClInclude Include="Attack.h" />
-    <ClInclude Include="bullet.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CircleOBBCollisionStrategy.h" />
     <ClInclude Include="ClickSystem.h" />
@@ -241,7 +241,7 @@
     <ClInclude Include="PlayerMovementSystem.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="ReaperSystem.h" />
-    <ClInclude Include="renderSystem.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="riot.h" />
     <ClInclude Include="RubberBullet.h" />
     <ClInclude Include="System.h" />

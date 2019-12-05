@@ -63,7 +63,7 @@
     <ClCompile Include="BlockerAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="bullet.cpp">
+    <ClCompile Include="Bullet.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
@@ -171,7 +171,7 @@
     <ClCompile Include="ReaperSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="renderSystem.cpp">
+    <ClCompile Include="RenderSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="riot.cpp">
@@ -248,7 +248,7 @@
     <ClInclude Include="BlockerAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="bullet.h">
+    <ClInclude Include="Bullet.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
@@ -407,7 +407,7 @@
     <ClInclude Include="ReaperSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="renderSystem.h">
+    <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="riot.h">
