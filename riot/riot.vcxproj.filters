@@ -189,6 +189,12 @@
     <ClCompile Include="GachaSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyAttackSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -214,9 +220,6 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="ButtonClickSystem.h">
-      <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="CircleCircleCollisionStrategy.h">
       <Filter>Header Files\Collision</Filter>
@@ -402,6 +405,12 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="GachaSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="ClickSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
   </ItemGroup>
