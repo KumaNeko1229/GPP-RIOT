@@ -1,6 +1,6 @@
 #include "AABBCircleCollisionStrategy.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	AABBCircleCollisionStrategy::AABBCircleCollisionStrategy() {
 		this->sourceType = CollisionType::AABB;

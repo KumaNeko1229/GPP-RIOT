@@ -3,7 +3,7 @@
 #include "vectorUtil.h"
 #include "CollisionStrategy.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	class AABBOBBCollisionStrategy : public CollisionStrategy {
 		public:

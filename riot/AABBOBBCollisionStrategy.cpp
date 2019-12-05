@@ -1,6 +1,6 @@
 #include "AABBOBBCollisionStrategy.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	AABBOBBCollisionStrategy::AABBOBBCollisionStrategy() {
 		this->sourceType = CollisionType::AABB;

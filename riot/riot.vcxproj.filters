@@ -5,7 +5,7 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Collision">
+    <Filter Include="Header Files\CollisionUtil">
       <UniqueIdentifier>{fb0a087a-3e51-4094-8b4c-a8a9922cf6a4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Component">
@@ -57,16 +57,16 @@
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="Blocker.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
     <ClCompile Include="BlockerAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
+    <ClCompile Include="BlockerEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp">
+    <ClCompile Include="BulletEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="CircleCircleCollisionStrategy.cpp">
@@ -78,7 +78,7 @@
     <ClCompile Include="ClickSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="Collidable.cpp">
+    <ClCompile Include="CollidableComponent.cpp">
       <Filter>Source Files\Component</Filter>
     </ClCompile>
     <ClCompile Include="CollisionSystem.cpp">
@@ -87,17 +87,17 @@
     <ClCompile Include="DamageSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="EliteGuard.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
     <ClCompile Include="EliteGuardAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="EliteSoldier.cpp">
+    <ClCompile Include="EliteGuardEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="EliteSoldierAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="EliteSoldierEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="EnemyAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -117,16 +117,16 @@
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Guard.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
     <ClCompile Include="GuardAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="Halfwall.cpp">
+    <ClCompile Include="GuardEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="HealthBar.cpp">
+    <ClCompile Include="HalfwallEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthBarEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="HUDSystem.cpp">
@@ -144,7 +144,7 @@
     <ClCompile Include="MenuSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="MetalBullet.cpp">
+    <ClCompile Include="MetalBulletEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="MovementSystem.cpp">
@@ -153,17 +153,17 @@
     <ClCompile Include="OBBOBBCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Pause.cpp">
+    <ClCompile Include="PauseEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="PauseMenuSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="PlayerMovementSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -177,7 +177,7 @@
     <ClCompile Include="riot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RubberBullet.cpp">
+    <ClCompile Include="RubberBulletEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="System.cpp">
@@ -201,10 +201,10 @@
     <ClCompile Include="TextSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="texture.cpp">
+    <ClCompile Include="TextureComponent.cpp">
       <Filter>Source Files\Component</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
+    <ClCompile Include="TileEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="typeUtil.cpp">
@@ -213,7 +213,7 @@
     <ClCompile Include="vectorUtil.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Wall.cpp">
+    <ClCompile Include="WallEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="winmain.cpp">
@@ -222,61 +222,61 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="AABBCircleCollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="AABBOBBCollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="Animatable.h">
+    <ClInclude Include="AnimatableComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="AnimationSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Attack.h">
+    <ClInclude Include="AttackComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Blocker.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="BlockerAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="BlockerAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
+    <ClInclude Include="BlockerEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
+    <ClInclude Include="BulletEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="CircleCircleCollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="CircleOBBCollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="Clickable.h">
+    <ClInclude Include="ClickableComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="ClickSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Collidable.h">
+    <ClInclude Include="CollidableComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="CollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="CollisionSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="CollisionType.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="component.h">
       <Filter>Header Files\ECS</Filter>
@@ -284,22 +284,19 @@
     <ClInclude Include="constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Damage.h">
+    <ClInclude Include="DamageComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="DamageSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="EliteGuard.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="EliteGuardAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="EliteGuardAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="EliteSoldier.h">
+    <ClInclude Include="EliteGuardEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="EliteSoldierAttackSystem.h">
@@ -307,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="EliteSoldierAttackSystem.h">
       <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="EliteSoldierEntity.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="EnemyAttackSystem.h">
       <Filter>Header Files\System</Filter>
@@ -329,16 +329,13 @@
     <ClInclude Include="graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Guard.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="GuardAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="GuardAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Halfwall.h">
+    <ClInclude Include="GuardEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Halfwall.h">
@@ -347,7 +344,10 @@
     <ClInclude Include="Halfwall.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="HealthBar.h">
+    <ClInclude Include="HalfwallEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthBarEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="HUDSystem.h">
@@ -356,7 +356,7 @@
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Life.h">
+    <ClInclude Include="LifeComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="MainMenuSystem.h">
@@ -374,34 +374,34 @@
     <ClInclude Include="MetalBullet.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="MetalBullet.h">
+    <ClInclude Include="MetalBulletEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="MovementSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="OBBOBBCollisionStrategy.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="Pause.h">
+    <ClInclude Include="PauseEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="PauseMenuSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Physics.h">
+    <ClInclude Include="PhysicsComponent.h">
       <Filter>Header Files\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="PlayerAttackSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerMovementSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Position.h">
+    <ClInclude Include="PositionComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="ReaperSystem.h">
@@ -416,7 +416,7 @@
     <ClInclude Include="RubberBullet.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="RubberBullet.h">
+    <ClInclude Include="RubberBulletEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="System.h">
@@ -443,7 +443,7 @@
     <ClInclude Include="TearGas.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Text.h">
+    <ClInclude Include="TextComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="textDX.h">
@@ -452,22 +452,22 @@
     <ClInclude Include="TextSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
+    <ClInclude Include="TextureComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Tile.h">
+    <ClInclude Include="TileEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.h">
+    <ClInclude Include="TransformComponent.h">
       <Filter>Header Files\Component</Filter>
     </ClInclude>
     <ClInclude Include="typeUtil.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="vectorUtil.h">
-      <Filter>Header Files\Collision</Filter>
+      <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
-    <ClInclude Include="Wall.h">
+    <ClInclude Include="WallEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>

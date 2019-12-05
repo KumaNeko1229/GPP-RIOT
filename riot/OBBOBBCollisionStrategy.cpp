@@ -1,6 +1,6 @@
 #include "OBBOBBCollisionStrategy.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	OBBOBBCollisionStrategy::OBBOBBCollisionStrategy() {
 		this->sourceType = CollisionType::OBB;

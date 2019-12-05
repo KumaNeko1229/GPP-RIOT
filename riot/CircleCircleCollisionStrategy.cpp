@@ -1,6 +1,6 @@
 #include "CircleCircleCollisionStrategy.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	CircleCircleCollisionStrategy::CircleCircleCollisionStrategy() {
 		this->sourceType = CollisionType::CIRCLE;

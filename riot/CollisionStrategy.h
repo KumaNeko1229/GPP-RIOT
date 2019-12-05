@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Position.h"
 #include "CollisionType.h"
-#include "Collidable.h"
+#include "PositionComponent.h"
+#include "CollidableComponent.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	class CollisionStrategy {
 		protected:

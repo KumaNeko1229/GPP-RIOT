@@ -2,7 +2,7 @@
 
 #include "CollisionStrategy.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	class AABBAABBCollisionStrategy : public CollisionStrategy {
 		public:

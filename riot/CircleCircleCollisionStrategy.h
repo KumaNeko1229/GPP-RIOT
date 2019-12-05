@@ -3,7 +3,7 @@
 #include <d3dx9math.h>
 #include "CollisionStrategy.h"
 
-namespace Collision {
+namespace CollisionUtil {
 
 	class CircleCircleCollisionStrategy : public CollisionStrategy {
 		public:
