@@ -1,4 +1,4 @@
-#include "TearGas.h"
+#include "TearGasEntity.h"
 
 namespace Entity {
 
@@ -15,7 +15,7 @@ namespace Entity {
 		// create the physics component
 		Component::Physics physicsComponent = Component::Physics();
 
-		// create the position component 
+		// create the position component
 		Component::Position positionComponent = Component::Position();
 
 		// create the collidable component

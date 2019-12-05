@@ -9,7 +9,7 @@
 #include "TextureComponent.h"
 #include "AnimatableComponent.h"
 #include "PositionComponent.h"
-#include "PlayerComponent.h"
+#include "PlayerEntity.h"
 
 namespace Entity {
 

@@ -1,8 +1,8 @@
 #include "HUDSystem.h"
 
 namespace System {
-	
-	void HUDSystem::render() {
+
+	void HUD::render() {
 		//graphics->beginScene();
 		//std::vector<Component::Texture>* TexturePtr = this->manager->getComponents<Component::Texture>();
 		//
@@ -25,7 +25,7 @@ namespace System {
 
 	}
 
-	void HUDSystem::releaseAll() {
+	void HUD::releaseAll() {
 		std::vector<Component::Texture>* componentsPtr =
 			this->manager->getComponents<Component::Texture>();
 
@@ -36,9 +36,9 @@ namespace System {
 		}
 	}
 
-	void HUDSystem::resetAll() {};
+	void HUD::resetAll() {};
 
-	void HUDSystem::update(float frameTime) {
+	void HUD::update(float frameTime) {
 		std::unordered_set<ECS::EntityIdType>* playerPtr = this->manager->getEntities<Entity::Player>();
 
 		for (ECS::EntityIdType id : *playerPtr)
@@ -50,7 +50,7 @@ namespace System {
 			LP_3DDEVICE device = graphics->get3Ddevice();
 			device->Clear(1, &healthbar, D3DCLEAR_TARGET, healthBarColor, 0, 0);
 		}
-	
+
 	};
 
 }

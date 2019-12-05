@@ -2,15 +2,15 @@
 
 #include <vector>
 
-#include "system.h"
-#include "manager.h"
-#include "Physics.h"
-#include "Position.h"
-#include "TearGas.h"
+#include "System.h"
+#include "Manager.h"
+#include "PhysicsComponent.h"
+#include "PositionComponent.h"
+#include "TearGasEntity.h"
 
 namespace System {
 
-	class MovementSystem : public ECS::System {
+	class Movement : public ECS::System {
 		public:
 			void update(float frameTime);
 		};

@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void System::GachaSystem::update()
+	void System::Gacha::update()
 	{
 		std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();
 

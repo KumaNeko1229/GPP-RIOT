@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void AnimationSystem::update(float frameTime) {
+	void Animation::update(float frameTime) {
 		// Get all animatable components
 		std::vector<Component::Animatable>* componentsPtr =
 			this->manager->getComponents<Component::Animatable>();

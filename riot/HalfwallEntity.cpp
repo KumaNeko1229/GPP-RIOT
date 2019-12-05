@@ -20,7 +20,7 @@ namespace Entity {
 			{(float)X * tileHeight, (float)(Y + 1) * tileHeight},
 			{(float)(X + 1) * tileWidth, (float)(Y + 1) * tileHeight}
 		};
-		collidableComponent.collisionType = Collision::CollisionType::CIRCLE;
+		collidableComponent.collisionType = CollisionUtil::CollisionType::CIRCLE;
 		collidableComponent.corners = corners;
 		collidableComponent.onEnter = [halfwallId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Entity::Player>()

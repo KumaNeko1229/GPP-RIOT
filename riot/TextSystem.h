@@ -1,14 +1,18 @@
-#include "texture.h"
-#include "system.h"
-#include "manager.h"
-#include "textDX.h"
+#pragma once
+
 #include <string>
-#include "Text.h"
-#include "Button.h"
-#include "Position.h"
+
+#include "System.h"
+#include "Manager.h"
+#include "textDX.h"
+#include "ButtonEntity.h"
+#include "TextureComponent.h"
+#include "TextComponent.h"
+#include "PositionComponent.h"
+
 namespace System {
 
-	class TextSystem : ECS::System {
+	class Text : ECS::System {
 
 	public:
 		void initialize(ECS::Manager* manager, Graphics* graphics);

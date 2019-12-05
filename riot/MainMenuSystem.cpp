@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void MainMenuSystem::render(ECS::Manager* manager) {
+	void MainMenu::render(ECS::Manager* manager) {
 		this->graphics->spriteBegin();
 
 		LP_SPRITE sprite = this->graphics->getSprite();

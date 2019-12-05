@@ -8,7 +8,6 @@
 #include "AnimationSystem.h"
 #include "manager.h"
 #include "systemRunner.h"
-#include "player.h"
 #include "MovementSystem.h"
 #include "PlayerAttackSystem.h"
 #include "MenuSystem.h"

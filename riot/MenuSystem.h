@@ -1,27 +1,27 @@
 #pragma once
-#include <vector>
 
-#include "texture.h"
-#include "system.h"
-#include "manager.h"
+#include <vector>
 #include <string>
-#include "Entity.h"
-#include "Tile.h"
-#include "Wall.h"
-#include "Halfwall.h"
-#include "Player.h"
-#include "SystemRunner.h"
-#include "Guard.h"
-#include "Blocker.h"
-#include "EliteGuard.h"
-#include "EliteSoldier.h"
 #include <fstream>
 #include <codecvt>
 #include <list>
 
+#include "System.h"
+#include "Manager.h"
+#include "Entity.h"
+#include "TileEntity.h"
+#include "WallEntity.h"
+#include "HalfwallEntity.h"
+#include "PlayerEntity.h"
+#include "GuardEntity.h"
+#include "BlockerEntity.h"
+#include "EliteGuardEntity.h"
+#include "EliteSoldierEntity.h"
+#include "TextureComponent.h"
+
 namespace System {
 
-	class MenuSystem : public ECS::System {
+	class Menu : public ECS::System {
 	private:
 		std::wstring level;
 	public:

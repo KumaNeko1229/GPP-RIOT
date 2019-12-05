@@ -1,18 +1,18 @@
 #pragma once
 
 #include <vector>
+#include <d3d9.h>
 
-#include "texture.h"
-#include "transform.h"
-#include "position.h"
-#include "system.h"
-#include "manager.h"
-#include "Player.h"
-#include "d3d9.h"
+#include "System.h"
+#include "Manager.h"
+#include "PlayerEntity.h"
+#include "TextureComponent.h"
+#include "TransformComponent.h"
+#include "PositionComponent.h"
 
 namespace System {
 
-	class HUDSystem : public ECS::System {
+	class HUD : public ECS::System {
 	public:
 		void update(float frameTime);
 

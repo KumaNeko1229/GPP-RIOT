@@ -177,7 +177,7 @@
     <ClCompile Include="RubberBulletEntity.cpp" />
     <ClCompile Include="System.cpp" />
     <ClCompile Include="SystemRunner.cpp" />
-    <ClCompile Include="TearGas.cpp" />
+    <ClCompile Include="TearGasEntity.cpp" />
     <ClCompile Include="textDX.cpp" />
     <ClCompile Include="TextSystem.cpp" />
     <ClCompile Include="TextureComponent.cpp" />
@@ -246,7 +246,7 @@
     <ClInclude Include="RubberBulletEntity.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="SystemRunner.h" />
-    <ClInclude Include="TearGas.h" />
+    <ClInclude Include="TearGasEntity.h" />
     <ClInclude Include="TextComponent.h" />
     <ClInclude Include="textDX.h" />
     <ClInclude Include="TextSystem.h" />

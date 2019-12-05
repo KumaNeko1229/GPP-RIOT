@@ -1,7 +1,7 @@
 #include "EnemyAttackSystem.h"
 
 namespace System {
-	void EnemyAttackSystem::update(float frametime) {
+	void EnemyAttack::update(float frametime) {
 		std::unordered_set<ECS::EntityIdType>* blockerPtrs = this->manager->getEntities<Entity::Blocker>();
 		std::unordered_set<ECS::EntityIdType>* guardPtrs = this->manager->getEntities<Entity::Guard>();
 		std::unordered_set<ECS::EntityIdType>* eliteGuardPtrs = this->manager->getEntities<Entity::EliteGuard>();
@@ -22,7 +22,7 @@ namespace System {
 				attackComponent.cooldownTime -= frametime;
 				if (attackComponent.cooldownTime <= 0)
 				{
-					//deal damage as blocker					
+					//deal damage as blocker
 					attackComponent.cooldownTime = attackComponent.interval;
 				}
 			}

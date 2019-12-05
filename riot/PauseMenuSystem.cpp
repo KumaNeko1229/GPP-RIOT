@@ -2,8 +2,8 @@
 
 namespace System {
 
-	void PauseMenuSystem::render(ECS::Manager* manager) {
-		
+	void PauseMenu::render(ECS::Manager* manager) {
+
 		D3DCOLOR windowColor = D3DCOLOR_XRGB(105, 105, 105);
 		LP_3DDEVICE device = graphics->get3Ddevice();
 		device->Clear(0, NULL, D3DCLEAR_TARGET, windowColor, 0.0f, 0);

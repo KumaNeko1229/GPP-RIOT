@@ -3,17 +3,17 @@
 #include <vector>
 #include <unordered_map>
 
-#include "Attack.h"
-#include "EliteSoldier.h"
-#include "system.h"
-#include "manager.h"
-#include "MetalBullet.h"
+#include "System.h"
+#include "Manager.h"
 #include "Entity.h"
-#include "Player.h"
+#include "AttackComponent.h"
+#include "EliteSoldierEntity.h"
+#include "MetalBulletEntity.h"
+#include "PlayerEntity.h"
 
 namespace System {
 
-	class EliteSoldierAttackSystem: public ECS::System {
+	class EliteSoldierAttack : public ECS::System {
 	public:
 		void update(float frameTime);
 	};

@@ -2,6 +2,8 @@
 
 #include <vector>
 
+#include "System.h"
+#include "Manager.h"
 #include "CollisionStrategy.h"
 #include "AABBAABBCollisionStrategy.h"
 #include "AABBCircleCollisionStrategy.h"
@@ -9,16 +11,14 @@
 #include "CircleCircleCollisionStrategy.h"
 #include "CircleOBBCollisionStrategy.h"
 #include "OBBOBBCollisionStrategy.h"
-#include "Collidable.h"
-#include "Physics.h"
-#include "System.h"
-#include "Manager.h"
+#include "CollidableComponent.h"
+#include "PhysicsComponent.h"
 
 namespace System {
 
-	class CollisionSystem : public ECS::System {
+	class Collision : public ECS::System {
 		private:
-			std::vector<Collision::CollisionStrategy*> strategies;
+			std::vector<CollisionUtil::CollisionStrategy*> strategies;
 			bool colliding(Component::Collidable a, Component::Collidable b);
 
 		public:

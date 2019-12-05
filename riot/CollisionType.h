@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Collision {
+namespace CollisionUtil {
 
 	enum class CollisionType {
 		CIRCLE,

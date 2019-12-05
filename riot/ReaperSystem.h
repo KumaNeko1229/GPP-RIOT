@@ -1,12 +1,12 @@
 #pragma once
 
-#include "system.h"
-#include "TearGas.h"
-#include "Life.h"
+#include "System.h"
+#include "LifeComponent.h"
+#include "TearGasEntity.h"
 
 namespace System {
 
-	class ReaperSystem : public ECS::System {
+	class Reaper : public ECS::System {
 	public:
 		void update(float frameTime);
 	};

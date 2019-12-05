@@ -1,17 +1,18 @@
 #pragma once
-#include <vector>
 
-#include "texture.h"
-#include "system.h"
-#include "manager.h"
+#include <vector>
 #include <string>
+
+#include "System.h"
+#include "Manager.h"
 #include "Entity.h"
-#include "Pause.h"
-#include "Button.h"
+#include "PauseEntity.h"
+#include "ButtonEntity.h"
+#include "TextureComponent.h"
 
 namespace System {
 
-	class PauseMenuSystem : public ECS::System {
+	class PauseMenu : public ECS::System {
 
 	public:
 		void render(ECS::Manager* manager);

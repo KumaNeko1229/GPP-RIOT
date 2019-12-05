@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void PlayerMovementSystem::update(float frameTime)
+	void PlayerMovement::update(float frameTime)
 	{
 		std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();
 

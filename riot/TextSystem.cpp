@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void TextSystem::initialize(ECS::Manager* manager, Graphics* graphics) {
+	void Text::initialize(ECS::Manager* manager, Graphics* graphics) {
 		std::vector<Component::Texture>* TexturePtr = this->manager->getComponents<Component::Texture>();
 		for (Component::Texture textureComponent : *TexturePtr)
 		{
@@ -12,9 +12,9 @@ namespace System {
 		}
 	}
 
-	void TextSystem::update(float frameTime) {}
+	void Text::update(float frameTime) {}
 
-	void TextSystem::render() {
+	void Text::render() {
 		graphics->beginScene();
 		std::vector<Component::Texture>* TexturePtr = this->manager->getComponents<Component::Texture>();
 
@@ -47,7 +47,7 @@ namespace System {
 
 	}
 
-	void TextSystem::releaseAll() {
+	void Text::releaseAll() {
 		std::vector<Component::Texture>* componentsPtr =
 			this->manager->getComponents<Component::Texture>();
 
@@ -58,7 +58,7 @@ namespace System {
 		}
 	}
 
-	void TextSystem::resetAll() {}
+	void Text::resetAll() {}
 
 
 

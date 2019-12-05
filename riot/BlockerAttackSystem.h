@@ -3,16 +3,16 @@
 #include <vector>
 #include <unordered_map>
 
-#include "Attack.h"
-#include "Blocker.h"
-#include "system.h"
-#include "manager.h"
+#include "Manager.h"
 #include "Entity.h"
+#include "System.h"
+#include "BlockerEntity.h"
+#include "AttackComponent.h"
 
 
 namespace System {
 
-	class BlockerAttackSystem : public ECS::System {
+	class BlockerAttack : public ECS::System {
 	public:
 		void update(float frameTime);
 	};

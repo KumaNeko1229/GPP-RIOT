@@ -2,8 +2,8 @@
 
 namespace System {
 
-	bool CollisionSystem::colliding(Component::Collidable a, Component::Collidable b) {
-		for (Collision::CollisionStrategy* strategy : this->strategies)
+	bool Collision::colliding(Component::Collidable a, Component::Collidable b) {
+		for (CollisionUtil::CollisionStrategy* strategy : this->strategies)
 		{
 			// Look for a strategy to handle this collision
 			if (strategy->isUseable(a.collisionType, b.collisionType))
@@ -16,18 +16,18 @@ namespace System {
 		throw(GameError(gameErrorNS::FATAL_ERROR, "Unable to find collision strategy to handle collision."));
 	}
 
-	void CollisionSystem::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
+	void Collision::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
 		System::initialize(manager, graphics, input);
 		// Add the collision strategies
-		this->strategies.push_back(new Collision::AABBAABBCollisionStrategy());
-		this->strategies.push_back(new Collision::AABBCircleCollisionStrategy());
-		this->strategies.push_back(new Collision::AABBOBBCollisionStrategy());
-		this->strategies.push_back(new Collision::CircleCircleCollisionStrategy());
-		this->strategies.push_back(new Collision::CircleOBBCollisionStrategy());
-		this->strategies.push_back(new Collision::OBBOBBCollisionStrategy());
+		this->strategies.push_back(new CollisionUtil::AABBAABBCollisionStrategy());
+		this->strategies.push_back(new CollisionUtil::AABBCircleCollisionStrategy());
+		this->strategies.push_back(new CollisionUtil::AABBOBBCollisionStrategy());
+		this->strategies.push_back(new CollisionUtil::CircleCircleCollisionStrategy());
+		this->strategies.push_back(new CollisionUtil::CircleOBBCollisionStrategy());
+		this->strategies.push_back(new CollisionUtil::OBBOBBCollisionStrategy());
 	}
 
-	void CollisionSystem::update(float frameTime) {
+	void Collision::update(float frameTime) {
 		// Get all animatable components
 		std::vector<Component::Collidable>* componentsPtr =
 			this->manager->getComponents<Component::Collidable>();
@@ -75,9 +75,9 @@ namespace System {
 		}
 	}
 
-	void CollisionSystem::releaseAll() {
+	void Collision::releaseAll() {
 		// Delete all the strategies
-		for (Collision::CollisionStrategy* strategy : this->strategies)
+		for (CollisionUtil::CollisionStrategy* strategy : this->strategies)
 		{
 			SAFE_DELETE(strategy);
 		}

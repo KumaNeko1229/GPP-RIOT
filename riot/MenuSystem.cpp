@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void MenuSystem::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
+	void Menu::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
 		System::initialize(manager, graphics, input);
 
 		std::ifstream map;
@@ -59,7 +59,7 @@ namespace System {
 				}
 			}
 		}
-		
+
 		if (playerX && playerY)
 		{
 			Entity::createPlayerEntity(this->manager, this->graphics, playerX, playerY);
@@ -84,7 +84,7 @@ namespace System {
 		}
 	}
 
-	void MenuSystem::releaseAll() {
+	void Menu::releaseAll() {
 
 	}
 }

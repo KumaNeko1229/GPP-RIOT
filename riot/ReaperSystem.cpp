@@ -1,8 +1,8 @@
 #include "ReaperSystem.h"
 
 namespace System {
-	
-	void ReaperSystem::update(float frameTime)
+
+	void Reaper::update(float frameTime)
 	{
 		// check if the tear gas entity should still be alive
 		std::vector<Component::Life>* componentPtrs = this->manager->getComponents<Component::Life>();

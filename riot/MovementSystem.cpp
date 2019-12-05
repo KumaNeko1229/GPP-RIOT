@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void MovementSystem::update(float frameTime)
+	void Movement::update(float frameTime)
 	{
 		std::vector<Component::Physics>* componentsPtr = this->manager->getComponents<Component::Physics>();
 

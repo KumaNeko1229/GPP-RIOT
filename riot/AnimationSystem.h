@@ -4,12 +4,12 @@
 
 #include "System.h"
 #include "Manager.h"
-#include "Animatable.h"
-#include "Texture.h"
+#include "AnimatableComponent.h"
+#include "TextureComponent.h"
 
 namespace System {
 
-	class AnimationSystem: public ECS::System {
+	class Animation: public ECS::System {
 		public:
 			void update(float frameTime);
 	};

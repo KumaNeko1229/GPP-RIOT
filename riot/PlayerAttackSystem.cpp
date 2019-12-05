@@ -3,7 +3,7 @@
 namespace System {
 
 	// check for the timer, and create the bullets here
-	void PlayerAttackSystem::update(float frameTime)
+	void PlayerAttack::update(float frameTime)
 	{
 		// get the position of the player entity
 		std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();

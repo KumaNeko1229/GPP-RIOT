@@ -2,15 +2,15 @@
 
 #include <vector>
 
-#include "system.h"
-#include "manager.h"
-#include "Player.h"
-#include "Damage.h"
-#include "Button.h"
+#include "System.h"
+#include "Manager.h"
+#include "PlayerEntity.h"
+#include "ButtonEntity.h"
+#include "DamageComponent.h"
 
 namespace System {
 
-	class GachaSystem : public ECS::System {
+	class Gacha : public ECS::System {
 	public:
 		void update();
 	};

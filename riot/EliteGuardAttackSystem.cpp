@@ -1,7 +1,7 @@
 #include "EliteGuardAttackSystem.h"
 
 namespace System {
-	void EliteGuardAttackSystem::update(float frametime) {
+	void EliteGuardAttack::update(float frametime) {
 
 		std::unordered_set<ECS::EntityIdType>* eliteGuardPtrs = this->manager->getEntities<Entity::EliteGuard>();
 		std::unordered_set<ECS::EntityIdType>* playerPtr = this->manager->getEntities<Entity::Player>();

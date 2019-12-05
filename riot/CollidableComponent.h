@@ -15,7 +15,7 @@ namespace Component {
 		float radius;
 		std::vector<D3DXVECTOR2> corners;
 
-		Collision::CollisionType collisionType;
+		CollisionUtil::CollisionType collisionType;
 
 		std::unordered_set<ECS::EntityIdType> collidingWith;
 

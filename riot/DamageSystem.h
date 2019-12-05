@@ -2,16 +2,16 @@
 
 #include <vector>
 
-#include "system.h"
-#include "manager.h"
-#include "Damage.h"
-#include "Blocker.h"
-#include "EliteGuard.h"
-#include "EliteSoldier.h"
+#include "System.h"
+#include "Manager.h"
+#include "DamageComponent.h"
+#include "BlockerEntity.h"
+#include "EliteGuardEntity.h"
+#include "EliteSoldierEntity.h"
 
 namespace System {
 
-	class DamageSystem : public ECS::System {
+	class Damage : public ECS::System {
 	public:
 		void update();
 	};

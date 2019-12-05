@@ -109,7 +109,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GachaSystem.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
@@ -192,8 +192,8 @@
     <ClCompile Include="TearGas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TearGas.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="TearGasEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
     </ClCompile>
     <ClCompile Include="textDX.cpp">
       <Filter>Source Files</Filter>
@@ -426,9 +426,6 @@
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="TearGas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TearGas.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="TearGas.h">
@@ -441,6 +438,9 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="TearGas.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="TearGasEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="TextComponent.h">

@@ -1,7 +1,7 @@
 #include "GuardAttackSystem.h"
 
 namespace System {
-	void GuardAttackSystem::update(float frametime) {
+	void GuardAttack::update(float frametime) {
 		std::unordered_set<ECS::EntityIdType>* guardPtrs = this->manager->getEntities<Entity::Guard>();
 		std::unordered_set<ECS::EntityIdType>* playerPtr = this->manager->getEntities<Entity::Player>();
 

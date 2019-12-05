@@ -1,7 +1,7 @@
 #include "ClickSystem.h"
 
 namespace System {
-	void ClickSystem::update() {
+	void Click::update() {
 
 		std::unordered_set<ECS::EntityIdType>* buttonPtrs = this->manager->getEntities<Entity::Button>();
 

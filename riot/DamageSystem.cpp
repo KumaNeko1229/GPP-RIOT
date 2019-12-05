@@ -2,7 +2,7 @@
 
 namespace System {
 
-	void DamageSystem::update() {
+	void Damage::update() {
 		// after checking if collision is true, handle the damage
 		std::vector<Component::Damage>* componentPtrs = this->manager->getComponents<Component::Damage>();
 

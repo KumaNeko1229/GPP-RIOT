@@ -2,7 +2,7 @@
 
 namespace System {
 
-void RenderSystem::render() {
+void Render::render() {
 	this->graphics->spriteBegin();
 
 	LP_SPRITE sprite = this->graphics->getSprite();
@@ -81,7 +81,7 @@ void RenderSystem::render() {
 	this->graphics->spriteEnd();
 }
 
-void RenderSystem::releaseAll() {
+void Render::releaseAll() {
 	// Get all texture components
 	std::vector<Component::Texture>* componentsPtr =
 		this->manager->getComponents<Component::Texture>();
@@ -95,7 +95,7 @@ void RenderSystem::releaseAll() {
 	System::releaseAll();
 }
 
-void RenderSystem::resetAll() {
+void Render::resetAll() {
 	// Get all texture components
 	std::vector<Component::Texture>* componentsPtr =
 		this->manager->getComponents<Component::Texture>();
