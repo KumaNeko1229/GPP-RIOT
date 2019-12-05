@@ -6,6 +6,11 @@
 #include "texture.h"
 #include "transform.h"
 #include "Collidable.h"
+#include "Player.h"
+#include "Blocker.h"
+#include "Guard.h"
+#include "EliteGuard.h"
+#include "EliteSoldier.h"
 
 namespace Entity {
 
