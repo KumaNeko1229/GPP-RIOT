@@ -1,20 +1,20 @@
-#include "Wall.h"
+#include "HalfwallEntity.h"
 
 namespace Entity {
 
-	ECS::EntityIdType createWallEntity(ECS::Manager* manager, Graphics* graphics, int X, int Y) {
-		ECS::EntityIdType wallId = manager->createEntity<Wall>();
+	ECS::EntityIdType createHalfwallEntity(ECS::Manager* manager, Graphics* graphics, int X, int Y) {
+		ECS::EntityIdType halfwallId = manager->createEntity<Halfwall>();
 		// Create the components
 	// Create texture Component
 		Component::Texture textureComponent = Component::Texture();
 
-		if (!textureComponent.loadTexture(graphics, WALL_IMAGE))
+		if (!textureComponent.loadTexture(graphics, HALFWALL_IMAGE))
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
 		}
 		textureComponent.visible = true;
 		Component::Collidable collidableComponent = Component::Collidable();
-		std::vector<D3DXVECTOR2> corners = { 
+		std::vector<D3DXVECTOR2> corners = {
 			{(float)X * tileWidth, (float)Y * tileHeight},
 			{(float)(X + 1) * tileWidth, (float)Y * tileHeight},
 			{(float)X * tileHeight, (float)(Y + 1) * tileHeight},
@@ -22,14 +22,14 @@ namespace Entity {
 		};
 		collidableComponent.collisionType = Collision::CollisionType::CIRCLE;
 		collidableComponent.corners = corners;
-		collidableComponent.onEnter = [wallId](ECS::Manager* manager, ECS::EntityIdType id) {
-			if (manager->getEntity(id)->isSameType<Entity::Player>() 
-				|| manager->getEntity(id)->isSameType<Entity::Blocker>() 
+		collidableComponent.onEnter = [halfwallId](ECS::Manager* manager, ECS::EntityIdType id) {
+			if (manager->getEntity(id)->isSameType<Entity::Player>()
+				|| manager->getEntity(id)->isSameType<Entity::Blocker>()
 				|| manager->getEntity(id)->isSameType<Entity::Guard>()
 				|| manager->getEntity(id)->isSameType<Entity::EliteGuard>()
 				|| manager->getEntity(id)->isSameType<Entity::EliteSoldier>())
 			{
-				Component::Position wallPos = manager->getEntityComponent<Component::Position>(wallId);
+				Component::Position wallPos = manager->getEntityComponent<Component::Position>(halfwallId);
 				Component::Position entityPos = manager->getEntityComponent<Component::Position>(id);
 				float wallCenX = wallPos.x + (tileWidth / 2);
 				float wallCenY = wallPos.y + (tileHeight / 2);
@@ -62,12 +62,12 @@ namespace Entity {
 		positionComponent.y = posY;
 
 		// Add the components
-		manager->addComponent<Component::Collidable>(wallId, collidableComponent);
-		manager->addComponent<Component::Texture>(wallId, textureComponent);
-		manager->addComponent<Component::Transform>(wallId, transformComponent);
-		manager->addComponent<Component::Position>(wallId, positionComponent);
+		manager->addComponent<Component::Collidable>(halfwallId, collidableComponent);
+		manager->addComponent<Component::Texture>(halfwallId, textureComponent);
+		manager->addComponent<Component::Transform>(halfwallId, transformComponent);
+		manager->addComponent<Component::Position>(halfwallId, positionComponent);
 
-		return wallId;
+		return halfwallId;
 	}
 
 }

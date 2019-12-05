@@ -1,10 +1,10 @@
-#include "Blocker.h"
+#include "BlockerEntity.h"
 
 namespace Entity {
 
 	ECS::EntityIdType createBlockerEntity(ECS::Manager* manager, Graphics* graphics, int x, int y) {
 		ECS::EntityIdType blockerId = manager->createEntity<Blocker>();
-		
+
 		// Create the components
 		// Create texture Component
 		Component::Texture textureComponent = Component::Texture();

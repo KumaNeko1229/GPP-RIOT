@@ -1,4 +1,4 @@
-#include "Pause.h"
+#include "PauseEntity.h"
 
 namespace Entity {
 
@@ -16,7 +16,7 @@ namespace Entity {
 		Component::Position positionComponent = Component::Position();
 		Component::Text textComponent = Component::Text();
 		textComponent.text = "Pause";
-	
+
 		positionComponent.x = pausex;
 		positionComponent.y = pausey;
 		// Add the components

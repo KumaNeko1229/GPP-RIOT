@@ -1,4 +1,4 @@
-#include "EliteGuard.h"
+#include "EliteGuardEntity.h"
 
 namespace Entity {
 

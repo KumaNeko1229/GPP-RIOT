@@ -1,4 +1,4 @@
-#include "Tile.h"
+#include "TileEntity.h"
 
 namespace Entity {
 

@@ -1,10 +1,11 @@
 #pragma once
-#include "entity.h"
-#include "manager.h"
-#include "texture.h"
-#include "transform.h"
+
+#include "Entity.h"
+#include "Manager.h"
 #include "graphics.h"
 #include "constants.h"
+#include "TextureComponent.h"
+#include "TransformComponent.h"
 #include <string>
 
 namespace Entity {

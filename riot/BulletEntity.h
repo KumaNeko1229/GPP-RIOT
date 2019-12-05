@@ -2,13 +2,13 @@
 
 #include "Entity.h"
 #include "Manager.h"
-#include "Physics.h"
-#include "Transform.h"
-#include "Collidable.h"
-#include "Texture.h"
-#include "Animatable.h"
-#include "Position.h"
-#include "Damage.h"
+#include "PhysicsComponent.h"
+#include "TransformComponent.h"
+#include "CollidableComponent.h"
+#include "TextureComponent.h"
+#include "AnimatableComponent.h"
+#include "PositionComponent.h"
+#include "DamageComponent.h"
 
 namespace Entity {
 

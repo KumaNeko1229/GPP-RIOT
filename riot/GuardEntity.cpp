@@ -1,4 +1,4 @@
-#include "Guard.h"
+#include "GuardEntity.h"
 
 namespace Entity {
 

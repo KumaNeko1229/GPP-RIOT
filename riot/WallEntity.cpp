@@ -1,14 +1,14 @@
-#include "Halfwall.h"
+#include "WallEntity.h"
 
 namespace Entity {
 
-	ECS::EntityIdType createHalfwallEntity(ECS::Manager* manager, Graphics* graphics, int X, int Y) {
-		ECS::EntityIdType halfwallId = manager->createEntity<Halfwall>();
+	ECS::EntityIdType createWallEntity(ECS::Manager* manager, Graphics* graphics, int X, int Y) {
+		ECS::EntityIdType wallId = manager->createEntity<Wall>();
 		// Create the components
 	// Create texture Component
 		Component::Texture textureComponent = Component::Texture();
 
-		if (!textureComponent.loadTexture(graphics, HALFWALL_IMAGE))
+		if (!textureComponent.loadTexture(graphics, WALL_IMAGE))
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading player entity texture"));
 		}
@@ -22,14 +22,14 @@ namespace Entity {
 		};
 		collidableComponent.collisionType = Collision::CollisionType::CIRCLE;
 		collidableComponent.corners = corners;
-		collidableComponent.onEnter = [halfwallId](ECS::Manager* manager, ECS::EntityIdType id) {
+		collidableComponent.onEnter = [wallId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Entity::Player>()
 				|| manager->getEntity(id)->isSameType<Entity::Blocker>()
 				|| manager->getEntity(id)->isSameType<Entity::Guard>()
 				|| manager->getEntity(id)->isSameType<Entity::EliteGuard>()
 				|| manager->getEntity(id)->isSameType<Entity::EliteSoldier>())
 			{
-				Component::Position wallPos = manager->getEntityComponent<Component::Position>(halfwallId);
+				Component::Position wallPos = manager->getEntityComponent<Component::Position>(wallId);
 				Component::Position entityPos = manager->getEntityComponent<Component::Position>(id);
 				float wallCenX = wallPos.x + (tileWidth / 2);
 				float wallCenY = wallPos.y + (tileHeight / 2);
@@ -62,12 +62,12 @@ namespace Entity {
 		positionComponent.y = posY;
 
 		// Add the components
-		manager->addComponent<Component::Collidable>(halfwallId, collidableComponent);
-		manager->addComponent<Component::Texture>(halfwallId, textureComponent);
-		manager->addComponent<Component::Transform>(halfwallId, transformComponent);
-		manager->addComponent<Component::Position>(halfwallId, positionComponent);
+		manager->addComponent<Component::Collidable>(wallId, collidableComponent);
+		manager->addComponent<Component::Texture>(wallId, textureComponent);
+		manager->addComponent<Component::Transform>(wallId, transformComponent);
+		manager->addComponent<Component::Position>(wallId, positionComponent);
 
-		return halfwallId;
+		return wallId;
 	}
 
 }

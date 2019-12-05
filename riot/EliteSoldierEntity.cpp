@@ -1,4 +1,4 @@
-#include "EliteSoldier.h"
+#include "EliteSoldierEntity.h"
 
 namespace Entity {
 

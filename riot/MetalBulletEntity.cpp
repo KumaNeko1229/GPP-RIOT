@@ -1,18 +1,19 @@
-#include "RubberBullet.h"
+#include "MetalBulletEntity.h"
 
 namespace Entity {
 
-	ECS::EntityIdType createRubberBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float enemyAngle, float bulletAngle)
+	ECS::EntityIdType createMetalBulletEntity(ECS::Manager* manager, Graphics* graphics, float x, float y, float enemyAngle, float bulletAngle)
 	{
-		ECS::EntityIdType rubberBulletId = manager->createEntity<RubberBullet>();
+		ECS::EntityIdType metalBulletId = manager->createEntity<MetalBullet>();
 
 		// Create the components
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
-		collidableComponent.onEnter = [rubberBulletId](ECS::Manager* manager, ECS::EntityIdType id) {
+		collidableComponent.onEnter = [metalBulletId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Entity::Player>())
 			{
-				manager->getEntityComponent<Component::Damage>(id).health -= 3;
+				manager->getEntityComponent<Component::Damage>(id).health -= 4;
+				manager->removeEntity<Entity::MetalBullet>(metalBulletId);
 			}
 		};
 
@@ -21,7 +22,7 @@ namespace Entity {
 
 		// create the texture component
 		Component::Texture textureComponent = Component::Texture();
-		if (!textureComponent.loadTexture(graphics, RUBBER_BULLET_IMAGE))
+		if (!textureComponent.loadTexture(graphics, METAL_BULLET_IMAGE))
 		{
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error loading bullet entity texture"));
 		}
@@ -64,12 +65,12 @@ namespace Entity {
 		transformComponent.angle = bulletAngle + PI / 2;
 		transformComponent.scale = SCALE_FACTOR * 2;
 
-		manager->addComponent<Component::Position>(rubberBulletId, positionComponent);
-		manager->addComponent<Component::Collidable>(rubberBulletId, collidableComponent);
-		manager->addComponent<Component::Physics>(rubberBulletId, physicsComponent);
-		manager->addComponent<Component::Transform>(rubberBulletId, transformComponent);
-		manager->addComponent<Component::Texture>(rubberBulletId, textureComponent);
+		manager->addComponent<Component::Position>(metalBulletId, positionComponent);
+		manager->addComponent<Component::Collidable>(metalBulletId, collidableComponent);
+		manager->addComponent<Component::Physics>(metalBulletId, physicsComponent);
+		manager->addComponent<Component::Transform>(metalBulletId, transformComponent);
+		manager->addComponent<Component::Texture>(metalBulletId, textureComponent);
 
-		return rubberBulletId;
+		return metalBulletId;
 	}
 }
