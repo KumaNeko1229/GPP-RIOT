@@ -11,6 +11,7 @@
 #include "Guard.h"
 #include "EliteGuard.h"
 #include "EliteSoldier.h"
+#include "CollisionType.h"
 
 namespace Entity {
 
