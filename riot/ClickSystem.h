@@ -5,6 +5,7 @@
 #include "Clickable.h"
 #include "Button.h"
 #include "Pause.h"
+#include "Player.h"
 
 namespace System {
 

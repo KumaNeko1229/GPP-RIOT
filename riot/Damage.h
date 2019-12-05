@@ -9,6 +9,7 @@ namespace Component {
 		int damage = 0;
 		int projectileDistanceLeft = 0;
 		int reductionCounter = 0;
+		bool revive = false;
 	};
 
 }
