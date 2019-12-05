@@ -18,8 +18,12 @@ namespace System {
 
 	void CollisionSystem::initialize() {
 		// Add the collision strategies
-		this->strategies.push_back(new Collision::CircleCircleCollisionStrategy());
 		this->strategies.push_back(new Collision::AABBAABBCollisionStrategy());
+		this->strategies.push_back(new Collision::AABBCircleCollisionStrategy());
+		this->strategies.push_back(new Collision::AABBOBBCollisionStrategy());
+		this->strategies.push_back(new Collision::CircleCircleCollisionStrategy());
+		this->strategies.push_back(new Collision::CircleOBBCollisionStrategy());
+		this->strategies.push_back(new Collision::OBBOBBCollisionStrategy());
 	}
 
 	void CollisionSystem::update(float frameTime) {

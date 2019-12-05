@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="AABBAABBCollisionStrategy.cpp" />
     <ClCompile Include="AABBCircleCollisionStrategy.cpp" />
+    <ClCompile Include="AABBOBBCollisionStrategy.cpp" />
     <ClCompile Include="AnimationSystem.cpp" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
@@ -189,6 +190,7 @@
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h" />
     <ClInclude Include="AABBCircleCollisionStrategy.h" />
+    <ClInclude Include="AABBOBBCollisionStrategy.h" />
     <ClInclude Include="Animatable.h" />
     <ClInclude Include="AnimationSystem.h" />
     <ClInclude Include="Attack.h" />

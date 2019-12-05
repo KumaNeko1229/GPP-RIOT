@@ -51,6 +51,9 @@
     <ClCompile Include="AABBCircleCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="AABBOBBCollisionStrategy.cpp">
+      <Filter>Source Files\Collision</Filter>
+    </ClCompile>
     <ClCompile Include="AnimationSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
@@ -222,6 +225,9 @@
       <Filter>Header Files\Collision</Filter>
     </ClInclude>
     <ClInclude Include="AABBCircleCollisionStrategy.h">
+      <Filter>Header Files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="AABBOBBCollisionStrategy.h">
       <Filter>Header Files\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Animatable.h">
