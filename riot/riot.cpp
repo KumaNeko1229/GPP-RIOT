@@ -62,7 +62,6 @@ void Riot::render()
 void Riot::releaseAll()
 {
 	this->systemRunner.releaseAll();
-	this->manager->releaseAll();
 	SAFE_DELETE(this->manager);
 	Game::releaseAll();
 }
