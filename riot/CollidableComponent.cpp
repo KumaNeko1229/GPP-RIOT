@@ -1,4 +1,4 @@
-#include "Collidable.h"
+#include "CollidableComponent.h"
 
 namespace Component {
 
