@@ -34,6 +34,26 @@ namespace System {
 							//insert systems calling
 
 						}
+						if (textComponent.text == "Spin") {
+							int number = rand() % 100;
+							std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();
+							for (ECS::EntityIdType pid : *playerPtrs)
+							{
+								Component::Damage& damageComponent = this->manager->getEntityComponent<Component::Damage>(pid);
+								if (number <= 0 && number <= 33) {
+									damageComponent.health = 1;
+									//insert system calling
+								}
+								else if (number <= 34 && number <= 66) {
+									damageComponent.health = 10;
+									//insert system calling
+								}
+								else {
+									damageComponent.health = 20;
+									//insert system calling
+								}
+							}
+						}
 					}
 				}
 			}
@@ -45,7 +65,6 @@ namespace System {
 		{
 			Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
 			Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
-			Component::Text& textComponent = this->manager->getEntityComponent<Component::Text>(id);
 			if (input->getMouseLButton()) {
 				if (clickComponent.click == false) {
 					if (input->getMouseX() >= (int)textureComponent.viewableRect.left && input->getMouseX() <= (int)textureComponent.viewableRect.right
