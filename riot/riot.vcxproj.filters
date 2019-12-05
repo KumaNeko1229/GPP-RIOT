@@ -114,6 +114,9 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameStateComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
     <ClCompile Include="graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -325,6 +328,12 @@
     </ClInclude>
     <ClInclude Include="gameError.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateEntity.h">
+      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="graphics.h">
       <Filter>Header Files</Filter>

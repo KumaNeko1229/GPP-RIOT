@@ -46,7 +46,7 @@ const char PAUSE_IMAGE[] = "pause.png";
 const char CLASS_NAME[] = "Riot";
 const char GAME_TITLE[] = "Riot";
 const bool FULLSCREEN = false;              // windowed or fullscreen
-const UINT GAME_WIDTH = 1366;               // width of game in pixels
+const UINT GAME_WIDTH = 1024;               // width of game in pixels
 const UINT GAME_HEIGHT = 768;               // height of game in pixels
 const float SCALE_FACTOR = 1;
 
