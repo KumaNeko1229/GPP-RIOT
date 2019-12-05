@@ -12,8 +12,8 @@
 
 namespace Entity {
 
-	class Button : ECS::Entity {};
+	class Pause : ECS::Entity {};
 
-	ECS::EntityIdType createButtonEntity(ECS::Manager* manager, Graphics* graphics, std::string buttonName, float x, float y);
+	ECS::EntityIdType createPauseEntity(ECS::Manager* manager, Graphics* graphics, float x, float y);
 
 }

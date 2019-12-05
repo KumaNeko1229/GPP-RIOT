@@ -157,11 +157,14 @@
     <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="HUDSystem.cpp" />
     <ClCompile Include="input.cpp" />
+    <ClCompile Include="MainMenuSystem.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="MenuSystem.cpp" />
     <ClCompile Include="MetalBullet.cpp" />
     <ClCompile Include="MovementSystem.cpp" />
     <ClCompile Include="OBBOBBCollisionStrategy.cpp" />
+    <ClCompile Include="Pause.cpp" />
+    <ClCompile Include="PauseMenuSystem.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerAttackSystem.cpp" />
     <ClCompile Include="PlayerMovementSystem.cpp" />
@@ -216,6 +219,7 @@
     <ClInclude Include="HealthBar.h" />
     <ClInclude Include="HUDSystem.h" />
     <ClInclude Include="Life.h" />
+    <ClInclude Include="MainMenuSystem.h" />
     <ClInclude Include="Manager.tpp" />
     <ClInclude Include="input.h" />
     <ClInclude Include="Manager.h" />
@@ -223,6 +227,8 @@
     <ClInclude Include="MetalBullet.h" />
     <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="OBBOBBCollisionStrategy.h" />
+    <ClInclude Include="Pause.h" />
+    <ClInclude Include="PauseMenuSystem.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerAttackSystem.h" />
     <ClInclude Include="PlayerMovementSystem.h" />
