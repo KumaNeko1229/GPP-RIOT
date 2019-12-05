@@ -137,6 +137,7 @@
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
+    <ClCompile Include="CircleOBBCollisionStrategy.cpp" />
     <ClCompile Include="ClickSystem.cpp" />
     <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="Attack.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="CircleOBBCollisionStrategy.h" />
     <ClInclude Include="ClickSystem.h" />
     <ClInclude Include="CircleCircleCollisionStrategy.h" />
     <ClInclude Include="Clickable.h" />

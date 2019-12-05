@@ -29,6 +29,39 @@ char getQuadrant(D3DXVECTOR2& subject, D3DXVECTOR2& reference) {
 		}
 }
 
+// Determines which quadrannt the subject is relative to the
+// reference position vector and based on the xAxisNormal axis
+char getQuadrant(D3DXVECTOR2& subject, D3DXVECTOR2& reference, D3DXVECTOR2& xAxisNormal) {
+	D3DXVECTOR2 yAxisNormal {xAxisNormal.y, -xAxisNormal.x};
+
+	D3DXVECTOR2 relativeVec = subject - reference;
+	float subjectX = D3DXVec2Dot(&relativeVec, &xAxisNormal);
+	float subjectY = D3DXVec2Dot(&relativeVec, &yAxisNormal);
+
+	if (subjectX > 0)
+	{
+		if (subjectY > 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return 4;
+		}
+	}
+	else
+	{
+		if (subjectY > 0)
+		{
+			return 2;
+		}
+		else
+		{
+			return 3;
+		}
+	}
+}
+
 // Calculates the squared distance between two position vectors
 float distance2(D3DXVECTOR2& a, D3DXVECTOR2& b) {
 	D3DXVECTOR2 diffVector = a - b;
