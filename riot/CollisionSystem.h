@@ -10,6 +10,7 @@
 #include "CircleOBBCollisionStrategy.h"
 #include "OBBOBBCollisionStrategy.h"
 #include "Collidable.h"
+#include "Physics.h"
 #include "System.h"
 #include "Manager.h"
 

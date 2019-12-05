@@ -40,6 +40,13 @@ namespace System {
 				Component::Collidable& source = componentsPtr->at(i);
 				Component::Collidable& target = componentsPtr->at(j);
 
+				// Skip checks if the two objects cannot move (do not have physics component)
+				if (!this->manager->entityHasComponent<Component::Physics>(source.entityId) &&
+					!this->manager->entityHasComponent<Component::Physics>(target.entityId))
+				{
+					continue;
+				}
+
 				// Check if the entities are already colliding with each other
 				bool wasColliding =
 					source.collidingWith.find(target.entityId) != source.collidingWith.end();
