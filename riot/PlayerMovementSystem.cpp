@@ -18,25 +18,25 @@ namespace System {
 			// check for WASD to add a velocity to the component
 			if (input->isKeyDown(UP_KEY))
 			{
-				physicsComponent.velocityY = -120.0f;
+				physicsComponent.velocityY = -PLAYER_SPEED * frameTime;
 				transformComponent.angle = UP_ANGLE;
 			}
 
 			if (input->isKeyDown(DOWN_KEY))
 			{
-				physicsComponent.velocityY = 120.0f;
+				physicsComponent.velocityY = PLAYER_SPEED * frameTime;
 				transformComponent.angle = DOWN_ANGLE;
 			}
 
 			if (input->isKeyDown(LEFT_KEY))
 			{
-				physicsComponent.velocityX = -120.0f;
+				physicsComponent.velocityX = -PLAYER_SPEED * frameTime;
 				transformComponent.angle = LEFT_ANGLE;
 			}
 
 			if (input->isKeyDown(RIGHT_KEY))
 			{
-				physicsComponent.velocityX = 120.0f;
+				physicsComponent.velocityX = PLAYER_SPEED * frameTime;
 				transformComponent.angle = RIGHT_ANGLE;
 			}
 		}
