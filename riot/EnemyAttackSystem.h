@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <unordered_map>
+#include <forward_list>
 
 #include "Entity.h"
 #include "System.h"
@@ -14,6 +15,7 @@
 #include "BlockerEntity.h"
 #include "MetalBulletEntity.h"
 #include "RubberBulletEntity.h"
+#include "WallEntity.h"
 
 namespace System {
 
