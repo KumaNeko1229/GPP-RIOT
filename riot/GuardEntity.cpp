@@ -29,6 +29,9 @@ namespace Entity {
 		positionComponent.x = x * tileWidth;
 		positionComponent.y = y * tileHeight;
 
+		// Create the physics component
+		Component::Physics physicsComponent = Component::Physics();
+
 		Component::Animatable animatableComponent = Component::Animatable();
 		animatableComponent.columns = 9;
 		animatableComponent.rows = 3;
@@ -37,6 +40,7 @@ namespace Entity {
 		animatableComponent.endFrame = 13;
 
 		// Add the components
+		manager->addComponent(guardId, physicsComponent);
 		manager->addComponent(guardId, textureComponent);
 		manager->addComponent(guardId, transformComponent);
 		manager->addComponent(guardId, attackComponent);

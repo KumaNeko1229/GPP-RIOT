@@ -8,6 +8,7 @@
 #include "TransformComponent.h"
 #include "AnimatableComponent.h"
 #include "AttackComponent.h"
+#include "CollidableComponent.h"
 #include "PhysicsComponent.h"
 #include "PositionComponent.h"
 #include "DamageComponent.h"

@@ -10,6 +10,7 @@
 #include "manager.h"
 #include "systemRunner.h"
 #include "MovementSystem.h"
+#include "EnemyMovementSystem.h"
 #include "PlayerAttackSystem.h"
 #include "MenuSystem.h"
 #include "CollisionSystem.h"
