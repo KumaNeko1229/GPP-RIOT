@@ -14,16 +14,11 @@
 #include "WallEntity.h"
 #include "PositionComponent.h"
 #include "CollidableComponent.h"
+#include "enemyUtil.h"
 
 namespace System {
 
 	class EnemyMovement : public ECS::System {
-	private:
-		bool inLineOfSight(
-			Component::Position playerPos,
-			Component::Position enemyPos,
-			std::forward_list<Component::Collidable> walls
-		);
 	public:
 		void update(float frameTime);
 	};

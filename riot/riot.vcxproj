@@ -137,6 +137,7 @@
     <ClCompile Include="AnimationSystem.cpp" />
     <ClCompile Include="BulletEntity.cpp" />
     <ClCompile Include="ButtonEntity.cpp" />
+    <ClCompile Include="CameraSystem.cpp" />
     <ClCompile Include="CircleCircleCollisionStrategy.cpp" />
     <ClCompile Include="CircleOBBCollisionStrategy.cpp" />
     <ClCompile Include="ClickSystem.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="EliteSoldierAttackSystem.cpp" />
     <ClCompile Include="EnemyAttackSystem.cpp" />
     <ClCompile Include="EnemyMovementSystem.cpp" />
+    <ClCompile Include="enemyUtil.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GachaSystem.cpp" />
     <ClCompile Include="game.cpp" />
@@ -200,6 +202,7 @@
     <ClInclude Include="AttackComponent.h" />
     <ClInclude Include="BulletEntity.h" />
     <ClInclude Include="ButtonEntity.h" />
+    <ClInclude Include="CameraSystem.h" />
     <ClInclude Include="CircleOBBCollisionStrategy.h" />
     <ClInclude Include="ClickSystem.h" />
     <ClInclude Include="CircleCircleCollisionStrategy.h" />
@@ -220,10 +223,12 @@
     <ClInclude Include="EliteSoldierAttackSystem.h" />
     <ClInclude Include="EnemyAttackSystem.h" />
     <ClInclude Include="EnemyMovementSystem.h" />
+    <ClInclude Include="enemyUtil.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GachaSystem.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateComponent.h" />
     <ClInclude Include="GameStateEntity.h" />
     <ClInclude Include="GameStateSystem.h" />

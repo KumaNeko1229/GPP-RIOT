@@ -16,6 +16,7 @@
 #include "MetalBulletEntity.h"
 #include "RubberBulletEntity.h"
 #include "WallEntity.h"
+#include "enemyUtil.h"
 
 namespace System {
 
