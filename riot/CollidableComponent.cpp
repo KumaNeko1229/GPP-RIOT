@@ -1,6 +1,29 @@
 #include "CollidableComponent.h"
 
 namespace Component {
+	float getPolarAngle(D3DXVECTOR2& vector) {
+		float basicAngle = abs(atan(vector.y / vector.x));
+		if (vector.x > 0 && vector.y > 0)
+		{
+			// First quadrant
+			return basicAngle;
+		}
+		else if (vector.x <= 0 && vector.y > 0)
+		{
+			// Second quadrant
+			return PI - basicAngle;
+		}
+		else if (vector.x <= 0 && vector.y <= 0)
+		{
+			// Third quadrant
+			return -(PI - basicAngle);
+		}
+		else
+		{
+			// Fourth quadrant
+			return -basicAngle;
+		}
+	}
 
 	D3DXVECTOR2 Collidable::getCenter() {
 		D3DXVECTOR2 centerVector {0, 0};
@@ -25,7 +48,10 @@ namespace Component {
 
 		for (size_t i = 0; i < this->corners.size(); i++)
 		{
-			differenceVectors.push_back(this->corners[i] - centerVector);
+			D3DXVECTOR2 differenceVector = this->corners[i] - centerVector;
+			// Flip the y axis because y increases downwards
+			differenceVector.y = -differenceVector.y;
+			differenceVectors.push_back(differenceVector);
 			differenceVectorsIndices.push_back(i);
 		}
 
@@ -34,23 +60,24 @@ namespace Component {
 			differenceVectorsIndices.begin(),
 			differenceVectorsIndices.end(),
 			[&differenceVectors](size_t a, size_t b) {
-				// Compare the angles from the x axis
 				D3DXVECTOR2& vectorA = differenceVectors[a];
 				D3DXVECTOR2& vectorB = differenceVectors[b];
 
-				float aAngle = atan(vectorA.y / vectorA.x);
-				float bAngle = atan(vectorB.y / vectorB.x);
-				return aAngle < bAngle;
+				// Compare the angles from the x axis
+				float aAngle = getPolarAngle(vectorA);
+				float bAngle = getPolarAngle(vectorB);
+				return getPolarAngle(vectorA) > getPolarAngle(vectorB);
 			}
 		);
 
 		// Find the top left corner
 		float shortestDistance = INFINITY;
-		size_t topRightVectorIndex = 0;
-		for (size_t index : differenceVectorsIndices)
+		size_t topLeftVectorIndex = 0;
+		for (size_t i = 0; i < differenceVectorsIndices.size(); i++)
 		{
+			size_t index = differenceVectorsIndices[i];
 			D3DXVECTOR2& vector = differenceVectors[index];
-			float footOfPerpendicularX = (vector.y - vector.x)/2.0f;
+			float footOfPerpendicularX = (vector.x - vector.y)/2.0f;
 			float footOfPerpendicularY = -footOfPerpendicularX;
 
 			float xDiff = footOfPerpendicularX - vector.x;
@@ -67,7 +94,7 @@ namespace Component {
 			else
 			{
 				// Since it is already sorted, we do not need to check further
-				topRightVectorIndex = index - 1;
+				topLeftVectorIndex = i - 1;
 				break;
 			}
 		}
@@ -75,16 +102,17 @@ namespace Component {
 		// Create the sorted corners
 		std::vector<D3DXVECTOR2> sortedCorners;
 		sortedCorners.reserve(this->corners.size());
+		sortedCorners.resize(this->corners.size());
 		for (size_t i = 0; i < this->corners.size(); i++)
 		{
 			// Start from top right vector index and wrap around
-			size_t index = topRightVectorIndex + i;
+			size_t index = topLeftVectorIndex + i;
 			if (index >= this->corners.size())
 			{
 				index -= this->corners.size();
 			}
 
-			sortedCorners[i] = this->corners[index];
+			sortedCorners[i] = this->corners[differenceVectorsIndices[index]];
 		}
 
 		return sortedCorners;

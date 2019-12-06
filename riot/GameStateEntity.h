@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include "Manager.h"
 #include "GameStateComponent.h"
+#include "PositionComponent.h"
 
 namespace Entity {
 

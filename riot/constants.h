@@ -30,7 +30,14 @@
 //-----------------------------------------------
 // graphic images
 const char PLAYER_IMAGE[] = "player.png";
+
 const char ENEMY_IMAGE[] = "enemy.png";
+const int ENEMY_IMAGE_COLS = 9;
+const int ENEMY_IMAGE_ROWS = 3;
+const int ENEMY_BLOCKER_FRAME = 18;
+const int ENEMY_BLOCKER_NOSHEILD_WALK_START = 16;
+const int ENEMY_BLOCKER_NOSHEILD_WALK_END = 17;
+
 const char MAP_IMAGE[] = "map.png";
 const char BULLET_IMAGE[] = "bullets.png";
 const char FLOOR_IMAGE[] = "floor.png";

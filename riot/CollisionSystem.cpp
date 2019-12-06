@@ -64,7 +64,7 @@ namespace System {
 					source.onStay(this->manager, target.entityId, frameTime);
 					target.onStay(this->manager, source.entityId, frameTime);
 				}
-				else
+				else if (wasColliding && !isColliding)
 				{
 					source.collidingWith.erase(target.entityId);
 					target.collidingWith.erase(source.entityId);

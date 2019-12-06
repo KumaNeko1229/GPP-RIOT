@@ -40,6 +40,19 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	Component::Attack attackComponent = Component::Attack();
 	attackComponent.interval = 0.1;
 
+	// Create the collision component
+	int playerWidth = textureComponent.totalWidth / animatableComponent.columns;
+	int playerHeight = textureComponent.totalHeight / animatableComponent.rows;
+	Component::Collidable collidableComponent = Component::Collidable();
+	std::vector<D3DXVECTOR2> corners = {
+		{(float) x * tileWidth, (float) y * tileHeight},
+		{(float) x * tileWidth + playerWidth, (float) y * tileHeight},
+		{(float) x * tileWidth, (float) y * tileHeight + playerHeight},
+		{(float) x * tileWidth + playerWidth, (float) y * tileHeight + playerHeight}
+	};
+	collidableComponent.collisionType = CollisionUtil::CollisionType::AABB;
+	collidableComponent.corners = corners;
+
 	// Create the damage component
 	Component::Damage damageComponent = Component::Damage();
 	damageComponent.health = 20;
@@ -47,6 +60,7 @@ ECS::EntityIdType createPlayerEntity(ECS::Manager* manager, Graphics* graphics, 
 	// Add the components
 	manager->addComponent<Component::Texture>(playerId, textureComponent);
 	manager->addComponent<Component::Transform>(playerId, transformComponent);
+	manager->addComponent<Component::Collidable>(playerId, collidableComponent);
 	manager->addComponent<Component::Animatable>(playerId, animatableComponent);
 	manager->addComponent<Component::Position>(playerId, positionComponent);
 	manager->addComponent<Component::Physics>(playerId, physicsComponent);
