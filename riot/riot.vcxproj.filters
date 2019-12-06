@@ -106,7 +106,7 @@
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
     <ClCompile Include="GachaSystem.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="GachaSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -194,12 +194,6 @@
     </ClCompile>
     <ClCompile Include="SystemRunner.cpp">
       <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="TearGas.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TearGas.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TearGasEntity.cpp">
       <Filter>Source Files\Entity</Filter>
@@ -356,12 +350,6 @@
     <ClInclude Include="GuardEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Halfwall.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="Halfwall.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="HalfwallEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -388,9 +376,6 @@
     </ClInclude>
     <ClInclude Include="MenuSystem.h">
       <Filter>Header Files\System</Filter>
-    </ClInclude>
-    <ClInclude Include="MetalBullet.h">
-      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="MetalBulletEntity.h">
       <Filter>Header Files\Entity</Filter>
@@ -431,9 +416,6 @@
     <ClInclude Include="riot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RubberBullet.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="RubberBulletEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -442,12 +424,6 @@
     </ClInclude>
     <ClInclude Include="SystemRunner.h">
       <Filter>Header Files\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="TearGas.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="TearGas.h">
-      <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="TearGas.h">
       <Filter>Header Files\Entity</Filter>
