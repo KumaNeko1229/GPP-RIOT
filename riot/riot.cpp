@@ -35,12 +35,12 @@ void Riot::initialize(HWND hwnd)
 	this->systemRunner.registerSystem(new System::EnemyMovement());
 	this->systemRunner.registerSystem(new System::PlayerAttack());
 	this->systemRunner.registerSystem(new System::EnemyAttack());
-	//this->systemRunner.registerSystem(new System::HUD());
-
-	//this->systemRunner.registerSystem(new System::MainMenu());
+	this->systemRunner.registerSystem(new System::HUD());
+	this->systemRunner.registerSystem(new System::MainMenu());
+	this->systemRunner.registerSystem(new System::PauseMenu());
 	this->systemRunner.registerSystem(new System::Render());
-	//this->systemRunner.registerSystem(new System::TextSystem());
-	//this->systemRunner.registerSystem(new System::ClickSystem());
+	this->systemRunner.registerSystem(new System::TextSystem());
+	this->systemRunner.registerSystem(new System::ClickSystem());
 
 
 	this->systemRunner.initialize(this->manager, this->graphics, this->input);
