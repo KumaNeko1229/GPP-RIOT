@@ -13,6 +13,7 @@ namespace Entity {
 
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
+
 		collidableComponent.collisionType = CollisionUtil::CollisionType::CIRCLE;
 		collidableComponent.onEnter = [bulletId, damageComponent](ECS::Manager* manager, ECS::EntityIdType id) {
 			manager->getEntityComponent<Component::Damage>(id).health -= damageComponent.damage;
