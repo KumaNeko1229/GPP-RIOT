@@ -49,6 +49,7 @@ const char METAL_BULLET_IMAGE[] = "metalBullet.png";
 const char MENU_IMAGE[] = "menu.png";
 const char PAUSE_IMAGE[] = "pause.png";
 const char BUTTON_IMAGE[] = "buttonbackground.png";
+const char GACHA_IMAGE[] = "gachasystem.png";
 
 // window
 const char CLASS_NAME[] = "Riot";

@@ -152,6 +152,7 @@
     <ClCompile Include="EnemyAttackSystem.cpp" />
     <ClCompile Include="EnemyMovementSystem.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GachaEntity.cpp" />
     <ClCompile Include="GachaSystem.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="GameStateComponent.cpp" />
@@ -231,6 +232,7 @@
     <ClInclude Include="GuardEntity.h" />
     <ClInclude Include="GuardAttackSystem.h" />
     <ClInclude Include="HalfwallEntity.h" />
+    <ClInclude Include="GachaEntity.h" />
     <ClInclude Include="HealthBarEntity.h" />
     <ClInclude Include="HUDSystem.h" />
     <ClInclude Include="LifeComponent.h" />
@@ -268,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\buttonbackground.png" />
+    <Image Include="..\..\..\gachasystem.png" />
     <Image Include="bullets.png" />
     <Image Include="enemy.png" />
     <Image Include="floor.png" />

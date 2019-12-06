@@ -14,9 +14,6 @@ namespace System {
 	class MainMenu : public ECS::System {
 	private:
 		Component::Texture textureComponent;
-		Component::Text starttextComponent;
-		Component::Text creditstextComponent;
-		Component::Text quittextComponent;
 		Component::Text textComponent;
 
 	public:

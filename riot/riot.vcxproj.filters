@@ -225,6 +225,9 @@
     <ClCompile Include="GachaSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="GachaEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -437,9 +440,6 @@
     <ClInclude Include="TearGas.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="TearGas.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="TearGasEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -468,6 +468,9 @@
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
     <ClInclude Include="WallEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="GachaEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>
@@ -509,6 +512,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\..\..\buttonbackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\gachasystem.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
