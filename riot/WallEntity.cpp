@@ -5,7 +5,7 @@ namespace Entity {
 	ECS::EntityIdType createWallEntity(ECS::Manager* manager, Graphics* graphics, int X, int Y) {
 		ECS::EntityIdType wallId = manager->createEntity<Wall>();
 		// Create the components
-	// Create texture Component
+		// Create texture Component
 		Component::Texture textureComponent = Component::Texture();
 
 		if (!textureComponent.loadTexture(graphics, WALL_IMAGE))
@@ -17,10 +17,10 @@ namespace Entity {
 		std::vector<D3DXVECTOR2> corners = {
 			{(float)X * tileWidth, (float)Y * tileHeight},
 			{(float)(X + 1) * tileWidth, (float)Y * tileHeight},
-			{(float)X * tileHeight, (float)(Y + 1) * tileHeight},
+			{(float)X * tileWidth, (float)(Y + 1) * tileHeight},
 			{(float)(X + 1) * tileWidth, (float)(Y + 1) * tileHeight}
 		};
-		collidableComponent.collisionType = CollisionUtil::CollisionType::CIRCLE;
+		collidableComponent.collisionType = CollisionUtil::CollisionType::AABB;
 		collidableComponent.corners = corners;
 		collidableComponent.onEnter = [wallId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Entity::Player>()
