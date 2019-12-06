@@ -150,6 +150,7 @@
     <ClCompile Include="BlockerAttackSystem.cpp" />
     <ClCompile Include="EliteSoldierAttackSystem.cpp" />
     <ClCompile Include="EnemyAttackSystem.cpp" />
+    <ClCompile Include="EnemyMovementSystem.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GachaSystem.cpp" />
     <ClCompile Include="game.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="BlockerAttackSystem.h" />
     <ClInclude Include="EliteSoldierAttackSystem.h" />
     <ClInclude Include="EnemyAttackSystem.h" />
+    <ClInclude Include="EnemyMovementSystem.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GachaSystem.h" />
     <ClInclude Include="game.h" />

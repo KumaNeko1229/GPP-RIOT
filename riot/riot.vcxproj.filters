@@ -102,6 +102,9 @@
     <ClCompile Include="EnemyAttackSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyMovementSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
@@ -312,6 +315,9 @@
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
     <ClInclude Include="EnemyAttackSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMovementSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
