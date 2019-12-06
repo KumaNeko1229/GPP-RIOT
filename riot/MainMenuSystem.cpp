@@ -52,12 +52,6 @@ namespace System {
 			textureComponent.filter);
 
 		textComponent.font->print("RIOT", (GAME_WIDTH / 3) + 50, GAME_HEIGHT / 4);
-
-		float buttonx = GAME_WIDTH / 2;
-		float startbuttony = GAME_HEIGHT / 2 + (GAME_HEIGHT / 2) / 4;
-		float creditsbuttony = GAME_HEIGHT / 2 + ((GAME_HEIGHT / 2) / 4) * 2;
-		float quitbuttony = GAME_HEIGHT / 2 + ((GAME_HEIGHT / 2) / 4) * 3;
-
 		this->graphics->spriteEnd();
 	}
 

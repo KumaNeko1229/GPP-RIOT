@@ -26,20 +26,19 @@ void Riot::initialize(HWND hwnd)
 	// TODO: Create the systems and register them to the manager
 
 	this->systemRunner.registerSystem(new System::GameState());
-	/*this->systemRunner.registerSystem(new System::Menu());
-	this->systemRunner.registerSystem(new System::Animation());
-	this->systemRunner.registerSystem(new System::Collision());
-	this->systemRunner.registerSystem(new System::Render());
-	this->systemRunner.registerSystem(new System::Movement());
-	this->systemRunner.registerSystem(new System::PlayerMovement());
-	this->systemRunner.registerSystem(new System::PlayerAttack());
-	this->systemRunner.registerSystem(new System::HUD());*/
-	
-	this->systemRunner.registerSystem(new System::MainMenu());
+	//this->systemRunner.registerSystem(new System::Menu());
+	//this->systemRunner.registerSystem(new System::Animation());
+	//this->systemRunner.registerSystem(new System::Collision());
+	//this->systemRunner.registerSystem(new System::Render());
+	//this->systemRunner.registerSystem(new System::Movement());
+	//this->systemRunner.registerSystem(new System::PlayerMovement());
+	//this->systemRunner.registerSystem(new System::PlayerAttack());
+	//this->systemRunner.registerSystem(new System::HUD());
+
+	this->systemRunner.registerSystem(new System::PauseMenu());
 	this->systemRunner.registerSystem(new System::Render());
 	this->systemRunner.registerSystem(new System::TextSystem());
 	this->systemRunner.registerSystem(new System::ClickSystem());
-
 
 	this->systemRunner.initialize(this->manager, this->graphics, this->input);
 }

@@ -25,9 +25,7 @@ namespace System {
 		for (ECS::EntityIdType id : *buttonPtrs)
 		{
 			Component::Text textComponent = this->manager->getEntityComponent<Component::Text>(id);
-
-			textComponent.font->onLostDevice();
-			return;
+			SAFE_DELETE(textComponent.font);
 		}
 	}
 

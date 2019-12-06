@@ -30,7 +30,7 @@ namespace Entity {
 		textComponent.font = new TextDX();
 		textComponent.text = buttonName;
 		textComponent.fontsize = fontsize;
-		textComponent.fontx = buttonx + 30;
+		textComponent.fontx = buttonx + 25;
 		textComponent.fonty = buttony + 20;
 		textComponent.font->setFontColor(graphicsNS::BLACK);
 		if (textComponent.font->initialize(graphics, textComponent.fontsize, false, false, "Arial") == false)

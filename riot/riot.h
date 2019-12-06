@@ -17,6 +17,7 @@
 #include "MainMenuSystem.h"
 #include "ClickSystem.h"
 #include "TextSystem.h"
+#include "PauseMenuSystem.h"
 
 //=============================================================================
 // Create game class

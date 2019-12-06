@@ -15,16 +15,7 @@ namespace System {
 		}
 	}
 
-	void HUD::releaseAll() {
-		std::vector<Component::Texture>* componentsPtr =
-			this->manager->getComponents<Component::Texture>();
-
-		// Release textures
-		for (Component::Texture textureComponent : *componentsPtr)
-		{
-			SAFE_RELEASE(textureComponent.texture);
-		}
-	}
+	void HUD::releaseAll() {};
 
 	void HUD::resetAll() {};
 
