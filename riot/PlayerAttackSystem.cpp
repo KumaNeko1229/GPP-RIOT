@@ -32,7 +32,7 @@ namespace System {
 					if (xDiff < 0)
 					{
 						const int ySign = (yDiff < 0) ? -1 : 1;
-						bulletAngle = atan(yDiff / xDiff) + PI * ySign;
+						bulletAngle = atan(yDiff / xDiff) + PI * ySign; // reverse the angle to ensure it lies on the correct side of the screen
 					}
 
 					// in case the division to get the centre returns a 0.5

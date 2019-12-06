@@ -34,7 +34,7 @@ namespace System {
 				lifeComponent.timeToLive = 4;
 
 				manager->addComponent(id, lifeComponent);
-				damageComponent.reductionCounter = 1;
+				damageComponent.reductionCounter = 1; // counter to ensure it does not re-attach a new life component
 			}
 		}
 	}

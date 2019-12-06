@@ -25,12 +25,22 @@ namespace Entity {
 		Component::Position positionComponent = Component::Position();
 		positionComponent.x = x * tileWidth;
 		positionComponent.y = y * tileHeight;
+
+		Component::Animatable animatableComponent = Component::Animatable();
+		animatableComponent.columns = 9;
+		animatableComponent.rows = 3;
+		animatableComponent.currentFrame = 11;
+		animatableComponent.startFrame = 11;
+		animatableComponent.endFrame = 11;
+
 		// Add the components
 		manager->addComponent(eliteGuardId, textureComponent);
 		manager->addComponent(eliteGuardId, transformComponent);
 		manager->addComponent(eliteGuardId, attackComponent);
 		manager->addComponent(eliteGuardId, damageComponent);
 		manager->addComponent(eliteGuardId, positionComponent);
+		manager->addComponent(eliteGuardId, animatableComponent);
+
 		return eliteGuardId;
 	}
 }
