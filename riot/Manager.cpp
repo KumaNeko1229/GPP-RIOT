@@ -6,6 +6,10 @@ Entity* Manager::getEntity(EntityIdType id) {
 	return this->entities.at(id);
 }
 
+std::unordered_set<EntityIdType>* Manager::getEntities(Types::TypeId entityType) {
+	return this->entityFamilies.at(entityType);
+}
+
 void Manager::removeEntity(EntityIdType id, Types::TypeId entityTypeId) {
 	// Remove the entity's components
 	std::unordered_map<Types::TypeId, int>* componentMap = this->entityComponents.at(id);
