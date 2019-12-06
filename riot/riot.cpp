@@ -34,6 +34,7 @@ void Riot::initialize(HWND hwnd)
 	this->systemRunner.registerSystem(new System::PlayerMovement());
 	this->systemRunner.registerSystem(new System::EnemyMovement());
 	this->systemRunner.registerSystem(new System::PlayerAttack());
+	this->systemRunner.registerSystem(new System::EnemyAttack());
 	//this->systemRunner.registerSystem(new System::HUD());
 
 	//this->systemRunner.registerSystem(new System::MainMenu());
