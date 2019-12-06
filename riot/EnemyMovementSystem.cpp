@@ -52,10 +52,6 @@ namespace System {
 
 			// Check using bottom left corner
 			float y = gradient * (bottomLeftCorner.x - playerPos.x) + playerPos.y;
-			if (gradient >= INFINITY)
-			{
-				y = sortedCorners[0].y;
-			}
 			float x = (bottomLeftCorner.y - playerPos.y)/gradient + playerPos.x;
 
 			// Check if the x intersects the bottom of the wall
@@ -65,14 +61,14 @@ namespace System {
 			}
 
 			// Check if the y intersects the left of the wall
-			if (sortedCorners[0].y <= y && y <= sortedCorners[3].y)
+			if (gradient < INFINITY && sortedCorners[0].y <= y && y <= sortedCorners[3].y)
 			{
 				return false;
 			}
 
 			// Calculate the new x for the right of the wall
 			y = gradient * (topRightCorner.x - playerPos.x) + playerPos.y;
-			if (sortedCorners[1].y < y && y < sortedCorners[2].y)
+			if (gradient < INFINITY && sortedCorners[1].y < y && y < sortedCorners[2].y)
 			{
 				return false;
 			}
@@ -119,7 +115,7 @@ namespace System {
 						D3DXVec2Normalize(&normMovementVector, &movementVector);
 
 						// Set the new velocity
-						normMovementVector *= ENEMY_SPEED * frameTime;
+						normMovementVector *= ENEMY_SPEED;
 						enemyPhysics.velocityX = normMovementVector.x;
 						enemyPhysics.velocityY = normMovementVector.y;
 					}

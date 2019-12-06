@@ -74,8 +74,8 @@ const int tileWidth = 48;
 const int visibleX = GAME_WIDTH / tileWidth;
 const int visibleY = GAME_HEIGHT / tileHeight;
 
-const float PLAYER_SPEED = 10000.0f;
-const float ENEMY_SPEED = 10000.0f;
+const float PLAYER_SPEED = 150.0f;
+const float ENEMY_SPEED = 150.0f;
 
 // key mappings
 // In this game simple constants are used for key mappings. If variables were used
