@@ -10,8 +10,29 @@ namespace System {
 		{
 			Component::Position& positionComponent = manager->getEntityComponent<Component::Position>(physicsComponent.entityId);
 
-			positionComponent.x += physicsComponent.velocityX * frameTime * SCALE_FACTOR;
-			positionComponent.y += physicsComponent.velocityY * frameTime * SCALE_FACTOR;
+			float xOffset = physicsComponent.velocityX * frameTime * SCALE_FACTOR;
+			float yOffset = physicsComponent.velocityY * frameTime * SCALE_FACTOR;
+
+			if (xOffset == 0 && yOffset == 0)
+			{
+				continue;
+			}
+
+			positionComponent.x += xOffset;
+			positionComponent.y += yOffset;
+
+			// Update the collision component if the entity has one
+			if (this->manager->entityHasComponent<Component::Collidable>(physicsComponent.entityId))
+			{
+				Component::Collidable& collidableComponent =
+					this->manager->getEntityComponent<Component::Collidable>(physicsComponent.entityId);
+
+				for (D3DXVECTOR2& cornerVector : collidableComponent.corners)
+				{
+					cornerVector.x += xOffset;
+					cornerVector.y += yOffset;
+				}
+			}
 
 			if (manager->getEntity(physicsComponent.entityId)->isSameType<Entity::TearGas>())
 			{
