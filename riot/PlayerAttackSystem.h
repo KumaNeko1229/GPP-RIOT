@@ -9,6 +9,7 @@
 #include "BulletEntity.h"
 #include "PlayerEntity.h"
 #include "AttackComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

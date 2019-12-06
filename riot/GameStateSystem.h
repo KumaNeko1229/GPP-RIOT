@@ -6,6 +6,7 @@
 #include "GameStateComponent.h"
 #include "PositionComponent.h"
 #include "PlayerEntity.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

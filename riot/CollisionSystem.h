@@ -13,6 +13,7 @@
 #include "OBBOBBCollisionStrategy.h"
 #include "CollidableComponent.h"
 #include "PhysicsComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

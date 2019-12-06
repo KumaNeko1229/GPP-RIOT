@@ -6,6 +6,7 @@
 #include "Manager.h"
 #include "AnimatableComponent.h"
 #include "TextureComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

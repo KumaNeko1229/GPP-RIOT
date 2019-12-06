@@ -8,6 +8,7 @@
 #include "BlockerEntity.h"
 #include "EliteGuardEntity.h"
 #include "EliteSoldierEntity.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

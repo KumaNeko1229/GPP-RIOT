@@ -15,6 +15,7 @@
 #include "PositionComponent.h"
 #include "CollidableComponent.h"
 #include "enemyUtil.h"
+#include "GameStateComponent.h"
 
 namespace System {
 
