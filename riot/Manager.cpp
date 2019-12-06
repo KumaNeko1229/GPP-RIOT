@@ -7,6 +7,15 @@ Entity* Manager::getEntity(EntityIdType id) {
 }
 
 std::unordered_set<EntityIdType>* Manager::getEntities(Types::TypeId entityType) {
+	if (this->entityFamilies.find(entityType) == this->entityFamilies.end())
+	{
+		// Add an empty set with the entityType if it does not exist
+		std::unordered_set<EntityIdType>* emptySet = new std::unordered_set<EntityIdType>();
+		std::pair<Types::TypeId, std::unordered_set<EntityIdType>*> emptyRecord
+			(entityType, emptySet);
+		this->entityFamilies.insert(emptyRecord);
+	}
+
 	return this->entityFamilies.at(entityType);
 }
 
