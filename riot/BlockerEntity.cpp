@@ -40,6 +40,13 @@ namespace Entity {
 			}
 		};
 
+		Component::Animatable animatableComponent = Component::Animatable();
+		animatableComponent.columns = 9;
+		animatableComponent.rows = 3;
+		animatableComponent.currentFrame = 18;
+		animatableComponent.startFrame = 18;
+		animatableComponent.endFrame = 18;
+
 		// Add the components
 		manager->addComponent(blockerId, textureComponent);
 		manager->addComponent(blockerId, transformComponent);
@@ -47,6 +54,7 @@ namespace Entity {
 		manager->addComponent(blockerId, attackComponent);
 		manager->addComponent(blockerId, damageComponent);
 		manager->addComponent(blockerId, positionComponent);
+		manager->addComponent(blockerId, animatableComponent);
 
 		return blockerId;
 	}

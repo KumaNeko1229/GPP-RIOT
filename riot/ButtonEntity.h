@@ -14,6 +14,6 @@ namespace Entity {
 
 	class Button : ECS::Entity {};
 
-	ECS::EntityIdType createButtonEntity(ECS::Manager* manager, Graphics* graphics, std::string buttonName, float x, float y);
+	ECS::EntityIdType createButtonEntity(ECS::Manager* manager, Graphics* graphics, std::string buttonName, float x, float y, float fontsize);
 
 }

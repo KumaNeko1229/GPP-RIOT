@@ -7,6 +7,7 @@ void SystemRunner::registerSystem(System* system) {
 }
 
 void SystemRunner::initialize(Manager* manager, Graphics* graphics, Input* input) {
+	this->graphics = graphics;
 	for (ECS::System* systemPtr : this->getSystems()) {
 		systemPtr->initialize(manager, graphics, input);
 	}
@@ -19,9 +20,11 @@ void SystemRunner::update(float frameTime) {
 }
 
 void SystemRunner::render() {
+	this->graphics->beginScene();
 	for (ECS::System* systemPtr : this->getSystems()) {
 		systemPtr->render();
 	}
+	this->graphics->endScene();
 }
 
 void SystemRunner::releaseAll() {

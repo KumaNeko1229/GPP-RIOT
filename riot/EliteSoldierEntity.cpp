@@ -29,6 +29,13 @@ namespace Entity {
 		// Create the physics component
 		Component::Physics physicsComponent = Component::Physics();
 
+		Component::Animatable animatableComponent = Component::Animatable();
+		animatableComponent.columns = 9;
+		animatableComponent.rows = 3;
+		animatableComponent.currentFrame = 8;
+		animatableComponent.startFrame = 8;
+		animatableComponent.endFrame = 8;
+
 		// Add the components
 		manager->addComponent(eliteSoldierId, textureComponent);
 		manager->addComponent(eliteSoldierId, physicsComponent);
@@ -36,6 +43,7 @@ namespace Entity {
 		manager->addComponent(eliteSoldierId, attackComponent);
 		manager->addComponent(eliteSoldierId, damageComponent);
 		manager->addComponent(eliteSoldierId, positionComponent);
+		manager->addComponent(eliteSoldierId, animatableComponent);
 
 		return eliteSoldierId;
 	}

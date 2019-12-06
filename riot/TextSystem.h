@@ -12,7 +12,7 @@
 
 namespace System {
 
-	class Text : ECS::System {
+	class TextSystem : public ECS::System {
 
 	public:
 		void initialize(ECS::Manager* manager, Graphics* graphics);

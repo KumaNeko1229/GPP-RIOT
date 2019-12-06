@@ -15,7 +15,7 @@ namespace System {
 	class PauseMenu : public ECS::System {
 
 	public:
-		void render(ECS::Manager* manager);
+		void update(ECS::Manager* manager);
 
 	};
 

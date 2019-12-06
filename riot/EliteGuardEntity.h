@@ -11,6 +11,7 @@
 #include "AnimatableComponent.h"
 #include "PositionComponent.h"
 #include "DamageComponent.h"
+#include "AnimatableComponent.h"
 
 namespace Entity {
 

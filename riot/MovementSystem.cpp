@@ -36,9 +36,7 @@ namespace System {
 
 			if (manager->getEntity(physicsComponent.entityId)->isSameType<Entity::TearGas>())
 			{
-				manager->getEntityComponent<Component::Damage>(physicsComponent.entityId).projectileDistanceLeft -= sqrt(
-					pow((physicsComponent.velocityX * frameTime * SCALE_FACTOR), 2) + pow((physicsComponent.velocityY * frameTime * SCALE_FACTOR), 2)
-				);
+				manager->getEntityComponent<Component::Damage>(physicsComponent.entityId).projectileDistanceLeft -= (pow((physicsComponent.velocityX * frameTime * SCALE_FACTOR), 2) + pow((physicsComponent.velocityY * frameTime * SCALE_FACTOR), 2));
 			}
 		}
 	}
