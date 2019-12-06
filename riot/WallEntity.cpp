@@ -15,10 +15,10 @@ namespace Entity {
 		textureComponent.visible = true;
 		Component::Collidable collidableComponent = Component::Collidable();
 		std::vector<D3DXVECTOR2> corners = {
-			{(float)X * tileWidth, (float)Y * tileHeight},
-			{(float)(X + 1) * tileWidth, (float)Y * tileHeight},
-			{(float)X * tileWidth, (float)(Y + 1) * tileHeight},
-			{(float)(X + 1) * tileWidth, (float)(Y + 1) * tileHeight}
+			{(float)(X - 0.5) * tileWidth, (float)(Y - 0.5) * tileHeight},
+			{(float)(X + 0.5) * tileWidth, (float)(Y - 0.5) * tileHeight},
+			{(float)(X - 0.5) * tileWidth, (float)(Y + 0.5) * tileHeight},
+			{(float)(X + 0.5) * tileWidth, (float)(Y + 0.5) * tileHeight}
 		};
 		collidableComponent.collisionType = CollisionUtil::CollisionType::AABB;
 		collidableComponent.corners = corners;

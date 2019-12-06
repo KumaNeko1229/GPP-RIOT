@@ -1,4 +1,5 @@
 #pragma once
+#include <unordered_set>
 
 #include "System.h"
 #include "Manager.h"
@@ -9,10 +10,10 @@
 
 namespace System {
 
-	class Click : public ECS::System {
+	class ClickSystem : public ECS::System {
 
 	public:
-		void update();
+		void update(float frametime);
 
 	};
 

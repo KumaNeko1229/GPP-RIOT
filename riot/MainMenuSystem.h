@@ -12,10 +12,14 @@
 namespace System {
 
 	class MainMenu : public ECS::System {
+	private:
+		Component::Texture textureComponent;
+		Component::Text textComponent;
 
 	public:
-		void render(ECS::Manager* manager);
-
+		void initialize(ECS::Manager* manager, Graphics* graphics, Input* input);
+		void render();
+		void update(float frametime);
 	};
 
 }

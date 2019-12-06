@@ -10,6 +10,7 @@ namespace ECS {
 class SystemRunner {
 	private:
 		std::vector<System*> systems;
+		Graphics* graphics;
 
 	public:
 		SystemRunner() {};

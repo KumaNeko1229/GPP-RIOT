@@ -1,40 +1,44 @@
 #include "ClickSystem.h"
 
 namespace System {
-	void Click::update() {
 
+	void ClickSystem::update(float frameTime)
+	{
 		std::unordered_set<ECS::EntityIdType>* buttonPtrs = this->manager->getEntities<Entity::Button>();
 
-		for (ECS::EntityIdType id : *buttonPtrs)
-		{
-			Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
-			Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
-			Component::Text& textComponent = this->manager->getEntityComponent<Component::Text>(id);
-			if (input->getMouseLButton()) {
+		if (input->getMouseLButton()) {
+			for (ECS::EntityIdType id : *buttonPtrs)
+			{
+				Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
+				Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
+				Component::Position& positionComponent = this->manager->getEntityComponent<Component::Position>(id);
+				Component::Transform& transformComponent = this->manager->getEntityComponent<Component::Transform>(id);
+
+				Component::Text& textComponent = this->manager->getEntityComponent<Component::Text>(id);
 				if (clickComponent.click == false) {
-					if (input->getMouseX() >= (int)textureComponent.viewableRect.left && input->getMouseX() <= (int)textureComponent.viewableRect.right 
-						&& input->getMouseY() >= (int)textureComponent.viewableRect.top && input->getMouseY() <= (int)textureComponent.viewableRect.bottom) {
+					if ((input->getMouseX() > (float)positionComponent.x) && (input->getMouseX() < ((float)positionComponent.x + ((float)textureComponent.totalWidth * transformComponent.scale)))
+						&& (input->getMouseY() > (float)positionComponent.y) && (input->getMouseY() < ((float)positionComponent.y + ((float)textureComponent.totalHeight * transformComponent.scale)))) {
 						clickComponent.click = true;
 						if (textComponent.text == "Start") {
 							//insert systems calling
 						}
-						if (textComponent.text == "Credits") {
+						else if (textComponent.text == "Credits") {
 							//insert systems calling
 
 						}
-						if (textComponent.text == "Quit") {
+						else if (textComponent.text == "Quit") {
+							//insert systems calling
+							PostQuitMessage(0);
+						}
+						else if (textComponent.text == "Resume") {
 							//insert systems calling
 
 						}
-						if (textComponent.text == "Resume") {
+						else if (textComponent.text == "Back to Menu") {
 							//insert systems calling
 
 						}
-						if (textComponent.text == "Back to Menu") {
-							//insert systems calling
-
-						}
-						if (textComponent.text == "Spin") {
+						else {
 							int number = rand() % 100;
 							std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();
 							for (ECS::EntityIdType pid : *playerPtrs)
@@ -60,22 +64,22 @@ namespace System {
 			input->setMouseLButton(FALSE);
 		}
 
-		std::unordered_set<ECS::EntityIdType>* pausePtrs = this->manager->getEntities<Entity::Pause>();
-		for (ECS::EntityIdType id : *buttonPtrs)
-		{
-			Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
-			Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
-			if (input->getMouseLButton()) {
-				if (clickComponent.click == false) {
-					if (input->getMouseX() >= (int)textureComponent.viewableRect.left && input->getMouseX() <= (int)textureComponent.viewableRect.right
-						&& input->getMouseY() >= (int)textureComponent.viewableRect.top && input->getMouseY() <= (int)textureComponent.viewableRect.bottom) {
-						clickComponent.click = true;
-						//call Pause system
-					}
-				}
-			}
-			input->setMouseLButton(FALSE);
-		}
+		//std::unordered_set<ECS::EntityIdType>* pausePtrs = this->manager->getEntities<Entity::Pause>();
+		//for (ECS::EntityIdType id : *buttonPtrs)
+		//{
+		//	Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
+		//	Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
+		//	if (input->getMouseLButton()) {
+		//		if (clickComponent.click == false) {
+		//			if (input->getMouseX() >= (int)textureComponent.viewableRect.left && input->getMouseX() <= (int)textureComponent.viewableRect.right
+		//				&& input->getMouseY() >= (int)textureComponent.viewableRect.top && input->getMouseY() <= (int)textureComponent.viewableRect.bottom) {
+		//				clickComponent.click = true;
+		//				//call Pause system
+		//			}
+		//		}
+		//	}
+		//	input->setMouseLButton(FALSE);
+		//}
 
 	}
 }

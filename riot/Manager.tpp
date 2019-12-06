@@ -70,7 +70,7 @@ template<typename ComponentType> ComponentType& Manager::getEntityComponent(Enti
 template<typename EntityType> std::unordered_set<EntityIdType>* Manager::getEntities() {
 	Types::TypeId entityType = Types::toTypeId<EntityType>();
 
-	return this->entityFamilies.at(entityType);
+	return this->getEntities(entityType);
 }
 
 template<typename ComponentType> bool Manager::entityHasComponent(EntityIdType id) {

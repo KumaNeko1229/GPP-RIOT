@@ -7,6 +7,7 @@
 #include "PlayerEntity.h"
 #include "ButtonEntity.h"
 #include "DamageComponent.h"
+#include "GachaEntity.h"
 
 namespace System {
 
