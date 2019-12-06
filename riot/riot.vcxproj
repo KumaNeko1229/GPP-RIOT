@@ -265,6 +265,7 @@
     <ClInclude Include="WallEntity.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\buttonbackground.png" />
     <Image Include="bullets.png" />
     <Image Include="enemy.png" />
     <Image Include="floor.png" />

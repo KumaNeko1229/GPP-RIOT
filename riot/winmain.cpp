@@ -65,12 +65,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		DestroyWindow(hwnd);
 		MessageBox(NULL, err.getMessage(), "Error", MB_OK);
 	}
-	catch (...)
-	{
-		game->deleteAll();
-		DestroyWindow(hwnd);
-		MessageBox(NULL, "Unknown error occured in game.", "Error", MB_OK);
-	}
+	
 
 	SAFE_DELETE(game);     // free memory before exit
 	return 0;

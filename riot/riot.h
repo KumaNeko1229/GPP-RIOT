@@ -1,6 +1,6 @@
 #pragma once
 #define WIN32_LEAN_AND_MEAN
-
+#include <string.h>
 #include "game.h"
 #include "textureManager.h"
 #include "renderSystem.h"
@@ -13,6 +13,10 @@
 #include "PlayerAttackSystem.h"
 #include "MenuSystem.h"
 #include "CollisionSystem.h"
+#include "HUDSystem.h"
+#include "MainMenuSystem.h"
+#include "ClickSystem.h"
+#include "TextSystem.h"
 
 //=============================================================================
 // Create game class

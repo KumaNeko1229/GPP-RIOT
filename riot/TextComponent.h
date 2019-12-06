@@ -8,7 +8,10 @@ namespace Component {
 
 	struct Text : ECS::Component {
 		std::string text;
-		TextDX* font;
+		TextDX *font;
+		int fontsize;
+		int fontx;
+		int fonty;
 	};
 
 }
