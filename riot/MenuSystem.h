@@ -4,7 +4,6 @@
 #include <string>
 #include <fstream>
 #include <codecvt>
-#include <list>
 
 #include "System.h"
 #include "Manager.h"
