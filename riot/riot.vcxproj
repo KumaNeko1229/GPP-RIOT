@@ -229,7 +229,6 @@
     <ClInclude Include="GachaSystem.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameError.h" />
-    <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateComponent.h" />
     <ClInclude Include="GameStateEntity.h" />
     <ClInclude Include="GameStateSystem.h" />

@@ -13,6 +13,13 @@ namespace Entity {
 
 		// create the collidable component
 		Component::Collidable collidableComponent = Component::Collidable();
+		std::vector<D3DXVECTOR2> corners = {
+			{(float)(x - 0.5) * tileWidth, (float)(y - 0.5) * tileHeight},
+			{(float)(x + 0.5) * tileWidth, (float)(y - 0.5) * tileHeight},
+			{(float)(x - 0.5) * tileWidth, (float)(y + 0.5) * tileHeight},
+			{(float)(x + 0.5) * tileWidth, (float)(y + 0.5) * tileHeight}
+		};
+		collidableComponent.corners = corners;
 		collidableComponent.collisionType = CollisionUtil::CollisionType::CIRCLE;
 		collidableComponent.onEnter = [bulletId, damageComponent](ECS::Manager* manager, ECS::EntityIdType id) {
 			manager->getEntityComponent<Component::Damage>(id).health -= damageComponent.damage;

@@ -20,6 +20,7 @@
 #include "ClickSystem.h"
 #include "TextSystem.h"
 #include "PauseMenuSystem.h"
+#include "EnemyAttackSystem.h"
 
 //=============================================================================
 // Create game class
