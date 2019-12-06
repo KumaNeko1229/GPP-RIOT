@@ -114,6 +114,12 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
     </ClCompile>
+    <ClCompile Include="GachaEntity.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="GachaSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="GachaSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
@@ -231,12 +237,6 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GachaSystem.cpp">
-      <Filter>Source Files\System</Filter>
-    </ClCompile>
-    <ClCompile Include="GachaEntity.cpp">
-      <Filter>Source Files\Entity</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBAABBCollisionStrategy.h">
@@ -341,6 +341,9 @@
     <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="GachaEntity.h">
+      <Filter>Header Files\Entity</Filter>
+    </ClInclude>
     <ClInclude Include="GachaSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
@@ -352,9 +355,6 @@
     </ClInclude>
     <ClInclude Include="gameError.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="GameStateComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -455,9 +455,6 @@
     <ClInclude Include="TearGas.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="TearGas.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="TearGasEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
@@ -488,12 +485,15 @@
     <ClInclude Include="WallEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="GachaEntity.h">
-      <Filter>Header Files\Entity</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\buttonbackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\buttonbackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\gachasystem.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="bullets.png">
@@ -530,9 +530,6 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="wall.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\buttonbackground.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
