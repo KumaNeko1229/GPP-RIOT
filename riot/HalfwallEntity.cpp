@@ -29,8 +29,10 @@ namespace Entity {
 				|| manager->getEntity(id)->isSameType<Entity::EliteGuard>()
 				|| manager->getEntity(id)->isSameType<Entity::EliteSoldier>())
 			{
+
+				Component::Collidable& entityCorner = manager->getEntityComponent<Component::Collidable>(id);
 				Component::Position wallPos = manager->getEntityComponent<Component::Position>(halfwallId);
-				Component::Position entityPos = manager->getEntityComponent<Component::Position>(id);
+				Component::Position &entityPos = manager->getEntityComponent<Component::Position>(id);
 				float wallCenX = wallPos.x + (tileWidth / 2);
 				float wallCenY = wallPos.y + (tileHeight / 2);
 				float entityCenX = entityPos.x + (tileWidth / 2);
@@ -47,6 +49,15 @@ namespace Entity {
 				else {
 					entityPos.y = wallPos.y + tileHeight;
 				}
+
+				std::vector<D3DXVECTOR2> corners = {
+					{(float)entityPos.x, (float)entityPos.y},
+					{(float)entityPos.x + tileWidth, (float)entityPos.y},
+					{(float)entityPos.x, (float)entityPos.y + tileHeight},
+					{(float)entityPos.x + tileWidth, (float)entityPos.y + tileHeight}
+				};
+
+				entityCorner.corners = corners;
 			}
 		};
 
