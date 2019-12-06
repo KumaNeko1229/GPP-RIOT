@@ -9,6 +9,7 @@
 #include "AttackComponent.h"
 #include "PositionComponent.h"
 #include "DamageComponent.h"
+#include "PhysicsComponent.h"
 
 namespace Entity {
 

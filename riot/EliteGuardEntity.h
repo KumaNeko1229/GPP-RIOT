@@ -7,6 +7,8 @@
 #include "TextureComponent.h"
 #include "TransformComponent.h"
 #include "AttackComponent.h"
+#include "PhysicsComponent.h"
+#include "AnimatableComponent.h"
 #include "PositionComponent.h"
 #include "DamageComponent.h"
 

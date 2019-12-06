@@ -21,6 +21,9 @@ namespace Entity {
 		attackComponent.attackDelay = 0.5;
 		attackComponent.interval = 1;
 
+		// Create the physics component
+		Component::Physics physicsComponent = Component::Physics();
+
 		Component::Damage damageComponent = Component::Damage();
 		damageComponent.health = 40;
 
@@ -40,6 +43,7 @@ namespace Entity {
 		// Add the components
 		manager->addComponent(blockerId, textureComponent);
 		manager->addComponent(blockerId, transformComponent);
+		manager->addComponent(blockerId, physicsComponent);
 		manager->addComponent(blockerId, attackComponent);
 		manager->addComponent(blockerId, damageComponent);
 		manager->addComponent(blockerId, positionComponent);

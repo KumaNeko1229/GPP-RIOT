@@ -22,6 +22,9 @@ namespace Entity {
 		Component::Damage damageComponent = Component::Damage();
 		damageComponent.health = 50;
 
+		// Create the physics component
+		Component::Physics physicsComponent = Component::Physics();
+
 		Component::Position positionComponent = Component::Position();
 		positionComponent.x = x * tileWidth;
 		positionComponent.y = y * tileHeight;
@@ -29,6 +32,7 @@ namespace Entity {
 		manager->addComponent(eliteGuardId, textureComponent);
 		manager->addComponent(eliteGuardId, transformComponent);
 		manager->addComponent(eliteGuardId, attackComponent);
+		manager->addComponent(eliteGuardId, physicsComponent);
 		manager->addComponent(eliteGuardId, damageComponent);
 		manager->addComponent(eliteGuardId, positionComponent);
 		return eliteGuardId;

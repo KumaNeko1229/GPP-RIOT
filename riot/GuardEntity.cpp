@@ -26,7 +26,11 @@ namespace Entity {
 		positionComponent.x = x * tileWidth;
 		positionComponent.y = y * tileHeight;
 
+		// Create the physics component
+		Component::Physics physicsComponent = Component::Physics();
+
 		// Add the components
+		manager->addComponent(guardId, physicsComponent);
 		manager->addComponent(guardId, textureComponent);
 		manager->addComponent(guardId, transformComponent);
 		manager->addComponent(guardId, attackComponent);
