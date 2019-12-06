@@ -69,6 +69,9 @@
     <ClCompile Include="ButtonEntity.cpp">
       <Filter>Source Files\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="CameraSystem.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="CircleCircleCollisionStrategy.cpp">
       <Filter>Source Files\Collision</Filter>
     </ClCompile>
@@ -105,8 +108,14 @@
     <ClCompile Include="EnemyMovementSystem.cpp">
       <Filter>Source Files\System</Filter>
     </ClCompile>
+    <ClCompile Include="enemyUtil.cpp">
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="GachaSystem.cpp">
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="GachaSystem.cpp">
       <Filter>Source Files\System</Filter>
@@ -263,6 +272,9 @@
     <ClInclude Include="ButtonEntity.h">
       <Filter>Header Files\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="CameraSystem.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
     <ClInclude Include="CircleCircleCollisionStrategy.h">
       <Filter>Header Files\CollisionUtil</Filter>
     </ClInclude>
@@ -323,6 +335,9 @@
     <ClInclude Include="EnemyMovementSystem.h">
       <Filter>Header Files\System</Filter>
     </ClInclude>
+    <ClInclude Include="enemyUtil.h">
+      <Filter>Header Files\System</Filter>
+    </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
@@ -337,6 +352,9 @@
     </ClInclude>
     <ClInclude Include="gameError.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Header Files\ECS</Filter>
     </ClInclude>
     <ClInclude Include="GameStateComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -475,6 +493,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\buttonbackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="bullets.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -512,9 +533,6 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\..\..\buttonbackground.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\gachasystem.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
