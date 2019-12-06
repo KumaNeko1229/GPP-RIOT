@@ -4,6 +4,8 @@
 #include "Manager.h"
 #include "GameStateEntity.h"
 #include "GameStateComponent.h"
+#include "PositionComponent.h"
+#include "PlayerEntity.h"
 
 namespace System {
 

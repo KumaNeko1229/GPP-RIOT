@@ -20,9 +20,9 @@ namespace System {
 
 		std::vector<std::vector<int>> enemy;
 
-		for (int y = 0; y < visibleY+1; y++)
+		for (int y = 0; y < levelHeight; y++)
 		{
-			for (int x = 0; x < visibleX+1; x++)
+			for (int x = 0; x < levelWidth; x++)
 			{
 				int count = (y * levelWidth) + x;
 				switch (level[count]) {
