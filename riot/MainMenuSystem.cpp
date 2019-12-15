@@ -3,6 +3,7 @@
 namespace System {
 
 	void MainMenu::initialize(ECS::Manager* manager, Graphics* graphics, Input* input) {
+		System::initialize(manager, graphics, input);
 		Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
 		if (gameState.displayState == Component::DisplayState::MENU)
 		{
