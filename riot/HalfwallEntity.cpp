@@ -37,17 +37,21 @@ namespace Entity {
 				float wallCenY = wallPos.y + (tileHeight / 2);
 				float entityCenX = entityPos.x + (tileWidth / 2);
 				float entityCenY = entityPos.y + (tileHeight / 2);
-				if (wallCenX > entityCenX) {
-					entityPos.x = wallPos.x - tileWidth;
+				if (wallCenX < entityPos.x < (wallPos.x + tileWidth))
+				{
+					entityPos.x += wallPos.x + tileWidth - entityPos.x;
 				}
-				else {
-					entityPos.x = wallPos.x + tileWidth;
+				else if (wallPos.x < (entityPos.x + tileWidth) < wallCenX)
+				{
+					entityPos.x -= entityPos.x - wallPos.x;
 				}
-				if (wallCenY > entityCenY) {
-					entityPos.y = wallPos.y - tileHeight;
+				if (wallCenY < entityPos.y < wallPos.y + tileHeight)
+				{
+					entityPos.y += wallPos.y + tileHeight - entityPos.y;
 				}
-				else {
-					entityPos.y = wallPos.y + tileHeight;
+				else if (wallPos.y < entityPos.y < wallCenY)
+				{
+					entityPos.y -= entityPos.y - wallPos.y;
 				}
 
 				std::vector<D3DXVECTOR2> corners = {

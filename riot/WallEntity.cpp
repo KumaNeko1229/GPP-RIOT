@@ -15,10 +15,10 @@ namespace Entity {
 		textureComponent.visible = true;
 		Component::Collidable collidableComponent = Component::Collidable();
 		std::vector<D3DXVECTOR2> corners = {
-			{(float)(X - 0.5) * tileWidth, (float)(Y - 0.5) * tileHeight},
-			{(float)(X + 0.5) * tileWidth, (float)(Y - 0.5) * tileHeight},
-			{(float)(X - 0.5) * tileWidth, (float)(Y + 0.5) * tileHeight},
-			{(float)(X + 0.5) * tileWidth, (float)(Y + 0.5) * tileHeight}
+			{(float)(X) * tileWidth, (float)(Y) * tileHeight},
+			{(float)(X + 1) * tileWidth, (float)(Y) * tileHeight},
+			{(float)(X) * tileWidth, (float)(Y + 1) * tileHeight},
+			{(float)(X + 1) * tileWidth, (float)(Y + 1) * tileHeight}
 		};
 		collidableComponent.collisionType = CollisionUtil::CollisionType::AABB;
 		collidableComponent.corners = corners;
@@ -37,28 +37,28 @@ namespace Entity {
 				float entityCenX = entityPos.x + (tileWidth / 2);
 				float entityCenY = entityPos.y + (tileHeight / 2);
 				
-				if (wallCenX < entityPos.x < (wallPos.x + tileWidth))
+				if (wallCenX < entityCenX < (wallPos.x + tileWidth))
 				{
 					entityPos.x += wallPos.x + tileWidth - entityPos.x;
 				}
-				else if (wallPos.x < (entityPos.x + tileWidth) < wallCenX)
+				else if (wallPos.x < entityCenX < wallCenX)
 				{
-					entityPos.x -= entityPos.x - wallPos.x;
+					entityPos.x -= (entityCenX - wallPos.x);
 				}
-				if (wallCenY < entityPos.y < wallPos.y + tileHeight)
+				if (wallCenY < entityCenY < wallPos.y + tileHeight)
 				{
 					entityPos.y += wallPos.y + tileHeight - entityPos.y;
 				}
-				else if (wallPos.y < entityPos.y < wallCenY)
+				else if (wallPos.y < entityCenY < wallCenY)
 				{
-					entityPos.y -= entityPos.y - wallPos.y;
+					entityPos.y -= entityCenY - wallPos.y;
 				}
 
 				std::vector<D3DXVECTOR2> corners = {
-					{(float)entityPos.x, (float)entityPos.y},
-					{(float)entityPos.x + tileWidth, (float)entityPos.y},
-					{(float)entityPos.x, (float)entityPos.y + tileHeight},
-					{(float)entityPos.x + tileWidth, (float)entityPos.y + tileHeight}
+					{(float)entityPos.x + 4, (float)entityPos.y + 4},
+					{(float)entityPos.x + 40, (float)entityPos.y + 4},
+					{(float)entityPos.x + 4, (float)entityPos.y + 40},
+					{(float)entityPos.x + 40, (float)entityPos.y + 40}
 				};
 
 				entityCorner.corners = corners;
