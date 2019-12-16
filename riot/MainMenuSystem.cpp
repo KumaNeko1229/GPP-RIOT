@@ -25,6 +25,8 @@ namespace System {
 			textComponent.font->setFontColor(graphicsNS::WHITE);
 			if (textComponent.font->initialize(graphics, 160, false, false, "Roboto") == false)
 				throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing DirectX font"));
+			Entity::createButtonEntity(this->manager, this->graphics, "Start", GAME_WIDTH / 2, GAME_HEIGHT / 2 + (GAME_HEIGHT / 2) / 4, 20);
+			Entity::createButtonEntity(this->manager, this->graphics, "Quit", GAME_WIDTH / 2, GAME_HEIGHT / 2 + ((GAME_HEIGHT / 2) / 4) * 3, 20);
 		}
 	}
 
@@ -65,15 +67,18 @@ namespace System {
 	}
 
 	void MainMenu::update(float frametime)
-	{
-		Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
-		if (gameState.displayState == Component::DisplayState::INGAME)
-		{
-			Entity::createButtonEntity(this->manager, this->graphics, "Start", GAME_WIDTH / 2, GAME_HEIGHT / 2 + (GAME_HEIGHT / 2) / 4, 20);
-			Entity::createButtonEntity(this->manager, this->graphics, "Quit", GAME_WIDTH / 2, GAME_HEIGHT / 2 + ((GAME_HEIGHT / 2) / 4) * 3, 20);
+	{}
 
+
+	void MainMenu::releaseAll()
+	{
+		std::unordered_set<ECS::EntityIdType>* buttonPtrs = this->manager->getEntities<Entity::Button>();
+		for (ECS::EntityIdType id : *buttonPtrs)
+		{
+			Component::Text textComponent = this->manager->getEntityComponent<Component::Text>(id);
+			SAFE_DELETE(textComponent.font);
 		}
 	}
-
 }
+
 

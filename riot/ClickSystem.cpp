@@ -21,11 +21,9 @@ namespace System {
 						Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
 						if (textComponent.text == "Start") {
 							//insert systems calling
+							this->manager->removeEntity<Entity::Button>(id);
 							gameState.displayState = Component::DisplayState::INGAME;
-						}
-						else if (textComponent.text == "Credits") {
-							//insert systems calling
-
+							clickComponent.click = false;
 						}
 						else if (textComponent.text == "Quit") {
 							//insert systems calling
@@ -34,10 +32,12 @@ namespace System {
 						else if (textComponent.text == "Resume") {
 							//insert systems calling
 							gameState.displayState = Component::DisplayState::INGAME;
+							clickComponent.click = false;
 						}
 						else if (textComponent.text == "Back to Menu") {
 							//insert systems calling
 							gameState.displayState = Component::DisplayState::MENU;
+							clickComponent.click = false;
 						}
 						else {
 							int number = rand() % 100;
@@ -48,15 +48,19 @@ namespace System {
 								if (number <= 0 && number <= 33) {
 									damageComponent.health = 1;
 									gameState.displayState = Component::DisplayState::INGAME;
+									clickComponent.click = false;
 								}
 								else if (number <= 34 && number <= 66) {
 									damageComponent.health = 10;
 									gameState.displayState = Component::DisplayState::INGAME;
+									clickComponent.click = false;
+
 
 								}
 								else {
 									damageComponent.health = 20;
 									gameState.displayState = Component::DisplayState::INGAME;
+									clickComponent.click = false;
 								}
 							}
 						}
@@ -79,6 +83,7 @@ namespace System {
 						clickComponent.click = true;
 						//call Pause system
 						gameState.displayState = Component::DisplayState::PAUSED;
+						clickComponent.click = false;
 					}
 				}
 			}

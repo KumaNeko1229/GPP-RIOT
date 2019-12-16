@@ -20,9 +20,9 @@ namespace Entity {
 		positionComponent.x = pausex;
 		positionComponent.y = pausey;
 		// Add the components
-		manager->addComponent(PauseId, textureComponent);
-		manager->addComponent(PauseId, clickableComponent);
-		manager->addComponent(PauseId, textComponent);
+		manager->addComponent<Component::Texture>(PauseId, textureComponent);
+		manager->addComponent<Component::Clickable>(PauseId, clickableComponent);
+		manager->addComponent<Component::Text>(PauseId, textComponent);
 
 		return PauseId;
 	}

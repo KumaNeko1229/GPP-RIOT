@@ -21,6 +21,7 @@ namespace System {
 		void initialize(ECS::Manager* manager, Graphics* graphics, Input* input);
 		void render();
 		void update(float frametime);
+		void releaseAll();
 	};
 
 }
