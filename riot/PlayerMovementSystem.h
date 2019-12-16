@@ -8,6 +8,7 @@
 #include "PlayerEntity.h"
 #include "PhysicsComponent.h"
 #include "PositionComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

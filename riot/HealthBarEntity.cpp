@@ -14,8 +14,8 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 
 		// Add the components
-		manager->addComponent(HealthBarId, textureComponent);
-		manager->addComponent(HealthBarId, transformComponent);
+		manager->addComponent<Component::Texture>(HealthBarId, textureComponent);
+		manager->addComponent<Component::Transform>(HealthBarId, transformComponent);
 		return HealthBarId;
 	}
 

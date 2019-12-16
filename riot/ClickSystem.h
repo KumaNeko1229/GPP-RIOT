@@ -7,6 +7,7 @@
 #include "PauseEntity.h"
 #include "PlayerEntity.h"
 #include "ClickableComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

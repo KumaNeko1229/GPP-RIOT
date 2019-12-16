@@ -9,6 +9,7 @@
 #include "TextureComponent.h"
 #include "TransformComponent.h"
 #include "PositionComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

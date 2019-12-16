@@ -17,6 +17,7 @@
 #include "EliteGuardEntity.h"
 #include "EliteSoldierEntity.h"
 #include "TextureComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

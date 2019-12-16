@@ -8,6 +8,7 @@
 #include "Manager.h"
 #include "ButtonEntity.h"
 #include "TextureComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 
@@ -20,6 +21,7 @@ namespace System {
 		void initialize(ECS::Manager* manager, Graphics* graphics, Input* input);
 		void render();
 		void update(float frametime);
+		void releaseAll();
 	};
 
 }

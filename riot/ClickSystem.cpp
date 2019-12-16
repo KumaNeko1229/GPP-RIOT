@@ -5,7 +5,6 @@ namespace System {
 	void ClickSystem::update(float frameTime)
 	{
 		std::unordered_set<ECS::EntityIdType>* buttonPtrs = this->manager->getEntities<Entity::Button>();
-
 		if (input->getMouseLButton()) {
 			for (ECS::EntityIdType id : *buttonPtrs)
 			{
@@ -19,12 +18,11 @@ namespace System {
 					if ((input->getMouseX() > (float)positionComponent.x) && (input->getMouseX() < ((float)positionComponent.x + ((float)textureComponent.totalWidth * transformComponent.scale)))
 						&& (input->getMouseY() > (float)positionComponent.y) && (input->getMouseY() < ((float)positionComponent.y + ((float)textureComponent.totalHeight * transformComponent.scale)))) {
 						clickComponent.click = true;
+						Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
 						if (textComponent.text == "Start") {
 							//insert systems calling
-						}
-						else if (textComponent.text == "Credits") {
-							//insert systems calling
-
+							gameState.displayState = Component::DisplayState::INGAME;
+							clickComponent.click = false;
 						}
 						else if (textComponent.text == "Quit") {
 							//insert systems calling
@@ -32,11 +30,13 @@ namespace System {
 						}
 						else if (textComponent.text == "Resume") {
 							//insert systems calling
-
+							gameState.displayState = Component::DisplayState::INGAME;
+							clickComponent.click = false;
 						}
 						else if (textComponent.text == "Back to Menu") {
 							//insert systems calling
-
+							gameState.displayState = Component::DisplayState::MENU;
+							clickComponent.click = false;
 						}
 						else {
 							int number = rand() % 100;
@@ -46,15 +46,20 @@ namespace System {
 								Component::Damage& damageComponent = this->manager->getEntityComponent<Component::Damage>(pid);
 								if (number <= 0 && number <= 33) {
 									damageComponent.health = 1;
-									//insert system calling
+									gameState.displayState = Component::DisplayState::INGAME;
+									clickComponent.click = false;
 								}
 								else if (number <= 34 && number <= 66) {
 									damageComponent.health = 10;
-									//insert system calling
+									gameState.displayState = Component::DisplayState::INGAME;
+									clickComponent.click = false;
+
+
 								}
 								else {
 									damageComponent.health = 20;
-									//insert system calling
+									gameState.displayState = Component::DisplayState::INGAME;
+									clickComponent.click = false;
 								}
 							}
 						}
@@ -64,22 +69,25 @@ namespace System {
 			input->setMouseLButton(FALSE);
 		}
 
-		//std::unordered_set<ECS::EntityIdType>* pausePtrs = this->manager->getEntities<Entity::Pause>();
-		//for (ECS::EntityIdType id : *buttonPtrs)
-		//{
-		//	Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
-		//	Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
-		//	if (input->getMouseLButton()) {
-		//		if (clickComponent.click == false) {
-		//			if (input->getMouseX() >= (int)textureComponent.viewableRect.left && input->getMouseX() <= (int)textureComponent.viewableRect.right
-		//				&& input->getMouseY() >= (int)textureComponent.viewableRect.top && input->getMouseY() <= (int)textureComponent.viewableRect.bottom) {
-		//				clickComponent.click = true;
-		//				//call Pause system
-		//			}
-		//		}
-		//	}
-		//	input->setMouseLButton(FALSE);
-		//}
+		std::unordered_set<ECS::EntityIdType>* pausePtrs = this->manager->getEntities<Entity::Pause>();
+		if (input->getMouseLButton()) {
+			for (ECS::EntityIdType id : *pausePtrs)
+			{
+				Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
+				Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
+				Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
+				if (clickComponent.click == false) {
+					if (input->getMouseX() >= (int)textureComponent.viewableRect.left && input->getMouseX() <= (int)textureComponent.viewableRect.right
+						&& input->getMouseY() >= (int)textureComponent.viewableRect.top && input->getMouseY() <= (int)textureComponent.viewableRect.bottom) {
+						clickComponent.click = true;
+						//call Pause system
+						gameState.displayState = Component::DisplayState::PAUSED;
+						clickComponent.click = false;
+					}
+				}
+			}
+			input->setMouseLButton(FALSE);
+		}
 
 	}
 }

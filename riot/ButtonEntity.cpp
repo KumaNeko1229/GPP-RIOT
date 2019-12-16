@@ -37,12 +37,11 @@ namespace Entity {
 			throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing DirectX font"));
 
 		// Add the components
-		manager->addComponent(ButtonId, textureComponent);
-		manager->addComponent(ButtonId, clickableComponent);
-		manager->addComponent(ButtonId, textComponent);
-		manager->addComponent(ButtonId, positionComponent);
-		manager->addComponent(ButtonId, textureComponent);
-		manager->addComponent(ButtonId, transformComponent);
+		manager->addComponent<Component::Texture>(ButtonId, textureComponent);
+		manager->addComponent<Component::Clickable>(ButtonId, clickableComponent);
+		manager->addComponent<Component::Text>(ButtonId, textComponent);
+		manager->addComponent<Component::Position>(ButtonId, positionComponent);
+		manager->addComponent<Component::Transform>(ButtonId, transformComponent);
 		return ButtonId;
 	}
 

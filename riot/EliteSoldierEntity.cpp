@@ -37,13 +37,13 @@ namespace Entity {
 		animatableComponent.endFrame = 8;
 
 		// Add the components
-		manager->addComponent(eliteSoldierId, textureComponent);
-		manager->addComponent(eliteSoldierId, physicsComponent);
-		manager->addComponent(eliteSoldierId, transformComponent);
-		manager->addComponent(eliteSoldierId, attackComponent);
-		manager->addComponent(eliteSoldierId, damageComponent);
-		manager->addComponent(eliteSoldierId, positionComponent);
-		manager->addComponent(eliteSoldierId, animatableComponent);
+		manager->addComponent<Component::Texture>(eliteSoldierId, textureComponent);
+		manager->addComponent<Component::Physics>(eliteSoldierId, physicsComponent);
+		manager->addComponent<Component::Transform>(eliteSoldierId, transformComponent);
+		manager->addComponent<Component::Attack>(eliteSoldierId, attackComponent);
+		manager->addComponent<Component::Damage>(eliteSoldierId, damageComponent);
+		manager->addComponent<Component::Position>(eliteSoldierId, positionComponent);
+		manager->addComponent<Component::Animatable>(eliteSoldierId, animatableComponent);
 
 		return eliteSoldierId;
 	}

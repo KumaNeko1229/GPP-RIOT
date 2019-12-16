@@ -9,6 +9,7 @@
 #include "PauseEntity.h"
 #include "ButtonEntity.h"
 #include "TextureComponent.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

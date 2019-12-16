@@ -48,13 +48,13 @@ namespace Entity {
 		animatableComponent.endFrame = 18;
 
 		// Add the components
-		manager->addComponent(blockerId, textureComponent);
-		manager->addComponent(blockerId, transformComponent);
-		manager->addComponent(blockerId, physicsComponent);
-		manager->addComponent(blockerId, attackComponent);
-		manager->addComponent(blockerId, damageComponent);
-		manager->addComponent(blockerId, positionComponent);
-		manager->addComponent(blockerId, animatableComponent);
+		manager->addComponent<Component::Texture>(blockerId, textureComponent);
+		manager->addComponent<Component::Transform>(blockerId, transformComponent);
+		manager->addComponent<Component::Physics>(blockerId, physicsComponent);
+		manager->addComponent<Component::Attack>(blockerId, attackComponent);
+		manager->addComponent<Component::Damage>(blockerId, damageComponent);
+		manager->addComponent<Component::Position>(blockerId, positionComponent);
+		manager->addComponent<Component::Animatable>(blockerId, animatableComponent);
 
 		return blockerId;
 	}

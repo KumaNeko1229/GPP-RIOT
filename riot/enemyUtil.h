@@ -4,6 +4,7 @@
 
 #include "PositionComponent.h"
 #include "CollidableComponent.h"
+#include "GameStateComponent.h"
 
 bool withinRange(float a, float b, float value);
 bool inLineOfSight(

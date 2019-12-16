@@ -4,40 +4,44 @@ namespace System {
 
 	void PlayerMovement::update(float frameTime)
 	{
-		std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();
-
-		for (ECS::EntityIdType id : *playerPtrs)
+		Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
+		if (gameState.displayState == Component::DisplayState::INGAME)
 		{
-			Component::Physics& physicsComponent = this->manager->getEntityComponent<Component::Physics>(id);
-			Component::Transform& transformComponent = this->manager->getEntityComponent<Component::Transform>(id);
+			std::unordered_set<ECS::EntityIdType>* playerPtrs = this->manager->getEntities<Entity::Player>();
 
-			// reset the velocity of the object
-			physicsComponent.velocityX = 0.0f;
-			physicsComponent.velocityY = 0.0f;
-
-			// check for WASD to add a velocity to the component
-			if (input->isKeyDown(UP_KEY))
+			for (ECS::EntityIdType id : *playerPtrs)
 			{
-				physicsComponent.velocityY = -PLAYER_SPEED;
-				transformComponent.angle = UP_ANGLE;
-			}
+				Component::Physics& physicsComponent = this->manager->getEntityComponent<Component::Physics>(id);
+				Component::Transform& transformComponent = this->manager->getEntityComponent<Component::Transform>(id);
 
-			if (input->isKeyDown(DOWN_KEY))
-			{
-				physicsComponent.velocityY = PLAYER_SPEED;
-				transformComponent.angle = DOWN_ANGLE;
-			}
+				// reset the velocity of the object
+				physicsComponent.velocityX = 0.0f;
+				physicsComponent.velocityY = 0.0f;
 
-			if (input->isKeyDown(LEFT_KEY))
-			{
-				physicsComponent.velocityX = -PLAYER_SPEED;
-				transformComponent.angle = LEFT_ANGLE;
-			}
+				// check for WASD to add a velocity to the component
+				if (input->isKeyDown(UP_KEY))
+				{
+					physicsComponent.velocityY = -PLAYER_SPEED;
+					transformComponent.angle = UP_ANGLE;
+				}
 
-			if (input->isKeyDown(RIGHT_KEY))
-			{
-				physicsComponent.velocityX = PLAYER_SPEED;
-				transformComponent.angle = RIGHT_ANGLE;
+				if (input->isKeyDown(DOWN_KEY))
+				{
+					physicsComponent.velocityY = PLAYER_SPEED;
+					transformComponent.angle = DOWN_ANGLE;
+				}
+
+				if (input->isKeyDown(LEFT_KEY))
+				{
+					physicsComponent.velocityX = -PLAYER_SPEED;
+					transformComponent.angle = LEFT_ANGLE;
+				}
+
+				if (input->isKeyDown(RIGHT_KEY))
+				{
+					physicsComponent.velocityX = PLAYER_SPEED;
+					transformComponent.angle = RIGHT_ANGLE;
+				}
 			}
 		}
 	}

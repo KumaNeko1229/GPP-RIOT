@@ -23,10 +23,9 @@ namespace Entity {
 		Component::Transform transformComponent = Component::Transform();
 
 		// Add the components
-		manager->addComponent(GachaId, textureComponent);
-		manager->addComponent(GachaId, positionComponent);
-		manager->addComponent(GachaId, textureComponent);
-		manager->addComponent(GachaId, transformComponent);
+		manager->addComponent<Component::Texture>(GachaId, textureComponent);
+		manager->addComponent<Component::Position>(GachaId, positionComponent);
+		manager->addComponent<Component::Transform>(GachaId, transformComponent);
 		return GachaId;
 	}
 

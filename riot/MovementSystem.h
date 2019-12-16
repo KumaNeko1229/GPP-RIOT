@@ -7,6 +7,7 @@
 #include "PhysicsComponent.h"
 #include "PositionComponent.h"
 #include "TearGasEntity.h"
+#include "GameStateComponent.h"
 
 namespace System {
 

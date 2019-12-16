@@ -17,6 +17,7 @@
 #include "RubberBulletEntity.h"
 #include "WallEntity.h"
 #include "enemyUtil.h"
+#include "GameStateComponent.h"
 
 namespace System {
 
