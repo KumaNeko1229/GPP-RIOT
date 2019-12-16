@@ -67,7 +67,23 @@ namespace System {
 	}
 
 	void MainMenu::update(float frametime)
-	{}
+	{
+		Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
+		if (gameState.displayState != Component::DisplayState::MENU)
+		{
+			std::unordered_set<ECS::EntityIdType>* buttonPtrs = this->manager->getEntities<Entity::Button>();
+			int index = 0;
+				for (ECS::EntityIdType id : *buttonPtrs)
+				{
+					Component::Text& textComponent = this->manager->getEntityComponent<Component::Text>(id);
+					if (textComponent.text == "Start") {
+						 index = id;
+					}
+				}
+				this->manager->removeEntity<Entity::Button>(index);
+			
+		}
+	}
 
 
 	void MainMenu::releaseAll()

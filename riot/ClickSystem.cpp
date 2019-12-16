@@ -21,7 +21,6 @@ namespace System {
 						Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
 						if (textComponent.text == "Start") {
 							//insert systems calling
-							this->manager->removeEntity<Entity::Button>(id);
 							gameState.displayState = Component::DisplayState::INGAME;
 							clickComponent.click = false;
 						}
@@ -71,12 +70,12 @@ namespace System {
 		}
 
 		std::unordered_set<ECS::EntityIdType>* pausePtrs = this->manager->getEntities<Entity::Pause>();
-		for (ECS::EntityIdType id : *buttonPtrs)
-		{
-			Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
-			Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
-			Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
-			if (input->getMouseLButton()) {
+		if (input->getMouseLButton()) {
+			for (ECS::EntityIdType id : *pausePtrs)
+			{
+				Component::Clickable& clickComponent = this->manager->getEntityComponent<Component::Clickable>(id);
+				Component::Texture& textureComponent = this->manager->getEntityComponent<Component::Texture>(id);
+				Component::GameState& gameState = this->manager->getComponents<Component::GameState>()->at(0);
 				if (clickComponent.click == false) {
 					if (input->getMouseX() >= (int)textureComponent.viewableRect.left && input->getMouseX() <= (int)textureComponent.viewableRect.right
 						&& input->getMouseY() >= (int)textureComponent.viewableRect.top && input->getMouseY() <= (int)textureComponent.viewableRect.bottom) {
