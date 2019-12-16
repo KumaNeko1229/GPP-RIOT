@@ -14,6 +14,9 @@
 #include "TextureComponent.h"
 #include "TransformComponent.h"
 #include "CollidableComponent.h"
+#include "BulletEntity.h"
+#include "MetalBulletEntity.h"
+#include "RubberBulletEntity.h"
 
 namespace Entity {
 

@@ -20,7 +20,7 @@ namespace Entity {
 			{(float)X * tileHeight, (float)(Y + 1) * tileHeight},
 			{(float)(X + 1) * tileWidth, (float)(Y + 1) * tileHeight}
 		};
-		collidableComponent.collisionType = CollisionUtil::CollisionType::CIRCLE;
+		collidableComponent.collisionType = CollisionUtil::CollisionType::AABB;
 		collidableComponent.corners = corners;
 		collidableComponent.onEnter = [halfwallId](ECS::Manager* manager, ECS::EntityIdType id) {
 			if (manager->getEntity(id)->isSameType<Entity::Player>()
@@ -29,36 +29,80 @@ namespace Entity {
 				|| manager->getEntity(id)->isSameType<Entity::EliteGuard>()
 				|| manager->getEntity(id)->isSameType<Entity::EliteSoldier>())
 			{
-
-				Component::Collidable& entityCorner = manager->getEntityComponent<Component::Collidable>(id);
 				Component::Position wallPos = manager->getEntityComponent<Component::Position>(halfwallId);
-				Component::Position &entityPos = manager->getEntityComponent<Component::Position>(id);
+				Component::Position& entityPos = manager->getEntityComponent<Component::Position>(id);
+				Component::Collidable& entityCorner = manager->getEntityComponent<Component::Collidable>(id);
+				Component::Physics& entityPhysics = manager->getEntityComponent<Component::Physics>(id);
 				float wallCenX = wallPos.x + (tileWidth / 2);
 				float wallCenY = wallPos.y + (tileHeight / 2);
 				float entityCenX = entityPos.x + (tileWidth / 2);
 				float entityCenY = entityPos.y + (tileHeight / 2);
-				if (wallCenX < entityPos.x < (wallPos.x + tileWidth))
+
+				if (wallCenX < entityCenX && entityPhysics.velocityX < 0)
 				{
-					entityPos.x += wallPos.x + tileWidth - entityPos.x;
+					entityPhysics.velocityX = 0;
 				}
-				else if (wallPos.x < (entityPos.x + tileWidth) < wallCenX)
+				else if (entityCenX < wallCenX && entityPhysics.velocityX > 0)
 				{
-					entityPos.x -= entityPos.x - wallPos.x;
+					entityPhysics.velocityX = 0;
 				}
-				if (wallCenY < entityPos.y < wallPos.y + tileHeight)
+				if (wallCenY < entityCenY && entityPhysics.velocityY < 0)
 				{
-					entityPos.y += wallPos.y + tileHeight - entityPos.y;
+					entityPhysics.velocityY = 0;
 				}
-				else if (wallPos.y < entityPos.y < wallCenY)
+				else if (entityCenY < wallCenY && entityPhysics.velocityY > 0)
 				{
-					entityPos.y -= entityPos.y - wallPos.y;
+					entityPhysics.velocityY = 0;
+				}
+				std::vector<D3DXVECTOR2> corners = {
+					{(float)entityPos.x + 4, (float)entityPos.y + 4},
+					{(float)entityPos.x + 40, (float)entityPos.y + 4},
+					{(float)entityPos.x + 4, (float)entityPos.y + 40},
+					{(float)entityPos.x + 40, (float)entityPos.y + 40}
+				};
+
+				entityCorner.corners = corners;
+			}
+		};
+
+		collidableComponent.onStay = [halfwallId](ECS::Manager* manager, ECS::EntityIdType id, float frametime) {
+			if (manager->getEntity(id)->isSameType<Entity::Player>()
+				|| manager->getEntity(id)->isSameType<Entity::Blocker>()
+				|| manager->getEntity(id)->isSameType<Entity::Guard>()
+				|| manager->getEntity(id)->isSameType<Entity::EliteGuard>()
+				|| manager->getEntity(id)->isSameType<Entity::EliteSoldier>())
+			{
+				Component::Position wallPos = manager->getEntityComponent<Component::Position>(halfwallId);
+				Component::Position& entityPos = manager->getEntityComponent<Component::Position>(id);
+				Component::Collidable& entityCorner = manager->getEntityComponent<Component::Collidable>(id);
+				Component::Physics& entityPhysics = manager->getEntityComponent<Component::Physics>(id);
+				float wallCenX = wallPos.x + (tileWidth / 2);
+				float wallCenY = wallPos.y + (tileHeight / 2);
+				float entityCenX = entityPos.x + (tileWidth / 2);
+				float entityCenY = entityPos.y + (tileHeight / 2);
+
+				if (wallCenX < entityCenX && entityPhysics.velocityX < 0)
+				{
+					entityPhysics.velocityX = 0;
+				}
+				else if (entityCenX < wallCenX && entityPhysics.velocityX > 0)
+				{
+					entityPhysics.velocityX = 0;
+				}
+				if (wallCenY < entityCenY && entityPhysics.velocityY < 0)
+				{
+					entityPhysics.velocityY = 0;
+				}
+				else if (entityCenY < wallCenY && entityPhysics.velocityY > 0)
+				{
+					entityPhysics.velocityY = 0;
 				}
 
 				std::vector<D3DXVECTOR2> corners = {
-					{(float)entityPos.x, (float)entityPos.y},
-					{(float)entityPos.x + tileWidth, (float)entityPos.y},
-					{(float)entityPos.x, (float)entityPos.y + tileHeight},
-					{(float)entityPos.x + tileWidth, (float)entityPos.y + tileHeight}
+					{(float)entityPos.x + 4, (float)entityPos.y + 4},
+					{(float)entityPos.x + 40, (float)entityPos.y + 4},
+					{(float)entityPos.x + 4, (float)entityPos.y + 40},
+					{(float)entityPos.x + 40, (float)entityPos.y + 40}
 				};
 
 				entityCorner.corners = corners;

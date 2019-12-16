@@ -32,26 +32,27 @@ namespace Entity {
 				Component::Position wallPos = manager->getEntityComponent<Component::Position>(wallId);
 				Component::Position &entityPos = manager->getEntityComponent<Component::Position>(id);
 				Component::Collidable& entityCorner = manager->getEntityComponent<Component::Collidable>(id);
+				Component::Physics& entityPhysics = manager->getEntityComponent<Component::Physics>(id);
 				float wallCenX = wallPos.x + (tileWidth / 2);
 				float wallCenY = wallPos.y + (tileHeight / 2);
 				float entityCenX = entityPos.x + (tileWidth / 2);
 				float entityCenY = entityPos.y + (tileHeight / 2);
 				
-				if (wallCenX < entityCenX < (wallPos.x + tileWidth))
+				if (wallCenX < entityCenX && entityPhysics.velocityX < 0)
 				{
-					entityPos.x += wallPos.x + tileWidth - entityPos.x;
+					entityPhysics.velocityX = 0;
 				}
-				else if (wallPos.x < entityCenX < wallCenX)
+				else if (entityCenX < wallCenX && entityPhysics.velocityX > 0)
 				{
-					entityPos.x -= (entityCenX - wallPos.x);
+					entityPhysics.velocityX = 0;
 				}
-				if (wallCenY < entityCenY < wallPos.y + tileHeight)
+				if (wallCenY < entityCenY && entityPhysics.velocityY < 0)
 				{
-					entityPos.y += wallPos.y + tileHeight - entityPos.y;
+					entityPhysics.velocityY = 0;
 				}
-				else if (wallPos.y < entityCenY < wallCenY)
+				else if (entityCenY < wallCenY && entityPhysics.velocityY > 0)
 				{
-					entityPos.y -= entityCenY - wallPos.y;
+					entityPhysics.velocityY = 0;
 				}
 
 				std::vector<D3DXVECTOR2> corners = {
@@ -62,6 +63,74 @@ namespace Entity {
 				};
 
 				entityCorner.corners = corners;
+			}
+			else if (manager->getEntity(id)->isSameType<Entity::Bullet>())
+			{
+				manager->removeEntity<Entity::Bullet>(id);
+			}
+			else if (manager->getEntity(id)->isSameType<Entity::MetalBullet>())
+			{
+				manager->removeEntity<Entity::MetalBullet>(id);
+			}
+			else if (manager->getEntity(id)->isSameType<Entity::RubberBullet>())
+			{
+				manager->removeEntity<Entity::RubberBullet>(id);
+			}
+		};
+		
+		collidableComponent.onStay = [wallId](ECS::Manager* manager, ECS::EntityIdType id, float frametime) {
+			if (manager->getEntity(id)->isSameType<Entity::Player>()
+				|| manager->getEntity(id)->isSameType<Entity::Blocker>()
+				|| manager->getEntity(id)->isSameType<Entity::Guard>()
+				|| manager->getEntity(id)->isSameType<Entity::EliteGuard>()
+				|| manager->getEntity(id)->isSameType<Entity::EliteSoldier>())
+			{
+				Component::Position wallPos = manager->getEntityComponent<Component::Position>(wallId);
+				Component::Position& entityPos = manager->getEntityComponent<Component::Position>(id);
+				Component::Collidable& entityCorner = manager->getEntityComponent<Component::Collidable>(id);
+				Component::Physics& entityPhysics = manager->getEntityComponent<Component::Physics>(id);
+				float wallCenX = wallPos.x + (tileWidth / 2);
+				float wallCenY = wallPos.y + (tileHeight / 2);
+				float entityCenX = entityPos.x + (tileWidth / 2);
+				float entityCenY = entityPos.y + (tileHeight / 2);
+
+				if (wallCenX < entityCenX && entityPhysics.velocityX < 0)
+				{
+					entityPhysics.velocityX = 0;
+				}
+				else if (entityCenX < wallCenX && entityPhysics.velocityX > 0)
+				{
+					entityPhysics.velocityX = 0;
+				}
+				if (wallCenY < entityCenY && entityPhysics.velocityY < 0)
+				{
+					entityPhysics.velocityY = 0;
+				}
+				else if (entityCenY < wallCenY && entityPhysics.velocityY > 0)
+				{
+					entityPhysics.velocityY = 0;
+				}
+
+				std::vector<D3DXVECTOR2> corners = {
+					{(float)entityPos.x + 4, (float)entityPos.y + 4},
+					{(float)entityPos.x + 40, (float)entityPos.y + 4},
+					{(float)entityPos.x + 4, (float)entityPos.y + 40},
+					{(float)entityPos.x + 40, (float)entityPos.y + 40}
+				};
+
+				entityCorner.corners = corners;
+			}
+			else if (manager->getEntity(id)->isSameType<Entity::Bullet>())
+			{
+				manager->removeEntity<Entity::Bullet>(id);
+			}
+			else if (manager->getEntity(id)->isSameType<Entity::MetalBullet>())
+			{
+				manager->removeEntity<Entity::MetalBullet>(id);
+			}
+			else if (manager->getEntity(id)->isSameType<Entity::RubberBullet>())
+			{
+				manager->removeEntity<Entity::RubberBullet>(id);
 			}
 		};
 
